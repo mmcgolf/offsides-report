@@ -2,9 +2,9 @@ name: Update Odds Data
 
 on:
   schedule:
-    # Run twice daily: 8 AM and 5 PM Eastern (12:00 and 21:00 UTC)
-    - cron: '0 12 * * *'
-    - cron: '0 21 * * *'
+    # Run once daily at 9 AM Eastern (13:00 UTC)
+    # Budget: ~15 requests/run × 30 days = ~450/month (under 500 free limit)
+    - cron: '0 13 * * *'
   workflow_dispatch: # Allow manual triggers from GitHub UI
 
 permissions:

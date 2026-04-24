@@ -1,0 +1,854 @@
+{
+  "event_id": "demo_ncaaf_champ",
+  "event_name": "CFP National Championship",
+  "sport_key": "americanfootball_ncaaf_championship_winner",
+  "sport_group": "ncaaf",
+  "event_date": "2027-01-20T00:00:00Z",
+  "days_to_resolution": 270,
+  "generated_at": "2026-04-24 16:00:06",
+  "markets": {
+    "outrights": {
+      "market_key": "outrights",
+      "market_name": "Futures / Winner",
+      "num_books": 7,
+      "num_nc_books": 5,
+      "num_sharp_books": 2,
+      "num_players": 20,
+      "min_edge_threshold": 5.33,
+      "strong_picks": [
+        {
+          "player": "Georgia",
+          "book": "espnbet",
+          "book_display": "ESPN BET",
+          "american_odds": 650,
+          "decimal_odds": 7.5,
+          "fair_american": 442,
+          "implied_prob": 0.13333,
+          "true_prob": 0.18438,
+          "ev_pct": 38.28,
+          "value_tier": "STRONG VALUE",
+          "kelly_pct": 1.47,
+          "analytics": null
+        },
+        {
+          "player": "Georgia",
+          "book": "betmgm",
+          "book_display": "BetMGM",
+          "american_odds": 550,
+          "decimal_odds": 6.5,
+          "fair_american": 442,
+          "implied_prob": 0.15385,
+          "true_prob": 0.18438,
+          "ev_pct": 19.85,
+          "value_tier": "STRONG VALUE",
+          "kelly_pct": 0.9,
+          "analytics": null
+        }
+      ],
+      "notable_picks": [],
+      "all_value_count": 2,
+      "odds_table": [
+        {
+          "player": "Georgia",
+          "true_prob": 0.18438,
+          "fair_american": 442,
+          "analytics": null,
+          "books": {
+            "fanduel": {
+              "american": 350,
+              "decimal": 4.5,
+              "ev_pct": -17.03
+            },
+            "draftkings": {
+              "american": 300,
+              "decimal": 4.0,
+              "ev_pct": -26.25
+            },
+            "betmgm": {
+              "american": 550,
+              "decimal": 6.5,
+              "ev_pct": 19.85
+            },
+            "caesars": {
+              "american": 350,
+              "decimal": 4.5,
+              "ev_pct": -17.03
+            },
+            "espnbet": {
+              "american": 650,
+              "decimal": 7.5,
+              "ev_pct": 38.28
+            }
+          },
+          "best_book": "espnbet",
+          "best_book_display": "ESPN BET"
+        },
+        {
+          "player": "Ohio State",
+          "true_prob": 0.13074,
+          "fair_american": 665,
+          "analytics": null,
+          "books": {
+            "fanduel": {
+              "american": 500,
+              "decimal": 6.0,
+              "ev_pct": -21.56
+            },
+            "draftkings": {
+              "american": 500,
+              "decimal": 6.0,
+              "ev_pct": -21.56
+            },
+            "betmgm": {
+              "american": 400,
+              "decimal": 5.0,
+              "ev_pct": -34.63
+            },
+            "caesars": {
+              "american": 500,
+              "decimal": 6.0,
+              "ev_pct": -21.56
+            },
+            "espnbet": {
+              "american": 500,
+              "decimal": 6.0,
+              "ev_pct": -21.56
+            }
+          },
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
+        },
+        {
+          "player": "Texas",
+          "true_prob": 0.10754,
+          "fair_american": 830,
+          "analytics": null,
+          "books": {
+            "fanduel": {
+              "american": 600,
+              "decimal": 7.0,
+              "ev_pct": -24.72
+            },
+            "draftkings": {
+              "american": 700,
+              "decimal": 8.0,
+              "ev_pct": -13.97
+            },
+            "betmgm": {
+              "american": 600,
+              "decimal": 7.0,
+              "ev_pct": -24.72
+            },
+            "caesars": {
+              "american": 750,
+              "decimal": 8.5,
+              "ev_pct": -8.59
+            },
+            "espnbet": {
+              "american": 600,
+              "decimal": 7.0,
+              "ev_pct": -24.72
+            }
+          },
+          "best_book": "caesars",
+          "best_book_display": "Caesars"
+        },
+        {
+          "player": "Oregon",
+          "true_prob": 0.09064,
+          "fair_american": 1003,
+          "analytics": null,
+          "books": {
+            "fanduel": {
+              "american": 700,
+              "decimal": 8.0,
+              "ev_pct": -27.49
+            },
+            "draftkings": {
+              "american": 700,
+              "decimal": 8.0,
+              "ev_pct": -27.49
+            },
+            "betmgm": {
+              "american": 900,
+              "decimal": 10.0,
+              "ev_pct": -9.36
+            },
+            "caesars": {
+              "american": 700,
+              "decimal": 8.0,
+              "ev_pct": -27.49
+            },
+            "espnbet": {
+              "american": 700,
+              "decimal": 8.0,
+              "ev_pct": -27.49
+            }
+          },
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
+        },
+        {
+          "player": "Alabama",
+          "true_prob": 0.07911,
+          "fair_american": 1164,
+          "analytics": null,
+          "books": {
+            "fanduel": {
+              "american": 800,
+              "decimal": 9.0,
+              "ev_pct": -28.8
+            },
+            "draftkings": {
+              "american": 750,
+              "decimal": 8.5,
+              "ev_pct": -32.75
+            },
+            "betmgm": {
+              "american": 800,
+              "decimal": 9.0,
+              "ev_pct": -28.8
+            },
+            "caesars": {
+              "american": 800,
+              "decimal": 9.0,
+              "ev_pct": -28.8
+            },
+            "espnbet": {
+              "american": 800,
+              "decimal": 9.0,
+              "ev_pct": -28.8
+            }
+          },
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
+        },
+        {
+          "player": "Michigan",
+          "true_prob": 0.06275,
+          "fair_american": 1494,
+          "analytics": null,
+          "books": {
+            "fanduel": {
+              "american": 1000,
+              "decimal": 11.0,
+              "ev_pct": -30.97
+            },
+            "draftkings": {
+              "american": 1000,
+              "decimal": 11.0,
+              "ev_pct": -30.97
+            },
+            "betmgm": {
+              "american": 1000,
+              "decimal": 11.0,
+              "ev_pct": -30.97
+            },
+            "caesars": {
+              "american": 1000,
+              "decimal": 11.0,
+              "ev_pct": -30.97
+            },
+            "espnbet": {
+              "american": 1300,
+              "decimal": 14.0,
+              "ev_pct": -12.15
+            }
+          },
+          "best_book": "espnbet",
+          "best_book_display": "ESPN BET"
+        },
+        {
+          "player": "Penn State",
+          "true_prob": 0.05174,
+          "fair_american": 1833,
+          "analytics": null,
+          "books": {
+            "fanduel": {
+              "american": 1200,
+              "decimal": 13.0,
+              "ev_pct": -32.73
+            },
+            "draftkings": {
+              "american": 1200,
+              "decimal": 13.0,
+              "ev_pct": -32.73
+            },
+            "betmgm": {
+              "american": 1400,
+              "decimal": 15.0,
+              "ev_pct": -22.39
+            },
+            "caesars": {
+              "american": 1350,
+              "decimal": 14.5,
+              "ev_pct": -24.97
+            },
+            "espnbet": {
+              "american": 1200,
+              "decimal": 13.0,
+              "ev_pct": -32.73
+            }
+          },
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
+        },
+        {
+          "player": "USC",
+          "true_prob": 0.04386,
+          "fair_american": 2180,
+          "analytics": null,
+          "books": {
+            "fanduel": {
+              "american": 1400,
+              "decimal": 15.0,
+              "ev_pct": -34.21
+            },
+            "draftkings": {
+              "american": 1500,
+              "decimal": 16.0,
+              "ev_pct": -29.82
+            },
+            "betmgm": {
+              "american": 1300,
+              "decimal": 14.0,
+              "ev_pct": -38.59
+            },
+            "caesars": {
+              "american": 1400,
+              "decimal": 15.0,
+              "ev_pct": -34.21
+            },
+            "espnbet": {
+              "american": 1400,
+              "decimal": 15.0,
+              "ev_pct": -34.21
+            }
+          },
+          "best_book": "draftkings",
+          "best_book_display": "DraftKings"
+        },
+        {
+          "player": "Notre Dame",
+          "true_prob": 0.03796,
+          "fair_american": 2534,
+          "analytics": null,
+          "books": {
+            "fanduel": {
+              "american": 1600,
+              "decimal": 17.0,
+              "ev_pct": -35.47
+            },
+            "draftkings": {
+              "american": 1550,
+              "decimal": 16.5,
+              "ev_pct": -37.36
+            },
+            "betmgm": {
+              "american": 1600,
+              "decimal": 17.0,
+              "ev_pct": -35.47
+            },
+            "caesars": {
+              "american": 1600,
+              "decimal": 17.0,
+              "ev_pct": -35.47
+            },
+            "espnbet": {
+              "american": 1600,
+              "decimal": 17.0,
+              "ev_pct": -35.47
+            }
+          },
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
+        },
+        {
+          "player": "Clemson",
+          "true_prob": 0.03339,
+          "fair_american": 2895,
+          "analytics": null,
+          "books": {
+            "fanduel": {
+              "american": 1800,
+              "decimal": 19.0,
+              "ev_pct": -36.57
+            },
+            "draftkings": {
+              "american": 1800,
+              "decimal": 19.0,
+              "ev_pct": -36.57
+            },
+            "betmgm": {
+              "american": 2000,
+              "decimal": 21.0,
+              "ev_pct": -29.89
+            },
+            "caesars": {
+              "american": 1800,
+              "decimal": 19.0,
+              "ev_pct": -36.57
+            },
+            "espnbet": {
+              "american": 1800,
+              "decimal": 19.0,
+              "ev_pct": -36.57
+            }
+          },
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
+        },
+        {
+          "player": "Florida State",
+          "true_prob": 0.02974,
+          "fair_american": 3262,
+          "analytics": null,
+          "books": {
+            "fanduel": {
+              "american": 2000,
+              "decimal": 21.0,
+              "ev_pct": -37.54
+            },
+            "draftkings": {
+              "american": 2000,
+              "decimal": 21.0,
+              "ev_pct": -37.54
+            },
+            "betmgm": {
+              "american": 2000,
+              "decimal": 21.0,
+              "ev_pct": -37.54
+            },
+            "caesars": {
+              "american": 2150,
+              "decimal": 22.5,
+              "ev_pct": -33.08
+            },
+            "espnbet": {
+              "american": 2300,
+              "decimal": 24.0,
+              "ev_pct": -28.62
+            }
+          },
+          "best_book": "espnbet",
+          "best_book_display": "ESPN BET"
+        },
+        {
+          "player": "LSU",
+          "true_prob": 0.02678,
+          "fair_american": 3635,
+          "analytics": null,
+          "books": {
+            "fanduel": {
+              "american": 2200,
+              "decimal": 23.0,
+              "ev_pct": -38.41
+            },
+            "draftkings": {
+              "american": 2200,
+              "decimal": 23.0,
+              "ev_pct": -38.41
+            },
+            "betmgm": {
+              "american": 2200,
+              "decimal": 23.0,
+              "ev_pct": -38.41
+            },
+            "caesars": {
+              "american": 2200,
+              "decimal": 23.0,
+              "ev_pct": -38.41
+            },
+            "espnbet": {
+              "american": 2200,
+              "decimal": 23.0,
+              "ev_pct": -38.41
+            }
+          },
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
+        },
+        {
+          "player": "Oklahoma",
+          "true_prob": 0.02324,
+          "fair_american": 4202,
+          "analytics": null,
+          "books": {
+            "fanduel": {
+              "american": 2500,
+              "decimal": 26.0,
+              "ev_pct": -39.57
+            },
+            "draftkings": {
+              "american": 2450,
+              "decimal": 25.5,
+              "ev_pct": -40.73
+            },
+            "betmgm": {
+              "american": 2700,
+              "decimal": 28.0,
+              "ev_pct": -34.92
+            },
+            "caesars": {
+              "american": 2500,
+              "decimal": 26.0,
+              "ev_pct": -39.57
+            },
+            "espnbet": {
+              "american": 2500,
+              "decimal": 26.0,
+              "ev_pct": -39.57
+            }
+          },
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
+        },
+        {
+          "player": "Tennessee",
+          "true_prob": 0.02049,
+          "fair_american": 4781,
+          "analytics": null,
+          "books": {
+            "fanduel": {
+              "american": 2800,
+              "decimal": 29.0,
+              "ev_pct": -40.58
+            },
+            "draftkings": {
+              "american": 2800,
+              "decimal": 29.0,
+              "ev_pct": -40.58
+            },
+            "betmgm": {
+              "american": 2700,
+              "decimal": 28.0,
+              "ev_pct": -42.63
+            },
+            "caesars": {
+              "american": 2800,
+              "decimal": 29.0,
+              "ev_pct": -40.58
+            },
+            "espnbet": {
+              "american": 2800,
+              "decimal": 29.0,
+              "ev_pct": -40.58
+            }
+          },
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
+        },
+        {
+          "player": "Ole Miss",
+          "true_prob": 0.01897,
+          "fair_american": 5171,
+          "analytics": null,
+          "books": {
+            "fanduel": {
+              "american": 3000,
+              "decimal": 31.0,
+              "ev_pct": -41.19
+            },
+            "draftkings": {
+              "american": 3000,
+              "decimal": 31.0,
+              "ev_pct": -41.19
+            },
+            "betmgm": {
+              "american": 3000,
+              "decimal": 31.0,
+              "ev_pct": -41.19
+            },
+            "caesars": {
+              "american": 3150,
+              "decimal": 32.5,
+              "ev_pct": -38.34
+            },
+            "espnbet": {
+              "american": 3000,
+              "decimal": 31.0,
+              "ev_pct": -41.19
+            }
+          },
+          "best_book": "caesars",
+          "best_book_display": "Caesars"
+        },
+        {
+          "player": "Miami (FL)",
+          "true_prob": 0.01596,
+          "fair_american": 6165,
+          "analytics": null,
+          "books": {
+            "fanduel": {
+              "american": 3500,
+              "decimal": 36.0,
+              "ev_pct": -42.53
+            },
+            "draftkings": {
+              "american": 3500,
+              "decimal": 36.0,
+              "ev_pct": -42.53
+            },
+            "betmgm": {
+              "american": 3700,
+              "decimal": 38.0,
+              "ev_pct": -39.34
+            },
+            "caesars": {
+              "american": 3500,
+              "decimal": 36.0,
+              "ev_pct": -42.53
+            },
+            "espnbet": {
+              "american": 3800,
+              "decimal": 39.0,
+              "ev_pct": -37.75
+            }
+          },
+          "best_book": "espnbet",
+          "best_book_display": "ESPN BET"
+        },
+        {
+          "player": "Utah",
+          "true_prob": 0.01374,
+          "fair_american": 7180,
+          "analytics": null,
+          "books": {
+            "fanduel": {
+              "american": 4000,
+              "decimal": 41.0,
+              "ev_pct": -43.68
+            },
+            "draftkings": {
+              "american": 3950,
+              "decimal": 40.5,
+              "ev_pct": -44.36
+            },
+            "betmgm": {
+              "american": 4000,
+              "decimal": 41.0,
+              "ev_pct": -43.68
+            },
+            "caesars": {
+              "american": 4000,
+              "decimal": 41.0,
+              "ev_pct": -43.68
+            },
+            "espnbet": {
+              "american": 4000,
+              "decimal": 41.0,
+              "ev_pct": -43.68
+            }
+          },
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
+        },
+        {
+          "player": "Washington",
+          "true_prob": 0.01203,
+          "fair_american": 8214,
+          "analytics": null,
+          "books": {
+            "fanduel": {
+              "american": 4500,
+              "decimal": 46.0,
+              "ev_pct": -44.67
+            },
+            "draftkings": {
+              "american": 4600,
+              "decimal": 47.0,
+              "ev_pct": -43.47
+            },
+            "betmgm": {
+              "american": 4500,
+              "decimal": 46.0,
+              "ev_pct": -44.67
+            },
+            "caesars": {
+              "american": 4500,
+              "decimal": 46.0,
+              "ev_pct": -44.67
+            },
+            "espnbet": {
+              "american": 4500,
+              "decimal": 46.0,
+              "ev_pct": -44.67
+            }
+          },
+          "best_book": "draftkings",
+          "best_book_display": "DraftKings"
+        },
+        {
+          "player": "Colorado",
+          "true_prob": 0.01068,
+          "fair_american": 9266,
+          "analytics": null,
+          "books": {
+            "fanduel": {
+              "american": 5000,
+              "decimal": 51.0,
+              "ev_pct": -45.55
+            },
+            "draftkings": {
+              "american": 5000,
+              "decimal": 51.0,
+              "ev_pct": -45.55
+            },
+            "betmgm": {
+              "american": 5200,
+              "decimal": 53.0,
+              "ev_pct": -43.41
+            },
+            "caesars": {
+              "american": 5150,
+              "decimal": 52.5,
+              "ev_pct": -43.94
+            },
+            "espnbet": {
+              "american": 5000,
+              "decimal": 51.0,
+              "ev_pct": -45.55
+            }
+          },
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
+        },
+        {
+          "player": "Iowa",
+          "true_prob": 0.00626,
+          "fair_american": 15878,
+          "analytics": null,
+          "books": {
+            "fanduel": {
+              "american": 8000,
+              "decimal": 81.0,
+              "ev_pct": -49.3
+            },
+            "draftkings": {
+              "american": 8000,
+              "decimal": 81.0,
+              "ev_pct": -49.3
+            },
+            "betmgm": {
+              "american": 7900,
+              "decimal": 80.0,
+              "ev_pct": -49.93
+            },
+            "caesars": {
+              "american": 8000,
+              "decimal": 81.0,
+              "ev_pct": -49.3
+            },
+            "espnbet": {
+              "american": 8000,
+              "decimal": 81.0,
+              "ev_pct": -49.3
+            }
+          },
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
+        }
+      ],
+      "outlier_summary": [
+        {
+          "book": "espnbet",
+          "decimal_odds": 7.5,
+          "american_odds": 650,
+          "median_odds": 4.5,
+          "median_american": 350,
+          "deviation_pct": 66.7,
+          "direction": "higher",
+          "player": "Georgia",
+          "book_display": "ESPN BET"
+        },
+        {
+          "book": "betmgm",
+          "decimal_odds": 6.5,
+          "american_odds": 550,
+          "median_odds": 4.5,
+          "median_american": 350,
+          "deviation_pct": 44.4,
+          "direction": "higher",
+          "player": "Georgia",
+          "book_display": "BetMGM"
+        },
+        {
+          "book": "espnbet",
+          "decimal_odds": 14.0,
+          "american_odds": 1300,
+          "median_odds": 11.0,
+          "median_american": 1000,
+          "deviation_pct": 27.3,
+          "direction": "higher",
+          "player": "Michigan",
+          "book_display": "ESPN BET"
+        },
+        {
+          "book": "betmgm",
+          "decimal_odds": 10.0,
+          "american_odds": 900,
+          "median_odds": 8.0,
+          "median_american": 700,
+          "deviation_pct": 25.0,
+          "direction": "higher",
+          "player": "Oregon",
+          "book_display": "BetMGM"
+        },
+        {
+          "book": "caesars",
+          "decimal_odds": 8.5,
+          "american_odds": 750,
+          "median_odds": 7.0,
+          "median_american": 600,
+          "deviation_pct": 21.4,
+          "direction": "higher",
+          "player": "Texas",
+          "book_display": "Caesars"
+        },
+        {
+          "book": "betmgm",
+          "decimal_odds": 5.0,
+          "american_odds": 400,
+          "median_odds": 6.0,
+          "median_american": 500,
+          "deviation_pct": -16.7,
+          "direction": "lower",
+          "player": "Ohio State",
+          "book_display": "BetMGM"
+        },
+        {
+          "book": "betmgm",
+          "decimal_odds": 15.0,
+          "american_odds": 1400,
+          "median_odds": 13.0,
+          "median_american": 1200,
+          "deviation_pct": 15.4,
+          "direction": "higher",
+          "player": "Penn State",
+          "book_display": "BetMGM"
+        }
+      ],
+      "book_vigs": {
+        "FanDuel": 41.6,
+        "DraftKings": 43.1,
+        "BetMGM": 34.2,
+        "Caesars": 37.8,
+        "ESPN BET": 30.0,
+        "Pinnacle": 43.6,
+        "LowVig": 42.8
+      },
+      "nc_books_available": [
+        "FanDuel",
+        "DraftKings",
+        "BetMGM",
+        "Caesars",
+        "ESPN BET"
+      ],
+      "sharp_books_available": [
+        "Pinnacle",
+        "LowVig"
+      ]
+    }
+  },
+  "analytics": null
+}

@@ -1,8 +1,9 @@
 """
-Offsides Report - Multi-Event Analysis Pipeline
+Offsides Report - Multi-Sport Analysis Pipeline
 
-Analyzes ALL active golf events and markets, outputting
-structured JSON for each event.
+Analyzes ALL active events across golf, NBA, NCAAB, NFL, NCAAF.
+The EV engine is sport-agnostic — same math works for golfers,
+teams, conferences, etc.
 """
 
 from datetime import datetime
@@ -20,7 +21,7 @@ from ev_engine import (
     minimum_edge_threshold,
     decimal_to_american,
 )
-from odds_fetcher import fetch_all_golf_odds, parse_event_odds
+from odds_fetcher import fetch_all_odds, parse_event_odds
 from analytics import (
     fetch_datagolf_rankings,
     get_analytics_for_player,
@@ -36,14 +37,15 @@ from config import (
     RISK_FREE_RATE,
     BASE_EDGE_MINIMUM,
     MARKET_DISPLAY_NAMES,
+    SPORT_GROUPS,
 )
 
 
 def analyze_outright_market(market_data: dict, market_key: str,
-                            days_to_resolution: int, dg_rankings: list) -> dict:
+                            days_to_resolution: int, dg_rankings: list = None) -> dict:
     """
-    Run EV analysis on an outright-style market (winner, top 5, top 10, etc.)
-    Returns structured analysis ready for JSON output.
+    Run EV analysis on an outright-style market.
+    Works for any sport: golf winner, NBA champion, Super Bowl, etc.
     """
     outcomes_by_book = market_data.get("outcomes_by_book", {})
     odds_by_book = market_data.get("odds_by_book", {})
@@ -69,21 +71,24 @@ def analyze_outright_market(market_data: dict, market_key: str,
         consensus = calculate_consensus_probabilities(
             outcomes_by_book, method="power", vig_weight=True)
 
-    # Calculate minimum edge threshold
     min_edge = minimum_edge_threshold(days_to_resolution, RISK_FREE_RATE, BASE_EDGE_MINIMUM)
 
     # Find value selections (NC-legal books only)
     value_selections = []
-    for player in sorted(consensus.keys()):
-        true_prob = consensus[player]
-        analytics = get_analytics_for_player(player, dg_rankings)
+    for outcome in sorted(consensus.keys()):
+        true_prob = consensus[outcome]
+
+        # Golf analytics overlay (only for golf)
+        analytics = None
+        if dg_rankings:
+            analytics = get_analytics_for_player(outcome, dg_rankings)
 
         for book in available_nc:
-            if player not in decimal_odds_by_book.get(book, {}):
+            if outcome not in decimal_odds_by_book.get(book, {}):
                 continue
 
-            offered_decimal = decimal_odds_by_book[book][player]
-            offered_american = odds_by_book[book].get(player, 0)
+            offered_decimal = decimal_odds_by_book[book][outcome]
+            offered_american = odds_by_book[book].get(outcome, 0)
             ev_pct = calculate_ev_percentage(offered_decimal, true_prob)
             value_tier = classify_value(ev_pct, days_to_resolution, RISK_FREE_RATE, BASE_EDGE_MINIMUM)
             kelly = kelly_fraction(offered_decimal, true_prob)
@@ -92,7 +97,7 @@ def analyze_outright_market(market_data: dict, market_key: str,
             fair_american = decimal_to_american(fair_decimal) if true_prob > 0 else 0
 
             entry = {
-                "player": player,
+                "player": outcome,
                 "book": book,
                 "book_display": BOOK_DISPLAY_NAMES.get(book, book),
                 "american_odds": offered_american,
@@ -113,15 +118,19 @@ def analyze_outright_market(market_data: dict, market_key: str,
     strong_picks = [v for v in value_selections if v["value_tier"] == "STRONG VALUE"]
     notable_picks = [v for v in value_selections if v["value_tier"] == "Notable Value"]
 
-    # Build odds comparison table (top 20 by consensus prob, NC books only)
-    top_players = sorted(consensus.items(), key=lambda x: x[1], reverse=True)[:20]
+    # Odds comparison table (top 20 by consensus prob, NC books only)
+    top_outcomes = sorted(consensus.items(), key=lambda x: x[1], reverse=True)[:20]
     odds_table = []
-    for player, true_prob in top_players:
+    for outcome, true_prob in top_outcomes:
+        analytics = None
+        if dg_rankings:
+            analytics = get_analytics_for_player(outcome, dg_rankings)
+
         row = {
-            "player": player,
+            "player": outcome,
             "true_prob": round(true_prob, 5),
             "fair_american": decimal_to_american(1.0 / true_prob) if true_prob > 0 else 0,
-            "analytics": _serialize_analytics(get_analytics_for_player(player, dg_rankings)),
+            "analytics": _serialize_analytics(analytics),
             "books": {},
         }
         best_odds = 0
@@ -129,9 +138,9 @@ def analyze_outright_market(market_data: dict, market_key: str,
         for book in odds_by_book:
             if book not in NC_BOOKS:
                 continue
-            if player in odds_by_book[book]:
-                am = odds_by_book[book][player]
-                dec = decimal_odds_by_book[book][player]
+            if outcome in odds_by_book[book]:
+                am = odds_by_book[book][outcome]
+                dec = decimal_odds_by_book[book][outcome]
                 ev = calculate_ev_percentage(dec, true_prob)
                 row["books"][book] = {
                     "american": am,
@@ -147,16 +156,16 @@ def analyze_outright_market(market_data: dict, market_key: str,
 
     # Detect outliers
     outlier_summary = []
-    for player in consensus.keys():
-        player_odds_all = {}
+    for outcome in consensus.keys():
+        outcome_odds_all = {}
         for book, od in decimal_odds_by_book.items():
-            if player in od:
-                player_odds_all[book] = od[player]
-        outliers = detect_odds_outliers(player_odds_all, threshold_pct=15.0)
+            if outcome in od:
+                outcome_odds_all[book] = od[outcome]
+        outliers = detect_odds_outliers(outcome_odds_all, threshold_pct=15.0)
         for o in outliers:
             if o["book"] not in NC_BOOKS:
                 continue
-            o["player"] = player
+            o["player"] = outcome
             o["book_display"] = BOOK_DISPLAY_NAMES.get(o["book"], o["book"])
             outlier_summary.append(o)
     outlier_summary.sort(key=lambda x: abs(x["deviation_pct"]), reverse=True)
@@ -180,11 +189,8 @@ def analyze_outright_market(market_data: dict, market_key: str,
     }
 
 
-def analyze_h2h_market(market_data: dict, days_to_resolution: int, dg_rankings: list) -> dict:
-    """
-    Analyze head-to-head matchup market.
-    Each matchup is a two-outcome market with its own EV calculation.
-    """
+def analyze_h2h_market(market_data: dict, days_to_resolution: int, dg_rankings: list = None) -> dict:
+    """Analyze golf-style head-to-head matchup market."""
     from ev_engine import american_to_decimal, decimal_to_implied_prob
 
     matchups_by_book = market_data.get("matchups_by_book", {})
@@ -193,8 +199,6 @@ def analyze_h2h_market(market_data: dict, days_to_resolution: int, dg_rankings: 
 
     min_edge = minimum_edge_threshold(days_to_resolution, RISK_FREE_RATE, BASE_EDGE_MINIMUM)
 
-    # Aggregate matchups across books
-    # Key: (player_a, player_b) -> {book: {a_price, b_price}}
     matchup_index = {}
     for book, matchups in matchups_by_book.items():
         for m in matchups:
@@ -208,36 +212,28 @@ def analyze_h2h_market(market_data: dict, days_to_resolution: int, dg_rankings: 
 
     analyzed_matchups = []
     for (player_a, player_b), books_data in matchup_index.items():
-        # Calculate consensus probability for this matchup
         all_prob_a = []
-        all_prob_b = []
         for book, prices in books_data.items():
             dec_a = american_to_decimal(prices["price_a"])
             dec_b = american_to_decimal(prices["price_b"])
             imp_a = decimal_to_implied_prob(dec_a)
             imp_b = decimal_to_implied_prob(dec_b)
-            # Normalize the pair
             total = imp_a + imp_b
             if total > 0:
-                # Weight sharp books more
                 weight = 2.0 if book in SHARP_REFERENCE_BOOKS else 1.0
                 all_prob_a.append((imp_a / total, weight))
-                all_prob_b.append((imp_b / total, weight))
 
         if not all_prob_a:
             continue
 
-        # Weighted average consensus
         total_weight = sum(w for _, w in all_prob_a)
         true_prob_a = sum(p * w for p, w in all_prob_a) / total_weight
         true_prob_b = 1.0 - true_prob_a
 
-        # Find value at NC-legal books
         matchup_picks = []
         for book, prices in books_data.items():
             if book not in NC_BOOKS:
                 continue
-
             for player, price, true_prob in [
                 (player_a, prices["price_a"], true_prob_a),
                 (player_b, prices["price_b"], true_prob_b),
@@ -245,7 +241,6 @@ def analyze_h2h_market(market_data: dict, days_to_resolution: int, dg_rankings: 
                 dec = american_to_decimal(price)
                 ev_pct = calculate_ev_percentage(dec, true_prob)
                 value_tier = classify_value(ev_pct, days_to_resolution, RISK_FREE_RATE, BASE_EDGE_MINIMUM)
-
                 if value_tier:
                     matchup_picks.append({
                         "player": player,
@@ -257,10 +252,9 @@ def analyze_h2h_market(market_data: dict, days_to_resolution: int, dg_rankings: 
                         "ev_pct": round(ev_pct, 2),
                         "value_tier": value_tier,
                         "analytics": _serialize_analytics(
-                            get_analytics_for_player(player, dg_rankings)),
+                            get_analytics_for_player(player, dg_rankings) if dg_rankings else None),
                     })
 
-        # Build comparison row
         book_odds = {}
         for book, prices in books_data.items():
             if book not in NC_BOOKS:
@@ -271,22 +265,15 @@ def analyze_h2h_market(market_data: dict, days_to_resolution: int, dg_rankings: 
             }
 
         analyzed_matchups.append({
-            "player_a": player_a,
-            "player_b": player_b,
+            "player_a": player_a, "player_b": player_b,
             "true_prob_a": round(true_prob_a, 4),
             "true_prob_b": round(true_prob_b, 4),
             "book_odds": book_odds,
             "value_picks": matchup_picks,
-            "analytics_a": _serialize_analytics(get_analytics_for_player(player_a, dg_rankings)),
-            "analytics_b": _serialize_analytics(get_analytics_for_player(player_b, dg_rankings)),
         })
 
-    # Sort by total value found
     analyzed_matchups.sort(key=lambda x: len(x["value_picks"]), reverse=True)
-
-    all_picks = []
-    for m in analyzed_matchups:
-        all_picks.extend(m["value_picks"])
+    all_picks = [p for m in analyzed_matchups for p in m["value_picks"]]
     all_picks.sort(key=lambda x: x["ev_pct"], reverse=True)
 
     return {
@@ -300,98 +287,100 @@ def analyze_h2h_market(market_data: dict, days_to_resolution: int, dg_rankings: 
     }
 
 
-def run_full_analysis(api_key: str = "") -> list[dict]:
+def run_full_analysis(api_key: str = "") -> dict[str, list[dict]]:
     """
-    Run analysis on ALL active golf events.
-    Returns a list of event reports, each containing analysis for every available market.
+    Run analysis on ALL active events across all sports.
+    Returns: {sport_group: [event_reports]}
     """
     print("=" * 60)
-    print("  THE OFFSIDES REPORT — Full Golf Analysis")
+    print("  THE OFFSIDES REPORT — Full Multi-Sport Analysis")
     print(f"  {datetime.now().strftime('%A, %B %d, %Y %H:%M')}")
     print("=" * 60)
 
-    # Fetch analytics (same for all events)
+    # Golf analytics (only applies to golf events)
     print("\n  Loading DataGolf analytics...")
     dg_rankings = fetch_datagolf_rankings()
-    course_fit_leaders = get_course_fit_summary(dg_rankings)
-    form_leaders = get_form_summary(dg_rankings)
-    trending_players = get_trending_players(dg_rankings)
-    heating_up = get_heating_up(dg_rankings, min_rank_jump=5)
+    golf_analytics = {
+        "course_fit_leaders": [_serialize_analytics(p) for p in get_course_fit_summary(dg_rankings)],
+        "form_leaders": [_serialize_analytics(p) for p in get_form_summary(dg_rankings)],
+        "trending_players": [_serialize_analytics(p) for p in get_trending_players(dg_rankings)],
+        "heating_up": [_serialize_analytics(p) for p in get_heating_up(dg_rankings, min_rank_jump=5)],
+    }
 
-    # Fetch all events
-    print("\n  Fetching odds for all active golf events...")
-    raw_events = fetch_all_golf_odds(api_key)
-    print(f"  Retrieved {len(raw_events)} events")
+    # Fetch all odds
+    print("\n  Fetching odds for all active sports...")
+    raw_by_group = fetch_all_odds(api_key)
 
-    event_reports = []
+    total_events = sum(len(events) for events in raw_by_group.values())
+    print(f"  Retrieved {total_events} events across {len(raw_by_group)} sports")
 
-    for raw_event in raw_events:
-        parsed = parse_event_odds(raw_event)
-        event_name = parsed["event_name"]
-        sport_key = parsed["sport_key"]
-        event_date = parsed["event_date"]
+    results = {}
 
-        print(f"\n{'─' * 50}")
-        print(f"  Analyzing: {event_name}")
-        print(f"  Sport key: {sport_key}")
+    for group_key, raw_events in raw_by_group.items():
+        group_cfg = SPORT_GROUPS.get(group_key, {})
+        group_name = group_cfg.get("display_name", group_key)
+        is_golf = group_key == "golf"
 
-        # Calculate days to resolution
-        days_to_resolution = 4  # default
-        if event_date:
-            try:
-                event_dt = datetime.fromisoformat(event_date.replace("Z", "+00:00"))
-                days_to_resolution = max(1, (event_dt - datetime.now(event_dt.tzinfo)).days)
-            except Exception:
-                pass
+        print(f"\n{'━' * 50}")
+        print(f"  {group_cfg.get('icon', '')} {group_name} ({len(raw_events)} events)")
+        print(f"{'━' * 50}")
 
-        print(f"  Days to resolution: {days_to_resolution}")
+        results[group_key] = []
 
-        event_report = {
-            "event_id": parsed["event_id"],
-            "event_name": event_name,
-            "sport_key": sport_key,
-            "event_date": event_date,
-            "days_to_resolution": days_to_resolution,
-            "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "markets": {},
-            "analytics": {
-                "course_fit_leaders": [_serialize_analytics(p) for p in course_fit_leaders],
-                "form_leaders": [_serialize_analytics(p) for p in form_leaders],
-                "trending_players": [_serialize_analytics(p) for p in trending_players],
-                "heating_up": [_serialize_analytics(p) for p in heating_up],
-            },
-        }
+        for raw_event in raw_events:
+            parsed = parse_event_odds(raw_event)
+            event_name = parsed["event_name"]
 
-        # Analyze each available market
-        for market_key, market_data in parsed["markets"].items():
-            if market_key == "h2h":
-                print(f"  Analyzing H2H matchups...")
-                event_report["markets"]["h2h"] = analyze_h2h_market(
-                    market_data, days_to_resolution, dg_rankings)
-            else:
-                print(f"  Analyzing {MARKET_DISPLAY_NAMES.get(market_key, market_key)}...")
-                event_report["markets"][market_key] = analyze_outright_market(
-                    market_data, market_key, days_to_resolution, dg_rankings)
+            # Calculate days to resolution
+            days_to_resolution = group_cfg.get("typical_resolution_days", 30)
+            if parsed["event_date"]:
+                try:
+                    event_dt = datetime.fromisoformat(parsed["event_date"].replace("Z", "+00:00"))
+                    days_to_resolution = max(1, (event_dt - datetime.now(event_dt.tzinfo)).days)
+                except Exception:
+                    pass
 
-        # Summary
-        for mk, md in event_report["markets"].items():
-            if "error" in md:
-                continue
-            strong = len(md.get("strong_picks", []))
-            notable = len(md.get("notable_picks", []))
-            print(f"    {MARKET_DISPLAY_NAMES.get(mk, mk)}: {strong} strong, {notable} notable picks")
+            print(f"\n  {event_name} ({days_to_resolution}d)")
 
-        event_reports.append(event_report)
+            event_report = {
+                "event_id": parsed["event_id"],
+                "event_name": event_name,
+                "sport_key": parsed["sport_key"],
+                "sport_group": group_key,
+                "event_date": parsed["event_date"],
+                "days_to_resolution": days_to_resolution,
+                "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "markets": {},
+                "analytics": golf_analytics if is_golf else None,
+            }
 
+            for market_key, market_data in parsed["markets"].items():
+                if market_key == "h2h" and "matchups_by_book" in market_data:
+                    event_report["markets"]["h2h"] = analyze_h2h_market(
+                        market_data, days_to_resolution, dg_rankings if is_golf else None)
+                else:
+                    event_report["markets"][market_key] = analyze_outright_market(
+                        market_data, market_key, days_to_resolution,
+                        dg_rankings if is_golf else None)
+
+            for mk, md in event_report["markets"].items():
+                if "error" in md:
+                    continue
+                s = len(md.get("strong_picks", []))
+                n = len(md.get("notable_picks", []))
+                print(f"    {MARKET_DISPLAY_NAMES.get(mk, mk)}: {s} strong, {n} notable")
+
+            results[group_key].append(event_report)
+
+    total_processed = sum(len(v) for v in results.values())
     print(f"\n{'=' * 60}")
-    print(f"  Analysis complete: {len(event_reports)} events processed")
+    print(f"  Analysis complete: {total_processed} events across {len(results)} sports")
     print(f"{'=' * 60}")
 
-    return event_reports
+    return results
 
 
 def _serialize_analytics(analytics) -> Optional[dict]:
-    """Ensure analytics data is JSON-serializable."""
     if analytics is None:
         return None
     return {k: v for k, v in analytics.items() if k != "_raw"}

@@ -1,8 +1,8 @@
 """
-Offsides Report - Odds Data Fetcher (Multi-Event)
+Offsides Report - Multi-Sport Odds Data Fetcher
 
-Fetches odds from The Odds API for ALL active golf events.
-Supports outrights, h2h, top 5/10/20 markets.
+Fetches odds from The Odds API for ALL active events across
+Golf, NBA, NCAAB, NFL, and NCAAF.
 Optimized for free tier (500 requests/month).
 """
 
@@ -12,14 +12,16 @@ import requests
 from datetime import datetime, timedelta
 from typing import Optional
 
-from config import ODDS_API_KEY, ODDS_API_BASE, BOOK_DISPLAY_NAMES, GOLF_MARKETS
+from config import (
+    ODDS_API_KEY, ODDS_API_BASE, BOOK_DISPLAY_NAMES,
+    SPORT_GROUPS, SPORT_KEY_DISPLAY,
+)
 
 
-def fetch_available_golf_sports(api_key: str) -> list[dict]:
+def fetch_all_active_sports(api_key: str) -> list[dict]:
     """
-    Discover which golf sport keys are currently active.
-    Golf uses per-tournament keys like 'golf_masters_tournament_winner'.
-    Costs 1 API request.
+    Discover ALL active sport keys from The Odds API.
+    Costs 1 API request. Returns the full list; caller filters by group.
     """
     url = f"{ODDS_API_BASE}/sports"
     params = {"apiKey": api_key}
@@ -30,142 +32,157 @@ def fetch_available_golf_sports(api_key: str) -> list[dict]:
         remaining = resp.headers.get("x-requests-remaining", "?")
         print(f"  API requests remaining: {remaining}")
         all_sports = resp.json()
-        golf_sports = [
-            s for s in all_sports
-            if s.get("active", False) and (
-                "golf" in s.get("group", "").lower()
-                or "golf" in s.get("key", "").lower()
-            )
-        ]
-        return golf_sports
+        active = [s for s in all_sports if s.get("active", False)]
+        return active
     except Exception as e:
         print(f"  API error fetching sports: {e}")
         return []
 
 
-def fetch_all_golf_odds(api_key: str, markets: str = GOLF_MARKETS) -> list[dict]:
+def classify_sport(sport_key: str) -> Optional[str]:
     """
-    Fetch odds for ALL active golf events in one sweep.
+    Classify an API sport key into one of our sport groups.
+    Returns the group key (e.g., 'golf', 'nba') or None if unrecognized.
+    """
+    key_lower = sport_key.lower()
+    for group_key, group_cfg in SPORT_GROUPS.items():
+        for pattern in group_cfg["key_patterns"]:
+            if key_lower.startswith(pattern):
+                return group_key
+    return None
+
+
+def get_event_display_name(sport_key: str, api_title: str) -> str:
+    """Get a clean display name for an event/sport key."""
+    if sport_key in SPORT_KEY_DISPLAY:
+        return SPORT_KEY_DISPLAY[sport_key]
+    # Fallback: use the API title
+    return api_title
+
+
+def fetch_all_odds(api_key: str) -> dict[str, list[dict]]:
+    """
+    Fetch odds for ALL active events across all configured sports.
 
     Strategy to minimize API usage:
-    1. One call to /sports to discover active golf events
-    2. One call per event with ALL markets combined
+    1. One call to /sports to discover everything active (1 request)
+    2. One call per active sport key with all markets (N requests)
 
-    Returns list of event dicts, each containing:
-    - event metadata (name, date, sport_key)
-    - raw bookmaker odds for all requested markets
+    Returns: {sport_group: [event_dicts]}
     """
     if not api_key:
         print("  No API key — using demo data")
-        return get_demo_all_events()
+        return get_demo_all_sports()
 
-    # Step 1: Discover active golf events
-    print("\n  Discovering active golf events...")
-    golf_sports = fetch_available_golf_sports(api_key)
+    # Step 1: Discover active sports
+    print("\n  Discovering active sports...")
+    active_sports = fetch_all_active_sports(api_key)
 
-    if not golf_sports:
-        print("  No active golf events found — using demo data")
-        return get_demo_all_events()
+    if not active_sports:
+        print("  No active sports found — using demo data")
+        return get_demo_all_sports()
 
-    print(f"  Found {len(golf_sports)} active golf markets:")
-    for s in golf_sports:
-        print(f"    - {s['key']}: {s.get('title', 'Unknown')}")
-
-    # Step 2: Fetch odds for each event (one API call each, all markets)
-    all_events = []
-    for sport in golf_sports:
+    # Step 2: Filter and classify into our groups
+    grouped = {}
+    for sport in active_sports:
         sport_key = sport["key"]
-        sport_title = sport.get("title", sport_key)
+        group = classify_sport(sport_key)
+        if group:
+            if group not in grouped:
+                grouped[group] = []
+            grouped[group].append(sport)
 
-        url = f"{ODDS_API_BASE}/sports/{sport_key}/odds"
-        params = {
-            "apiKey": api_key,
-            "regions": "us",
-            "markets": markets,
-            "oddsFormat": "american",
-        }
+    for group_key, sports in grouped.items():
+        display = SPORT_GROUPS[group_key]["display_name"]
+        print(f"  {display}: {len(sports)} active market(s)")
+        for s in sports:
+            print(f"    - {s['key']}: {s.get('title', 'Unknown')}")
 
-        try:
-            resp = requests.get(url, params=params, timeout=30)
-            resp.raise_for_status()
-            remaining = resp.headers.get("x-requests-remaining", "?")
-            print(f"  {sport_key}: fetched odds (remaining: {remaining})")
+    if not grouped:
+        print("  No matching sports found — using demo data")
+        return get_demo_all_sports()
 
-            data = resp.json()
-            if isinstance(data, list):
-                for event in data:
-                    event["_sport_key"] = sport_key
-                    event["_sport_title"] = sport_title
-                    all_events.append(event)
-            elif isinstance(data, dict) and "bookmakers" in data:
-                data["_sport_key"] = sport_key
-                data["_sport_title"] = sport_title
-                all_events.append(data)
-        except Exception as e:
-            print(f"  {sport_key}: error — {e}")
+    # Step 3: Fetch odds for each active sport key
+    results = {}
+    for group_key, sports in grouped.items():
+        group_cfg = SPORT_GROUPS[group_key]
+        markets = group_cfg["markets"]
+        results[group_key] = []
 
-    if not all_events:
-        print("  No odds data retrieved — using demo data")
-        return get_demo_all_events()
+        for sport in sports:
+            sport_key = sport["key"]
+            sport_title = sport.get("title", sport_key)
+            display_name = get_event_display_name(sport_key, sport_title)
 
-    return all_events
+            url = f"{ODDS_API_BASE}/sports/{sport_key}/odds"
+            params = {
+                "apiKey": api_key,
+                "regions": "us",
+                "markets": markets,
+                "oddsFormat": "american",
+            }
+
+            try:
+                resp = requests.get(url, params=params, timeout=30)
+                resp.raise_for_status()
+                remaining = resp.headers.get("x-requests-remaining", "?")
+                print(f"  {sport_key}: fetched odds (remaining: {remaining})")
+
+                data = resp.json()
+                if isinstance(data, list):
+                    for event in data:
+                        event["_sport_key"] = sport_key
+                        event["_sport_title"] = display_name
+                        event["_sport_group"] = group_key
+                        results[group_key].append(event)
+                elif isinstance(data, dict) and "bookmakers" in data:
+                    data["_sport_key"] = sport_key
+                    data["_sport_title"] = display_name
+                    data["_sport_group"] = group_key
+                    results[group_key].append(data)
+            except Exception as e:
+                print(f"  {sport_key}: error — {e}")
+
+    return results
 
 
 def parse_event_odds(event: dict) -> dict:
     """
     Parse a single event's odds into our internal format.
-    Handles multiple market types (outrights, h2h, top_5, etc.)
-
-    Returns:
-        {
-            "event_id": str,
-            "event_name": str,
-            "sport_key": str,
-            "event_date": str,
-            "markets": {
-                "outrights": {
-                    "outcomes_by_book": {...},
-                    "odds_by_book": {...},
-                    "decimal_odds_by_book": {...},
-                },
-                "h2h": {
-                    "matchups": [
-                        {
-                            "player_a": str,
-                            "player_b": str,
-                            "odds_by_book": {...}
-                        }
-                    ]
-                },
-                ...
-            }
-        }
+    Works for all sports — golf, NBA, NFL, NCAAB, NCAAF.
+    Handles outrights, h2h (moneyline), spreads, totals.
     """
     from ev_engine import american_to_decimal, decimal_to_implied_prob
 
     result = {
         "event_id": event.get("id", "unknown"),
-        "event_name": event.get("_sport_title", event.get("sport_title", "Golf Event")),
-        "sport_key": event.get("_sport_key", event.get("sport_key", "golf")),
+        "event_name": event.get("_sport_title", event.get("sport_title", "Event")),
+        "sport_key": event.get("_sport_key", event.get("sport_key", "unknown")),
+        "sport_group": event.get("_sport_group", ""),
         "event_date": event.get("commence_time", ""),
+        "home_team": event.get("home_team", ""),
+        "away_team": event.get("away_team", ""),
         "markets": {},
     }
 
     bookmakers = event.get("bookmakers", [])
 
-    # Group outcomes by market type
     for bm in bookmakers:
         book_key = bm.get("key", "unknown")
 
         for market in bm.get("markets", []):
             market_key = market.get("key", "unknown")
 
-            if market_key == "h2h":
-                # Head-to-head matchups: pairs of outcomes
-                _parse_h2h_market(result, market, book_key)
-            elif market_key in ("outrights", "top_5", "top_10", "top_20"):
-                # Standard outright-style markets
+            if market_key in ("outrights", "top_5", "top_10", "top_20"):
                 _parse_outright_market(result, market, market_key, book_key)
+            elif market_key == "h2h":
+                # For team sports, h2h is moneyline (2-way outright)
+                # For golf, h2h is player matchups
+                sport_group = result.get("sport_group", "")
+                if sport_group == "golf":
+                    _parse_h2h_golf(result, market, book_key)
+                else:
+                    _parse_h2h_team_sport(result, market, book_key, event)
 
     return result
 
@@ -202,10 +219,8 @@ def _parse_outright_market(result: dict, market: dict, market_key: str, book_key
         mkt["decimal_odds_by_book"][book_key] = decimal_odds
 
 
-def _parse_h2h_market(result: dict, market: dict, book_key: str):
-    """Parse head-to-head matchup market into structured matchup pairs."""
-    from ev_engine import american_to_decimal, decimal_to_implied_prob
-
+def _parse_h2h_golf(result: dict, market: dict, book_key: str):
+    """Parse golf head-to-head matchup market into structured matchup pairs."""
     if "h2h" not in result["markets"]:
         result["markets"]["h2h"] = {"matchups_by_book": {}}
 
@@ -213,7 +228,6 @@ def _parse_h2h_market(result: dict, market: dict, book_key: str):
     if len(outcomes) < 2:
         return
 
-    # H2H markets come as pairs: outcomes[0] vs outcomes[1], etc.
     matchup_pairs = []
     for i in range(0, len(outcomes) - 1, 2):
         a = outcomes[i]
@@ -228,172 +242,208 @@ def _parse_h2h_market(result: dict, market: dict, book_key: str):
     result["markets"]["h2h"]["matchups_by_book"][book_key] = matchup_pairs
 
 
+def _parse_h2h_team_sport(result: dict, market: dict, book_key: str, event: dict):
+    """
+    Parse team sport h2h (moneyline) as an outright-style market.
+    For NBA/NFL game lines, h2h is just home vs away moneyline —
+    treat it like a 2-outcome outright so EV engine works the same.
+    """
+    from ev_engine import american_to_decimal, decimal_to_implied_prob
+
+    if "h2h" not in result["markets"]:
+        result["markets"]["h2h"] = {
+            "outcomes_by_book": {},
+            "odds_by_book": {},
+            "decimal_odds_by_book": {},
+        }
+
+    mkt = result["markets"]["h2h"]
+    implied_probs = {}
+    american_odds = {}
+    decimal_odds = {}
+
+    for outcome in market.get("outcomes", []):
+        name = outcome.get("name", "Unknown")
+        price = outcome.get("price", 0)
+
+        if price != 0:
+            dec = american_to_decimal(price)
+            implied_probs[name] = decimal_to_implied_prob(dec)
+            american_odds[name] = price
+            decimal_odds[name] = dec
+
+    if implied_probs:
+        mkt["outcomes_by_book"][book_key] = implied_probs
+        mkt["odds_by_book"][book_key] = american_odds
+        mkt["decimal_odds_by_book"][book_key] = decimal_odds
+
+
 # ── Demo Data ─────────────────────────────────────────────────
 
-def get_demo_all_events() -> list[dict]:
-    """Return demo data simulating multiple active golf events."""
+def get_demo_all_sports() -> dict[str, list[dict]]:
+    """Return demo data for all sports."""
+    return {
+        "golf": _get_demo_golf_events(),
+        "nba": _get_demo_nba_events(),
+        "nfl": _get_demo_nfl_events(),
+        "ncaab": _get_demo_ncaab_events(),
+        "ncaaf": _get_demo_ncaaf_events(),
+    }
+
+
+def _get_demo_golf_events() -> list[dict]:
     today = datetime.now()
     thursday = today + timedelta(days=(3 - today.weekday()) % 7)
-
     return [
-        # Current week tournament
         {
             "id": "demo_zurich_classic_2026",
-            "_sport_key": "golf_pga_tour_zurich_classic",
+            "_sport_key": "golf_pga_tour",
             "_sport_title": "Zurich Classic of New Orleans",
-            "sport_key": "golf_pga_tour",
-            "sport_title": "Zurich Classic of New Orleans",
+            "_sport_group": "golf",
             "commence_time": thursday.strftime("%Y-%m-%dT13:00:00Z"),
-            "bookmakers": _demo_current_week_bookmakers(),
+            "bookmakers": _demo_golf_bookmakers({"Scottie Scheffler": 650, "Collin Morikawa": 1400, "Xander Schauffele": 1100, "Rory McIlroy": 1200, "Patrick Cantlay": 1800, "Matt Fitzpatrick": 2200, "Shane Lowry": 2500, "Justin Thomas": 2000, "Tommy Fleetwood": 2800, "Hideki Matsuyama": 1600, "Viktor Hovland": 2000, "Sahith Theegala": 2500, "Wyndham Clark": 2200, "Tom Kim": 3000, "Cameron Young": 3500, "Corey Conners": 3000, "Sungjae Im": 3500, "Akshay Bhatia": 4000, "Brian Harman": 4500, "Russell Henley": 4000}),
         },
-        # PGA Championship futures
         {
-            "id": "demo_pga_championship_2026",
+            "id": "demo_pga_champ_2026",
             "_sport_key": "golf_pga_championship_winner",
-            "_sport_title": "PGA Championship Winner",
-            "sport_key": "golf_pga_championship_winner",
-            "sport_title": "PGA Championship Winner",
+            "_sport_title": "PGA Championship",
+            "_sport_group": "golf",
             "commence_time": "2026-05-14T13:00:00Z",
-            "bookmakers": _demo_futures_bookmakers("PGA Championship"),
+            "bookmakers": _demo_golf_bookmakers({"Scottie Scheffler": 500, "Xander Schauffele": 800, "Rory McIlroy": 900, "Collin Morikawa": 1100, "Hideki Matsuyama": 1600, "Patrick Cantlay": 1800, "Viktor Hovland": 2000, "Sahith Theegala": 2200, "Matt Fitzpatrick": 2500, "Justin Thomas": 2200, "Tommy Fleetwood": 2800, "Shane Lowry": 2800, "Wyndham Clark": 2500, "Tom Kim": 3000, "Cameron Young": 3500, "Corey Conners": 3500, "Sungjae Im": 4000, "Akshay Bhatia": 3500, "Brian Harman": 5000, "Russell Henley": 4500}),
         },
-        # US Open futures
         {
             "id": "demo_us_open_2026",
             "_sport_key": "golf_us_open_winner",
-            "_sport_title": "US Open Winner",
-            "sport_key": "golf_us_open_winner",
-            "sport_title": "US Open Winner",
+            "_sport_title": "US Open",
+            "_sport_group": "golf",
             "commence_time": "2026-06-18T13:00:00Z",
-            "bookmakers": _demo_futures_bookmakers("US Open"),
-        },
-        # The Open Championship futures
-        {
-            "id": "demo_the_open_2026",
-            "_sport_key": "golf_the_open_championship_winner",
-            "_sport_title": "The Open Championship Winner",
-            "sport_key": "golf_the_open_championship_winner",
-            "sport_title": "The Open Championship Winner",
-            "commence_time": "2026-07-16T13:00:00Z",
-            "bookmakers": _demo_futures_bookmakers("The Open"),
+            "bookmakers": _demo_golf_bookmakers({"Scottie Scheffler": 450, "Xander Schauffele": 850, "Rory McIlroy": 1000, "Collin Morikawa": 1200, "Hideki Matsuyama": 1800, "Patrick Cantlay": 2000, "Matt Fitzpatrick": 2000, "Wyndham Clark": 2000, "Viktor Hovland": 2200, "Sahith Theegala": 2500, "Justin Thomas": 2500, "Tommy Fleetwood": 3000, "Shane Lowry": 3000, "Tom Kim": 3500, "Cameron Young": 4000, "Corey Conners": 4000, "Sungjae Im": 4500, "Akshay Bhatia": 4000, "Brian Harman": 5000, "Russell Henley": 5000}),
         },
     ]
 
 
-def _demo_current_week_bookmakers() -> list:
-    """Demo bookmaker data for current week event."""
-    players_base = {
-        "Scottie Scheffler": 650, "Collin Morikawa": 1400,
-        "Xander Schauffele": 1100, "Rory McIlroy": 1200,
-        "Patrick Cantlay": 1800, "Matt Fitzpatrick": 2200,
-        "Shane Lowry": 2500, "Justin Thomas": 2000,
-        "Tommy Fleetwood": 2800, "Hideki Matsuyama": 1600,
-        "Viktor Hovland": 2000, "Cameron Young": 3500,
-        "Corey Conners": 3000, "Sahith Theegala": 2500,
-        "Wyndham Clark": 2200, "Tom Kim": 3000,
-        "Russell Henley": 4000, "Brian Harman": 4500,
-        "Denny McCarthy": 5000, "Akshay Bhatia": 4000,
-        "Sepp Straka": 5500, "Keegan Bradley": 5000,
-        "Sungjae Im": 3500, "Davis Thompson": 6000,
-        "Max Homa": 4000,
-    }
-
-    # Offsets to simulate book disagreement (value spots)
+def _demo_golf_bookmakers(players_base: dict) -> list:
+    """Generate bookmakers with disagreement for golf."""
     book_offsets = {
         "fanduel": {},
-        "draftkings": {"Collin Morikawa": -200, "Rory McIlroy": 200, "Viktor Hovland": -200},
-        "betmgm": {"Collin Morikawa": 200, "Shane Lowry": 800, "Cameron Young": 500, "Sepp Straka": 1000},
-        "caesars": {"Justin Thomas": 500, "Brian Harman": 1000, "Max Homa": 1000},
-        "espnbet": {"Tommy Fleetwood": 700, "Denny McCarthy": 1000},
-        "pinnacle": {"Scottie Scheffler": -50, "Collin Morikawa": -100},
-        "lowvig": {"Scottie Scheffler": -30, "Xander Schauffele": -50},
+        "draftkings": {k: (-200 if i % 5 == 1 else 200 if i % 7 == 0 else 0) for i, k in enumerate(players_base)},
+        "betmgm": {k: (500 if i % 4 == 0 else 0) for i, k in enumerate(players_base)},
+        "caesars": {k: (300 if i % 6 == 2 else 0) for i, k in enumerate(players_base)},
+        "espnbet": {k: (400 if i % 5 == 3 else 0) for i, k in enumerate(players_base)},
+        "pinnacle": {k: (-30 if i < 3 else 0) for i, k in enumerate(players_base)},
+        "lowvig": {k: (-20 if i < 2 else 0) for i, k in enumerate(players_base)},
     }
-
     bookmakers = []
     for book_key, offsets in book_offsets.items():
-        outcomes = []
-        for player, base_price in players_base.items():
-            price = base_price + offsets.get(player, 0)
-            outcomes.append({"name": player, "price": price})
-
-        markets = [{"key": "outrights", "outcomes": outcomes}]
-
-        # Add h2h matchups for some books
-        if book_key in ("fanduel", "draftkings", "betmgm", "caesars"):
-            h2h_outcomes = [
-                {"name": "Scottie Scheffler", "price": -130},
-                {"name": "Xander Schauffele", "price": 110},
-                {"name": "Rory McIlroy", "price": -110},
-                {"name": "Collin Morikawa", "price": -110},
-                {"name": "Patrick Cantlay", "price": 140},
-                {"name": "Viktor Hovland", "price": -160},
-            ]
-            # Vary h2h odds slightly by book
-            if book_key == "draftkings":
-                h2h_outcomes[0]["price"] = -140
-                h2h_outcomes[1]["price"] = 120
-            elif book_key == "betmgm":
-                h2h_outcomes[2]["price"] = -105
-                h2h_outcomes[3]["price"] = -115
-
-            markets.append({"key": "h2h", "outcomes": h2h_outcomes})
-
-        bookmakers.append({
-            "key": book_key,
-            "title": BOOK_DISPLAY_NAMES.get(book_key, book_key),
-            "markets": markets,
-        })
-
+        outcomes = [{"name": p, "price": max(players_base[p] + offsets.get(p, 0), 100)} for p in players_base]
+        bookmakers.append({"key": book_key, "title": BOOK_DISPLAY_NAMES.get(book_key, book_key), "markets": [{"key": "outrights", "outcomes": outcomes}]})
     return bookmakers
 
 
-def _demo_futures_bookmakers(tournament: str) -> list:
-    """Demo bookmaker data for futures markets with tournament-specific offsets."""
-    players_base = {
-        "Scottie Scheffler": 500, "Xander Schauffele": 900,
-        "Rory McIlroy": 1000, "Collin Morikawa": 1200,
-        "Hideki Matsuyama": 1800, "Patrick Cantlay": 2000,
-        "Viktor Hovland": 2200, "Sahith Theegala": 2500,
-        "Wyndham Clark": 2500, "Matt Fitzpatrick": 2800,
-        "Justin Thomas": 2500, "Tommy Fleetwood": 3000,
-        "Shane Lowry": 3000, "Tom Kim": 3500,
-        "Cameron Young": 4000, "Corey Conners": 4000,
-        "Sungjae Im": 4500, "Akshay Bhatia": 4000,
-        "Brian Harman": 5000, "Russell Henley": 5000,
-        "Keegan Bradley": 5500, "Denny McCarthy": 6000,
-        "Max Homa": 5000, "Sepp Straka": 6000,
-        "Davis Thompson": 7000,
-    }
+def _get_demo_nba_events() -> list[dict]:
+    return [
+        _demo_futures_event(
+            "demo_nba_champ", "basketball_nba_championship_winner", "NBA Championship", "nba",
+            "2026-06-15T00:00:00Z",
+            {"Boston Celtics": 250, "Oklahoma City Thunder": 350, "Cleveland Cavaliers": 600,
+             "New York Knicks": 800, "Denver Nuggets": 1200, "Minnesota Timberwolves": 1400,
+             "Dallas Mavericks": 1600, "Milwaukee Bucks": 1800, "Phoenix Suns": 2000,
+             "Golden State Warriors": 2500, "LA Clippers": 3000, "Philadelphia 76ers": 3500,
+             "Miami Heat": 4000, "Los Angeles Lakers": 4500, "Sacramento Kings": 5000,
+             "Indiana Pacers": 5500, "Memphis Grizzlies": 6000, "Houston Rockets": 6500,
+             "New Orleans Pelicans": 8000, "Atlanta Hawks": 10000}),
+        _demo_futures_event(
+            "demo_nba_east", "basketball_nba_eastern_conference_winner", "Eastern Conference", "nba",
+            "2026-06-01T00:00:00Z",
+            {"Boston Celtics": 130, "Cleveland Cavaliers": 300, "New York Knicks": 400,
+             "Milwaukee Bucks": 800, "Philadelphia 76ers": 1200, "Miami Heat": 1500,
+             "Indiana Pacers": 2000, "Orlando Magic": 2500, "Atlanta Hawks": 4000,
+             "Chicago Bulls": 8000}),
+        _demo_futures_event(
+            "demo_nba_west", "basketball_nba_western_conference_winner", "Western Conference", "nba",
+            "2026-06-01T00:00:00Z",
+            {"Oklahoma City Thunder": 180, "Denver Nuggets": 500, "Minnesota Timberwolves": 600,
+             "Dallas Mavericks": 700, "Phoenix Suns": 900, "Golden State Warriors": 1200,
+             "LA Clippers": 1600, "Los Angeles Lakers": 2000, "Sacramento Kings": 2500,
+             "Houston Rockets": 3000, "Memphis Grizzlies": 3500, "New Orleans Pelicans": 5000}),
+    ]
 
-    # Tournament-specific adjustments
-    tourney_adjust = {
-        "PGA Championship": {"Xander Schauffele": -100, "Rory McIlroy": -200, "Justin Thomas": -300},
-        "US Open": {"Matt Fitzpatrick": -500, "Wyndham Clark": -300, "Scottie Scheffler": -100},
-        "The Open": {"Rory McIlroy": -300, "Shane Lowry": -500, "Tommy Fleetwood": -500},
-    }
 
-    adjustments = tourney_adjust.get(tournament, {})
+def _get_demo_nfl_events() -> list[dict]:
+    return [
+        _demo_futures_event(
+            "demo_nfl_sb", "americanfootball_nfl_super_bowl_winner", "Super Bowl Winner", "nfl",
+            "2027-02-14T00:00:00Z",
+            {"Kansas City Chiefs": 500, "Detroit Lions": 600, "Buffalo Bills": 700,
+             "Philadelphia Eagles": 800, "Baltimore Ravens": 1000, "San Francisco 49ers": 1200,
+             "Green Bay Packers": 1400, "Houston Texans": 1600, "Dallas Cowboys": 1800,
+             "Cincinnati Bengals": 2000, "Miami Dolphins": 2200, "Pittsburgh Steelers": 2500,
+             "Minnesota Vikings": 2800, "Los Angeles Rams": 3000, "Jacksonville Jaguars": 3500,
+             "Cleveland Browns": 4000, "New York Jets": 4500, "Denver Broncos": 5000,
+             "Atlanta Falcons": 5500, "Seattle Seahawks": 6000}),
+        _demo_futures_event(
+            "demo_nfl_afc", "americanfootball_nfl_afc_conference_winner", "AFC Champion", "nfl",
+            "2027-01-25T00:00:00Z",
+            {"Kansas City Chiefs": 250, "Buffalo Bills": 350, "Baltimore Ravens": 500,
+             "Houston Texans": 700, "Cincinnati Bengals": 900, "Miami Dolphins": 1000,
+             "Pittsburgh Steelers": 1200, "Cleveland Browns": 1800, "New York Jets": 2000,
+             "Denver Broncos": 2500, "Jacksonville Jaguars": 1600, "Las Vegas Raiders": 5000}),
+        _demo_futures_event(
+            "demo_nfl_nfc", "americanfootball_nfl_nfc_conference_winner", "NFC Champion", "nfl",
+            "2027-01-25T00:00:00Z",
+            {"Detroit Lions": 300, "Philadelphia Eagles": 400, "San Francisco 49ers": 550,
+             "Green Bay Packers": 650, "Dallas Cowboys": 800, "Minnesota Vikings": 1200,
+             "Los Angeles Rams": 1400, "Atlanta Falcons": 2000, "Seattle Seahawks": 2500,
+             "Chicago Bears": 3000, "Tampa Bay Buccaneers": 3500, "New York Giants": 8000}),
+    ]
 
+
+def _get_demo_ncaab_events() -> list[dict]:
+    return [
+        _demo_futures_event(
+            "demo_ncaab_champ", "basketball_ncaab_championship_winner", "NCAAB Championship", "ncaab",
+            "2027-04-07T00:00:00Z",
+            {"Duke": 500, "Houston": 600, "UConn": 700, "Kansas": 800,
+             "Auburn": 1000, "Purdue": 1200, "Tennessee": 1400, "Arizona": 1600,
+             "Gonzaga": 1800, "North Carolina": 2000, "Kentucky": 2200,
+             "Marquette": 2500, "Baylor": 3000, "Creighton": 3500,
+             "Iowa State": 4000, "Texas": 4500, "Alabama": 5000,
+             "St. John's": 6000, "Michigan State": 6500, "UCLA": 7000}),
+    ]
+
+
+def _get_demo_ncaaf_events() -> list[dict]:
+    return [
+        _demo_futures_event(
+            "demo_ncaaf_champ", "americanfootball_ncaaf_championship_winner", "CFP National Championship", "ncaaf",
+            "2027-01-20T00:00:00Z",
+            {"Georgia": 350, "Ohio State": 500, "Texas": 600, "Oregon": 700,
+             "Alabama": 800, "Michigan": 1000, "Penn State": 1200, "USC": 1400,
+             "Notre Dame": 1600, "Clemson": 1800, "Florida State": 2000,
+             "LSU": 2200, "Oklahoma": 2500, "Tennessee": 2800,
+             "Ole Miss": 3000, "Miami (FL)": 3500, "Utah": 4000,
+             "Washington": 4500, "Colorado": 5000, "Iowa": 8000}),
+    ]
+
+
+def _demo_futures_event(event_id: str, sport_key: str, title: str, group: str,
+                         commence: str, teams_base: dict) -> dict:
+    """Generate a demo futures event with bookmaker disagreement."""
     book_offsets = {
         "fanduel": {},
-        "draftkings": {"Scottie Scheffler": -50, "Rory McIlroy": 200},
-        "betmgm": {"Collin Morikawa": 300, "Cameron Young": 500, "Sepp Straka": 1000},
-        "caesars": {"Justin Thomas": 500, "Brian Harman": 1500},
-        "espnbet": {"Tommy Fleetwood": 500, "Denny McCarthy": 1000},
-        "pinnacle": {"Scottie Scheffler": -30},
-        "lowvig": {"Xander Schauffele": -50},
+        "draftkings": {k: (-50 if i % 4 == 0 else 100 if i % 5 == 2 else 0) for i, k in enumerate(teams_base)},
+        "betmgm": {k: (200 if i % 3 == 0 else -100 if i % 6 == 1 else 0) for i, k in enumerate(teams_base)},
+        "caesars": {k: (150 if i % 4 == 2 else 0) for i, k in enumerate(teams_base)},
+        "espnbet": {k: (300 if i % 5 == 0 else 0) for i, k in enumerate(teams_base)},
+        "pinnacle": {k: (-20 if i < 3 else 0) for i, k in enumerate(teams_base)},
+        "lowvig": {k: (-15 if i < 2 else 0) for i, k in enumerate(teams_base)},
     }
-
     bookmakers = []
     for book_key, offsets in book_offsets.items():
-        outcomes = []
-        for player, base_price in players_base.items():
-            price = base_price + adjustments.get(player, 0) + offsets.get(player, 0)
-            price = max(price, 100)  # Floor at +100
-            outcomes.append({"name": player, "price": price})
-        bookmakers.append({
-            "key": book_key,
-            "title": BOOK_DISPLAY_NAMES.get(book_key, book_key),
-            "markets": [{"key": "outrights", "outcomes": outcomes}],
-        })
-
-    return bookmakers
+        outcomes = [{"name": t, "price": max(teams_base[t] + offsets.get(t, 0), 100)} for t in teams_base]
+        bookmakers.append({"key": book_key, "title": BOOK_DISPLAY_NAMES.get(book_key, book_key),
+                           "markets": [{"key": "outrights", "outcomes": outcomes}]})
+    return {
+        "id": event_id, "_sport_key": sport_key, "_sport_title": title,
+        "_sport_group": group, "commence_time": commence, "bookmakers": bookmakers,
+    }

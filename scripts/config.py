@@ -62,18 +62,92 @@ BASE_EDGE_MINIMUM = 0.02  # 2% minimum edge even for same-day bets
 STRONG_VALUE_LABEL = "STRONG VALUE"
 NOTABLE_VALUE_LABEL = "Notable Value"
 
-# ── Golf Markets ─────────────────────────────────────────────
-# All markets to request from The Odds API in a single call
-# This maximizes data while minimizing API request usage
-GOLF_MARKETS = "outrights,h2h"
+# ── Sport Groups ─────────────────────────────────────────────
+# Each group defines which API sport keys belong to it.
+# The /sports endpoint returns all active keys; we match them
+# to groups by prefix pattern. This is dynamic — when the API
+# adds "americanfootball_nfl_afc_winner" it auto-sorts into NFL.
 
-# Display names for market types
+SPORT_GROUPS = {
+    "golf": {
+        "display_name": "Golf",
+        "icon": "⛳",
+        "key_patterns": ["golf"],
+        "markets": "outrights,h2h",
+        "typical_resolution_days": 4,
+    },
+    "nba": {
+        "display_name": "NBA",
+        "icon": "🏀",
+        "key_patterns": ["basketball_nba"],
+        "markets": "outrights,h2h",
+        "typical_resolution_days": 120,
+    },
+    "ncaab": {
+        "display_name": "NCAAB",
+        "icon": "🏀",
+        "key_patterns": ["basketball_ncaab"],
+        "markets": "outrights,h2h",
+        "typical_resolution_days": 90,
+    },
+    "nfl": {
+        "display_name": "NFL",
+        "icon": "🏈",
+        "key_patterns": ["americanfootball_nfl"],
+        "markets": "outrights,h2h",
+        "typical_resolution_days": 180,
+    },
+    "ncaaf": {
+        "display_name": "NCAAF",
+        "icon": "🏈",
+        "key_patterns": ["americanfootball_ncaaf"],
+        "markets": "outrights,h2h",
+        "typical_resolution_days": 150,
+    },
+}
+
+# ── Display Names ────────────────────────────────────────────
+# Market type display names
 MARKET_DISPLAY_NAMES = {
-    "outrights": "Tournament Winner",
-    "h2h": "Head-to-Head Matchups",
-    "top_5": "Top 5 Finish",
-    "top_10": "Top 10 Finish",
-    "top_20": "Top 20 Finish",
+    "outrights": "Futures / Winner",
+    "h2h": "Head-to-Head / Moneyline",
+    "spreads": "Spreads",
+    "totals": "Totals (O/U)",
+}
+
+# Clean up sport key names for display
+# Maps API key fragments to readable names
+SPORT_KEY_DISPLAY = {
+    # Golf
+    "golf_masters_tournament_winner": "Masters",
+    "golf_pga_championship_winner": "PGA Championship",
+    "golf_us_open_winner": "US Open",
+    "golf_the_open_championship_winner": "The Open Championship",
+    "golf_pga_tour": "PGA Tour (This Week)",
+    # NBA
+    "basketball_nba_championship_winner": "NBA Championship",
+    "basketball_nba_championship": "NBA Championship",
+    "basketball_nba_eastern_conference_winner": "Eastern Conference",
+    "basketball_nba_western_conference_winner": "Western Conference",
+    "basketball_nba_mvp": "NBA MVP",
+    "basketball_nba": "NBA (Game Lines)",
+    # NCAAB
+    "basketball_ncaab_championship_winner": "NCAAB Championship",
+    "basketball_ncaab_championship": "NCAAB Championship",
+    "basketball_ncaab": "NCAAB (Game Lines)",
+    # NFL
+    "americanfootball_nfl_super_bowl_winner": "Super Bowl Winner",
+    "americanfootball_nfl_super_bowl": "Super Bowl Winner",
+    "americanfootball_nfl_afc_championship_winner": "AFC Champion",
+    "americanfootball_nfl_nfc_championship_winner": "NFC Champion",
+    "americanfootball_nfl_afc_conference_winner": "AFC Champion",
+    "americanfootball_nfl_nfc_conference_winner": "NFC Champion",
+    "americanfootball_nfl_mvp": "NFL MVP",
+    "americanfootball_nfl": "NFL (Game Lines)",
+    # NCAAF
+    "americanfootball_ncaaf_championship_winner": "CFP National Championship",
+    "americanfootball_ncaaf_championship": "CFP National Championship",
+    "americanfootball_ncaaf": "NCAAF (Game Lines)",
 }
 
 # ── Newsletter Settings ───────────────────────────────────────
