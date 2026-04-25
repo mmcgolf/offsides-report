@@ -3,8 +3,8 @@
   "event_name": "PGA Championship Winner",
   "sport_key": "golf_pga_championship_winner",
   "event_date": "2026-05-14T10:00:00Z",
-  "days_to_resolution": 19,
-  "generated_at": "2026-04-24 21:38:17",
+  "days_to_resolution": 18,
+  "generated_at": "2026-04-25 12:39:36",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -13,7 +13,7 @@
       "num_nc_books": 3,
       "num_sharp_books": 2,
       "num_players": 137,
-      "min_edge_threshold": 2.23,
+      "min_edge_threshold": 2.22,
       "strong_picks": [
         {
           "player": "Si Woo Kim",
@@ -124,13 +124,13 @@
               "ev_pct": -6.78
             },
             "fanduel": {
-              "american": 340,
-              "decimal": 4.4,
-              "ev_pct": -14.55
+              "american": 390,
+              "decimal": 4.9,
+              "ev_pct": -4.84
             }
           },
-          "best_book": "draftkings",
-          "best_book_display": "DraftKings"
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
         },
         {
           "player": "Rory McIlroy",
@@ -158,13 +158,13 @@
               "ev_pct": -38.98
             },
             "fanduel": {
-              "american": 750,
-              "decimal": 8.5,
-              "ev_pct": -30.85
+              "american": 650,
+              "decimal": 7.5,
+              "ev_pct": -38.98
             }
           },
-          "best_book": "fanduel",
-          "best_book_display": "FanDuel"
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
         },
         {
           "player": "Jon Rahm",
@@ -183,9 +183,9 @@
               "ev_pct": -40.68
             },
             "fanduel": {
-              "american": 1400,
-              "decimal": 15.0,
-              "ev_pct": -31.55
+              "american": 1200,
+              "decimal": 13.0,
+              "ev_pct": -40.68
             }
           },
           "best_book": "betmgm",
@@ -208,13 +208,13 @@
               "ev_pct": -55.53
             },
             "fanduel": {
-              "american": 1900,
-              "decimal": 20.0,
-              "ev_pct": -19.15
+              "american": 1000,
+              "decimal": 11.0,
+              "ev_pct": -55.53
             }
           },
-          "best_book": "fanduel",
-          "best_book_display": "FanDuel"
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
         },
         {
           "player": "Xander Schauffele",
@@ -276,9 +276,9 @@
               "ev_pct": -23.88
             },
             "fanduel": {
-              "american": 1800,
-              "decimal": 19.0,
-              "ev_pct": -31.13
+              "american": 2000,
+              "decimal": 21.0,
+              "ev_pct": -23.88
             }
           },
           "best_book": "betmgm",
@@ -813,28 +813,6 @@
         },
         {
           "book": "betmgm",
-          "decimal_odds": 11.0,
-          "american_odds": 1000,
-          "median_odds": 19.0,
-          "median_american": 1800,
-          "deviation_pct": -42.1,
-          "direction": "lower",
-          "player": "Bryson DeChambeau",
-          "book_display": "BetMGM"
-        },
-        {
-          "book": "draftkings",
-          "decimal_odds": 11.0,
-          "american_odds": 1000,
-          "median_odds": 19.0,
-          "median_american": 1800,
-          "deviation_pct": -42.1,
-          "direction": "lower",
-          "player": "Bryson DeChambeau",
-          "book_display": "DraftKings"
-        },
-        {
-          "book": "betmgm",
           "decimal_odds": 176.0,
           "american_odds": 17500,
           "median_odds": 301.0,
@@ -854,6 +832,28 @@
           "direction": "lower",
           "player": "Davis Riley",
           "book_display": "BetMGM"
+        },
+        {
+          "book": "draftkings",
+          "decimal_odds": 141.0,
+          "american_odds": 14000,
+          "median_odds": 101.0,
+          "median_american": 10000,
+          "deviation_pct": 39.6,
+          "direction": "higher",
+          "player": "Gary Woodland",
+          "book_display": "DraftKings"
+        },
+        {
+          "book": "fanduel",
+          "decimal_odds": 81.0,
+          "american_odds": 8000,
+          "median_odds": 131.0,
+          "median_american": 13000,
+          "deviation_pct": -38.2,
+          "direction": "lower",
+          "player": "Dustin Johnson",
+          "book_display": "FanDuel"
         }
       ],
       "book_vigs": {
@@ -861,7 +861,7 @@
         "BetOnline": 35.8,
         "BetMGM": 69.9,
         "DraftKings": 69.7,
-        "FanDuel": 64.3,
+        "FanDuel": 68.2,
         "BetRivers": 67.6
       },
       "nc_books_available": [
