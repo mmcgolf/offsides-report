@@ -4,8 +4,8 @@
   "sport_key": "golf_us_open_winner",
   "sport_group": "golf",
   "event_date": "2026-06-18T10:00:00Z",
-  "days_to_resolution": 52,
-  "generated_at": "2026-04-26 23:42:06",
+  "days_to_resolution": 51,
+  "generated_at": "2026-04-27 14:57:24",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 3,
       "num_sharp_books": 2,
       "num_players": 118,
-      "min_edge_threshold": 2.64,
+      "min_edge_threshold": 2.63,
       "strong_picks": [
         {
           "player": "Si Woo Kim",
@@ -22,12 +22,12 @@
           "book_display": "FanDuel",
           "american_odds": 8000,
           "decimal_odds": 81.0,
-          "fair_american": -2225,
+          "fair_american": 6232,
           "implied_prob": 0.01235,
-          "true_prob": 0.95699,
-          "ev_pct": 7651.65,
+          "true_prob": 0.01579,
+          "ev_pct": 27.92,
           "value_tier": "STRONG VALUE",
-          "kelly_pct": 23.91,
+          "kelly_pct": 0.09,
           "analytics": null
         },
         {
@@ -36,12 +36,12 @@
           "book_display": "DraftKings",
           "american_odds": 8000,
           "decimal_odds": 81.0,
-          "fair_american": -2225,
+          "fair_american": 6232,
           "implied_prob": 0.01235,
-          "true_prob": 0.95699,
-          "ev_pct": 7651.65,
+          "true_prob": 0.01579,
+          "ev_pct": 27.92,
           "value_tier": "STRONG VALUE",
-          "kelly_pct": 23.91,
+          "kelly_pct": 0.09,
           "analytics": null
         },
         {
@@ -50,12 +50,12 @@
           "book_display": "BetMGM",
           "american_odds": 6600,
           "decimal_odds": 67.0,
-          "fair_american": -2225,
+          "fair_american": 6232,
           "implied_prob": 0.01493,
-          "true_prob": 0.95699,
-          "ev_pct": 6311.86,
+          "true_prob": 0.01579,
+          "ev_pct": 5.81,
           "value_tier": "STRONG VALUE",
-          "kelly_pct": 23.91,
+          "kelly_pct": 0.02,
           "analytics": null
         }
       ],
@@ -63,34 +63,9 @@
       "all_value_count": 3,
       "odds_table": [
         {
-          "player": "Si Woo Kim",
-          "true_prob": 0.95699,
-          "fair_american": -2225,
-          "analytics": null,
-          "books": {
-            "betmgm": {
-              "american": 6600,
-              "decimal": 67.0,
-              "ev_pct": 6311.86
-            },
-            "draftkings": {
-              "american": 8000,
-              "decimal": 81.0,
-              "ev_pct": 7651.65
-            },
-            "fanduel": {
-              "american": 8000,
-              "decimal": 81.0,
-              "ev_pct": 7651.65
-            }
-          },
-          "best_book": "draftkings",
-          "best_book_display": "DraftKings"
-        },
-        {
           "player": "Scottie Scheffler",
-          "true_prob": 0.04938,
-          "fair_american": 1925,
+          "true_prob": 0.196,
+          "fair_american": 410,
           "analytics": {
             "name": "Scottie Scheffler",
             "dg_rank": 1,
@@ -105,17 +80,17 @@
             "betmgm": {
               "american": 350,
               "decimal": 4.5,
-              "ev_pct": -77.78
+              "ev_pct": -11.8
             },
             "draftkings": {
               "american": 400,
               "decimal": 5.0,
-              "ev_pct": -75.31
+              "ev_pct": -2.0
             },
             "fanduel": {
               "american": 380,
               "decimal": 4.8,
-              "ev_pct": -76.3
+              "ev_pct": -5.92
             }
           },
           "best_book": "draftkings",
@@ -123,8 +98,8 @@
         },
         {
           "player": "Rory McIlroy",
-          "true_prob": 0.01235,
-          "fair_american": 8000,
+          "true_prob": 0.09249,
+          "fair_american": 981,
           "analytics": {
             "name": "Rory McIlroy",
             "dg_rank": 3,
@@ -139,17 +114,17 @@
             "betmgm": {
               "american": 750,
               "decimal": 8.5,
-              "ev_pct": -89.51
+              "ev_pct": -21.38
             },
             "draftkings": {
               "american": 700,
               "decimal": 8.0,
-              "ev_pct": -90.12
+              "ev_pct": -26.01
             },
             "fanduel": {
               "american": 700,
               "decimal": 8.0,
-              "ev_pct": -90.12
+              "ev_pct": -26.01
             }
           },
           "best_book": "betmgm",
@@ -157,24 +132,24 @@
         },
         {
           "player": "Bryson DeChambeau",
-          "true_prob": 0.00346,
-          "fair_american": 28800,
+          "true_prob": 0.04644,
+          "fair_american": 2054,
           "analytics": null,
           "books": {
             "betmgm": {
-              "american": 1000,
-              "decimal": 11.0,
-              "ev_pct": -96.19
+              "american": 1200,
+              "decimal": 13.0,
+              "ev_pct": -39.63
             },
             "draftkings": {
               "american": 1000,
               "decimal": 11.0,
-              "ev_pct": -96.19
+              "ev_pct": -48.92
             },
             "fanduel": {
               "american": 1500,
               "decimal": 16.0,
-              "ev_pct": -94.46
+              "ev_pct": -25.7
             }
           },
           "best_book": "fanduel",
@@ -182,24 +157,24 @@
         },
         {
           "player": "Jon Rahm",
-          "true_prob": 0.00346,
-          "fair_american": 28800,
+          "true_prob": 0.04644,
+          "fair_american": 2054,
           "analytics": null,
           "books": {
             "betmgm": {
               "american": 1400,
               "decimal": 15.0,
-              "ev_pct": -94.81
+              "ev_pct": -30.35
             },
             "draftkings": {
               "american": 1200,
               "decimal": 13.0,
-              "ev_pct": -95.5
+              "ev_pct": -39.63
             },
             "fanduel": {
               "american": 1300,
               "decimal": 14.0,
-              "ev_pct": -95.16
+              "ev_pct": -34.99
             }
           },
           "best_book": "betmgm",
@@ -207,8 +182,8 @@
         },
         {
           "player": "Xander Schauffele",
-          "true_prob": 0.00277,
-          "fair_american": 36000,
+          "true_prob": 0.04116,
+          "fair_american": 2329,
           "analytics": {
             "name": "Xander Schauffele",
             "dg_rank": 2,
@@ -223,17 +198,17 @@
             "betmgm": {
               "american": 1600,
               "decimal": 17.0,
-              "ev_pct": -95.29
+              "ev_pct": -30.02
             },
             "draftkings": {
               "american": 1800,
               "decimal": 19.0,
-              "ev_pct": -94.74
+              "ev_pct": -21.79
             },
             "fanduel": {
               "american": 1700,
               "decimal": 18.0,
-              "ev_pct": -95.01
+              "ev_pct": -25.91
             }
           },
           "best_book": "draftkings",
@@ -241,8 +216,8 @@
         },
         {
           "player": "Cameron Young",
-          "true_prob": 0.00189,
-          "fair_american": 52800,
+          "true_prob": 0.03347,
+          "fair_american": 2888,
           "analytics": {
             "name": "Cameron Young",
             "dg_rank": 15,
@@ -257,17 +232,17 @@
             "betmgm": {
               "american": 2000,
               "decimal": 21.0,
-              "ev_pct": -96.03
+              "ev_pct": -29.72
             },
             "draftkings": {
               "american": 2200,
               "decimal": 23.0,
-              "ev_pct": -95.65
+              "ev_pct": -23.03
             },
             "fanduel": {
-              "american": 1600,
-              "decimal": 17.0,
-              "ev_pct": -96.79
+              "american": 1700,
+              "decimal": 18.0,
+              "ev_pct": -39.76
             }
           },
           "best_book": "draftkings",
@@ -275,24 +250,24 @@
         },
         {
           "player": "Ludvig Aberg",
-          "true_prob": 0.00148,
-          "fair_american": 67500,
+          "true_prob": 0.0293,
+          "fair_american": 3313,
           "analytics": null,
           "books": {
             "betmgm": {
               "american": 2000,
               "decimal": 21.0,
-              "ev_pct": -96.89
+              "ev_pct": -38.46
             },
             "draftkings": {
               "american": 1600,
               "decimal": 17.0,
-              "ev_pct": -97.49
+              "ev_pct": -50.18
             },
             "fanduel": {
               "american": 2200,
               "decimal": 23.0,
-              "ev_pct": -96.6
+              "ev_pct": -32.6
             }
           },
           "best_book": "fanduel",
@@ -300,24 +275,24 @@
         },
         {
           "player": "Matthew Fitzpatrick",
-          "true_prob": 0.00148,
-          "fair_american": 67500,
+          "true_prob": 0.0293,
+          "fair_american": 3313,
           "analytics": null,
           "books": {
             "betmgm": {
-              "american": 2500,
-              "decimal": 26.0,
-              "ev_pct": -96.15
+              "american": 2200,
+              "decimal": 23.0,
+              "ev_pct": -32.6
             },
             "draftkings": {
               "american": 2000,
               "decimal": 21.0,
-              "ev_pct": -96.89
+              "ev_pct": -38.46
             },
             "fanduel": {
-              "american": 2200,
-              "decimal": 23.0,
-              "ev_pct": -96.6
+              "american": 1900,
+              "decimal": 20.0,
+              "ev_pct": -41.39
             }
           },
           "best_book": "betmgm",
@@ -325,8 +300,8 @@
         },
         {
           "player": "Collin Morikawa",
-          "true_prob": 0.00119,
-          "fair_american": 84000,
+          "true_prob": 0.02603,
+          "fair_american": 3741,
           "analytics": {
             "name": "Collin Morikawa",
             "dg_rank": 4,
@@ -341,17 +316,17 @@
             "betmgm": {
               "american": 2500,
               "decimal": 26.0,
-              "ev_pct": -96.91
+              "ev_pct": -32.31
             },
             "draftkings": {
               "american": 2200,
               "decimal": 23.0,
-              "ev_pct": -97.27
+              "ev_pct": -40.12
             },
             "fanduel": {
               "american": 2700,
               "decimal": 28.0,
-              "ev_pct": -96.67
+              "ev_pct": -27.1
             }
           },
           "best_book": "fanduel",
@@ -359,8 +334,8 @@
         },
         {
           "player": "Tommy Fleetwood",
-          "true_prob": 0.00119,
-          "fair_american": 84000,
+          "true_prob": 0.02603,
+          "fair_american": 3741,
           "analytics": {
             "name": "Tommy Fleetwood",
             "dg_rank": 12,
@@ -375,17 +350,17 @@
             "betmgm": {
               "american": 2200,
               "decimal": 23.0,
-              "ev_pct": -97.27
+              "ev_pct": -40.12
             },
             "draftkings": {
               "american": 2000,
               "decimal": 21.0,
-              "ev_pct": -97.5
+              "ev_pct": -45.33
             },
             "fanduel": {
-              "american": 2000,
-              "decimal": 21.0,
-              "ev_pct": -97.5
+              "american": 2200,
+              "decimal": 23.0,
+              "ev_pct": -40.12
             }
           },
           "best_book": "betmgm",
@@ -393,33 +368,58 @@
         },
         {
           "player": "Brooks Koepka",
-          "true_prob": 0.00077,
-          "fair_american": 129500,
+          "true_prob": 0.02422,
+          "fair_american": 4029,
           "analytics": null,
           "books": {
             "betmgm": {
               "american": 3300,
               "decimal": 34.0,
-              "ev_pct": -97.38
+              "ev_pct": -17.65
             },
             "draftkings": {
               "american": 3300,
               "decimal": 34.0,
-              "ev_pct": -97.38
+              "ev_pct": -17.65
             },
             "fanduel": {
               "american": 3000,
               "decimal": 31.0,
-              "ev_pct": -97.61
+              "ev_pct": -24.92
             }
           },
           "best_book": "betmgm",
           "best_book_display": "BetMGM"
         },
         {
+          "player": "Si Woo Kim",
+          "true_prob": 0.01579,
+          "fair_american": 6232,
+          "analytics": null,
+          "books": {
+            "betmgm": {
+              "american": 6600,
+              "decimal": 67.0,
+              "ev_pct": 5.81
+            },
+            "draftkings": {
+              "american": 8000,
+              "decimal": 81.0,
+              "ev_pct": 27.92
+            },
+            "fanduel": {
+              "american": 8000,
+              "decimal": 81.0,
+              "ev_pct": 27.92
+            }
+          },
+          "best_book": "draftkings",
+          "best_book_display": "DraftKings"
+        },
+        {
           "player": "Hideki Matsuyama",
-          "true_prob": 0.00038,
-          "fair_american": 260000,
+          "true_prob": 0.01412,
+          "fair_american": 6981,
           "analytics": {
             "name": "Hideki Matsuyama",
             "dg_rank": 5,
@@ -434,17 +434,17 @@
             "betmgm": {
               "american": 5000,
               "decimal": 51.0,
-              "ev_pct": -98.04
+              "ev_pct": -27.98
             },
             "draftkings": {
               "american": 4000,
               "decimal": 41.0,
-              "ev_pct": -98.42
+              "ev_pct": -42.1
             },
             "fanduel": {
               "american": 4000,
               "decimal": 41.0,
-              "ev_pct": -98.42
+              "ev_pct": -42.1
             }
           },
           "best_book": "betmgm",
@@ -452,24 +452,24 @@
         },
         {
           "player": "Robert Macintyre",
-          "true_prob": 0.00038,
-          "fair_american": 260000,
+          "true_prob": 0.01412,
+          "fair_american": 6981,
           "analytics": null,
           "books": {
             "betmgm": {
               "american": 5000,
               "decimal": 51.0,
-              "ev_pct": -98.04
+              "ev_pct": -27.98
             },
             "draftkings": {
               "american": 5000,
               "decimal": 51.0,
-              "ev_pct": -98.04
+              "ev_pct": -27.98
             },
             "fanduel": {
               "american": 3000,
               "decimal": 31.0,
-              "ev_pct": -98.81
+              "ev_pct": -56.22
             }
           },
           "best_book": "betmgm",
@@ -477,8 +477,8 @@
         },
         {
           "player": "Russell Henley",
-          "true_prob": 0.00038,
-          "fair_american": 260000,
+          "true_prob": 0.01412,
+          "fair_american": 6981,
           "analytics": {
             "name": "Russell Henley",
             "dg_rank": 20,
@@ -493,17 +493,17 @@
             "betmgm": {
               "american": 5000,
               "decimal": 51.0,
-              "ev_pct": -98.04
+              "ev_pct": -27.98
             },
             "draftkings": {
               "american": 5500,
               "decimal": 56.0,
-              "ev_pct": -97.85
+              "ev_pct": -20.91
             },
             "fanduel": {
               "american": 5000,
               "decimal": 51.0,
-              "ev_pct": -98.04
+              "ev_pct": -27.98
             }
           },
           "best_book": "draftkings",
@@ -511,24 +511,24 @@
         },
         {
           "player": "Tyrrell Hatton",
-          "true_prob": 0.00038,
-          "fair_american": 260000,
+          "true_prob": 0.01412,
+          "fair_american": 6981,
           "analytics": null,
           "books": {
             "betmgm": {
               "american": 3300,
               "decimal": 34.0,
-              "ev_pct": -98.69
+              "ev_pct": -51.98
             },
             "draftkings": {
               "american": 3500,
               "decimal": 36.0,
-              "ev_pct": -98.62
+              "ev_pct": -49.16
             },
             "fanduel": {
               "american": 3000,
               "decimal": 31.0,
-              "ev_pct": -98.81
+              "ev_pct": -56.22
             }
           },
           "best_book": "draftkings",
@@ -536,8 +536,8 @@
         },
         {
           "player": "Viktor Hovland",
-          "true_prob": 0.00038,
-          "fair_american": 260000,
+          "true_prob": 0.01412,
+          "fair_american": 6981,
           "analytics": {
             "name": "Viktor Hovland",
             "dg_rank": 7,
@@ -552,17 +552,17 @@
             "betmgm": {
               "american": 3300,
               "decimal": 34.0,
-              "ev_pct": -98.69
+              "ev_pct": -51.98
             },
             "draftkings": {
               "american": 2800,
               "decimal": 29.0,
-              "ev_pct": -98.89
+              "ev_pct": -59.05
             },
             "fanduel": {
               "american": 2700,
               "decimal": 28.0,
-              "ev_pct": -98.92
+              "ev_pct": -60.46
             }
           },
           "best_book": "betmgm",
@@ -570,49 +570,49 @@
         },
         {
           "player": "Justin Rose",
-          "true_prob": 0.00032,
-          "fair_american": 313500,
+          "true_prob": 0.01276,
+          "fair_american": 7736,
           "analytics": null,
           "books": {
             "betmgm": {
-              "american": 4000,
-              "decimal": 41.0,
-              "ev_pct": -98.69
+              "american": 3300,
+              "decimal": 34.0,
+              "ev_pct": -56.61
             },
             "draftkings": {
               "american": 3500,
               "decimal": 36.0,
-              "ev_pct": -98.85
+              "ev_pct": -54.06
             },
             "fanduel": {
               "american": 4000,
               "decimal": 41.0,
-              "ev_pct": -98.69
+              "ev_pct": -47.68
             }
           },
-          "best_book": "betmgm",
-          "best_book_display": "BetMGM"
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
         },
         {
           "player": "Christopher Gotterup",
-          "true_prob": 0.00027,
-          "fair_american": 372000,
+          "true_prob": 0.01163,
+          "fair_american": 8497,
           "analytics": null,
           "books": {
             "betmgm": {
               "american": 4500,
               "decimal": 46.0,
-              "ev_pct": -98.76
+              "ev_pct": -46.49
             },
             "draftkings": {
               "american": 4000,
               "decimal": 41.0,
-              "ev_pct": -98.9
+              "ev_pct": -52.31
             },
             "fanduel": {
               "american": 4000,
               "decimal": 41.0,
-              "ev_pct": -98.9
+              "ev_pct": -52.31
             }
           },
           "best_book": "betmgm",
@@ -620,24 +620,24 @@
         },
         {
           "player": "Jacob Bridgeman",
-          "true_prob": 0.0002,
-          "fair_american": 504000,
+          "true_prob": 0.00987,
+          "fair_american": 10034,
           "analytics": null,
           "books": {
             "betmgm": {
               "american": 6600,
               "decimal": 67.0,
-              "ev_pct": -98.67
+              "ev_pct": -33.89
             },
             "draftkings": {
               "american": 10000,
               "decimal": 101.0,
-              "ev_pct": -98.0
+              "ev_pct": -0.33
             },
             "fanduel": {
               "american": 8000,
               "decimal": 81.0,
-              "ev_pct": -98.39
+              "ev_pct": -20.07
             }
           },
           "best_book": "draftkings",
@@ -812,11 +812,11 @@
         }
       ],
       "book_vigs": {
-        "BetOnline": 127.6,
-        "BetMGM": 62.9,
-        "LowVig": 127.6,
+        "BetOnline": 32.4,
+        "BetMGM": 62.0,
+        "LowVig": 32.4,
         "DraftKings": 69.4,
-        "FanDuel": 59.3,
+        "FanDuel": 59.2,
         "BetRivers": 64.7
       },
       "nc_books_available": [
