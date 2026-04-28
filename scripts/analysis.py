@@ -69,7 +69,9 @@ def analyze_outright_market(market_data: dict, market_key: str,
     available_nc = [b for b in NC_BOOKS if b in outcomes_by_book]
 
     consensus = calculate_consensus_probabilities(
-        outcomes_by_book, method="power", vig_weight=True)
+        outcomes_by_book, method="power", vig_weight=True,
+        sharp_books=available_sharp if available_sharp else None,
+        nc_books=list(NC_BOOKS))
 
     min_edge = minimum_edge_threshold(days_to_resolution, RISK_FREE_RATE, BASE_EDGE_MINIMUM)
 

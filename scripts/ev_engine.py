@@ -140,6 +140,7 @@ def calculate_consensus_probabilities(
     sharp_weight: float = 3.0,
     vig_weight: bool = True,
     min_books: int = 2,
+    nc_books: Optional[list[str]] = None,
 ) -> dict[str, float]:
     """
     Calculate consensus (true) probability for each outcome.
@@ -162,24 +163,39 @@ def calculate_consensus_probabilities(
         min_books: minimum number of books that must list an outcome
                    for it to be included in consensus (prevents distortion
                    from single-book outliers like Tiger Woods at 1 book)
+        nc_books: list of NC-legal book keys. If provided, outcomes must
+                  appear at 1+ NC book to be included (no point pricing
+                  outcomes you can't bet on).
 
     Returns:
         {outcome: true_probability}
     """
     books_to_use = outcomes_by_book
     sharp_set = set(sharp_books) if sharp_books else set()
+    nc_set = set(nc_books) if nc_books else set()
 
-    # Count how many books list each outcome
+    # Count how many books list each outcome (total and NC separately)
     outcome_book_count = {}
-    for book_probs in books_to_use.values():
+    outcome_nc_count = {}
+    for book_key, book_probs in books_to_use.items():
         for outcome in book_probs:
             outcome_book_count[outcome] = outcome_book_count.get(outcome, 0) + 1
+            if book_key in nc_set:
+                outcome_nc_count[outcome] = outcome_nc_count.get(outcome, 0) + 1
 
-    # Only include outcomes listed at min_books or more books
-    # (For small markets like 2-way moneyline, relax to 1)
+    # Only include outcomes that:
+    # 1. Appear at min_books or more total books
+    # 2. Appear at 1+ NC book (if nc_books provided) — no point pricing
+    #    outcomes you can't bet on, and they distort vig removal
     total_books = len(books_to_use)
     effective_min = min(min_books, max(1, total_books))
-    qualified_outcomes = {o for o, c in outcome_book_count.items() if c >= effective_min}
+    qualified_outcomes = set()
+    for outcome, count in outcome_book_count.items():
+        if count < effective_min:
+            continue
+        if nc_set and outcome_nc_count.get(outcome, 0) == 0:
+            continue  # Skip outcomes with no NC book (e.g., Tiger Woods)
+        qualified_outcomes.add(outcome)
 
     # Calculate weights: inverse of overround × sharp multiplier
     book_weights = {}
@@ -201,8 +217,14 @@ def calculate_consensus_probabilities(
         weight_total = 0.0
         for book, book_probs in books_to_use.items():
             if outcome in book_probs:
+                imp = book_probs[outcome]
+                # Sanity check: skip obviously wrong data points
+                # (e.g., Tiger Woods at +100 in a 100-player field)
+                # A single outcome shouldn't imply >25% in a 20+ player mkt
+                if len(qualified_outcomes) >= 20 and imp > 0.25:
+                    continue
                 w = book_weights.get(book, 1.0)
-                weighted_sum += book_probs[outcome] * w
+                weighted_sum += imp * w
                 weight_total += w
         if weight_total > 0:
             avg_probs[outcome] = weighted_sum / weight_total
