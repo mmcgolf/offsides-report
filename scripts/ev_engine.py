@@ -218,11 +218,6 @@ def calculate_consensus_probabilities(
         for book, book_probs in books_to_use.items():
             if outcome in book_probs:
                 imp = book_probs[outcome]
-                # Sanity check: skip obviously wrong data points
-                # (e.g., Tiger Woods at +100 in a 100-player field)
-                # A single outcome shouldn't imply >25% in a 20+ player mkt
-                if len(qualified_outcomes) >= 20 and imp > 0.25:
-                    continue
                 w = book_weights.get(book, 1.0)
                 weighted_sum += imp * w
                 weight_total += w
