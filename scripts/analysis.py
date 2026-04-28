@@ -60,16 +60,16 @@ def analyze_outright_market(market_data: dict, market_key: str,
         vig = calculate_market_vig(list(probs.values()))
         book_vigs[book] = vig
 
-    # Build consensus from sharp books if available
+    # Build consensus from ALL books, weighted by inverse overround.
+    # Sharp books naturally get higher weight due to lower vig.
+    # Previously using sharp-only consensus caused every longshot at NC
+    # books to show +EV (because NC books charge more vig on longshots,
+    # not because they're genuinely mispriced).
     available_sharp = [b for b in SHARP_REFERENCE_BOOKS if b in outcomes_by_book]
     available_nc = [b for b in NC_BOOKS if b in outcomes_by_book]
 
-    if available_sharp:
-        consensus = calculate_consensus_probabilities(
-            outcomes_by_book, method="power", sharp_books=available_sharp)
-    else:
-        consensus = calculate_consensus_probabilities(
-            outcomes_by_book, method="power", vig_weight=True)
+    consensus = calculate_consensus_probabilities(
+        outcomes_by_book, method="power", vig_weight=True)
 
     min_edge = minimum_edge_threshold(days_to_resolution, RISK_FREE_RATE, BASE_EDGE_MINIMUM)
 
@@ -114,7 +114,17 @@ def analyze_outright_market(market_data: dict, market_key: str,
             if value_tier:
                 value_selections.append(entry)
 
-    value_selections.sort(key=lambda x: x["ev_pct"], reverse=True)
+    # Consolidate: keep only the BEST book per player (highest EV).
+    # Showing the same player 3x (once per book) clutters the picks
+    # and usually means the consensus is slightly off, not that every
+    # book has genuine value on that player.
+    best_by_player = {}
+    for v in value_selections:
+        player = v["player"]
+        if player not in best_by_player or v["ev_pct"] > best_by_player[player]["ev_pct"]:
+            best_by_player[player] = v
+    value_selections = sorted(best_by_player.values(), key=lambda x: x["ev_pct"], reverse=True)
+
     strong_picks = [v for v in value_selections if v["value_tier"] == "STRONG VALUE"]
     notable_picks = [v for v in value_selections if v["value_tier"] == "Notable Value"]
 

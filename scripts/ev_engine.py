@@ -137,6 +137,7 @@ def calculate_consensus_probabilities(
     outcomes_by_book: dict[str, dict[str, float]],
     method: str = "power",
     sharp_books: Optional[list[str]] = None,
+    sharp_weight: float = 3.0,
     vig_weight: bool = True,
     min_books: int = 2,
 ) -> dict[str, float]:
@@ -144,18 +145,19 @@ def calculate_consensus_probabilities(
     Calculate consensus (true) probability for each outcome.
 
     Strategy:
-    1. If sharp_books are specified, use ONLY those books (best approach).
-    2. Otherwise, weight each book by its sharpness (inverse of overround).
-       A book with 32% overround gets ~2x the weight of one with 67%.
-    3. Remove vig from the weighted average using the specified method.
-
-    This prevents high-vig books from inflating the consensus probabilities,
-    which would make even fair prices at sharp books look like -EV.
+    1. Use ALL books, but give sharp books extra weight (sharp_weight multiplier).
+       This blends sharp and NC views so the consensus reflects the whole market.
+       Using sharp-only caused false +EV for every longshot because NC books
+       have higher vig on longshots than sharp books.
+    2. Weight each book by inverse overround (sharper = higher weight).
+    3. Apply sharp_weight multiplier on top for designated sharp books.
+    4. Remove vig from the weighted average using the specified method.
 
     Args:
         outcomes_by_book: {book_name: {outcome: implied_prob}}
         method: vig removal method ("multiplicative", "power", "additive")
-        sharp_books: if provided, only use these books for consensus
+        sharp_books: books to give extra weight (not exclusive filter)
+        sharp_weight: multiplier for sharp book weights (default 3.0)
         vig_weight: if True, weight books by inverse overround (default)
         min_books: minimum number of books that must list an outcome
                    for it to be included in consensus (prevents distortion
@@ -164,12 +166,8 @@ def calculate_consensus_probabilities(
     Returns:
         {outcome: true_probability}
     """
-    # Filter to sharp books if specified
     books_to_use = outcomes_by_book
-    if sharp_books:
-        books_to_use = {k: v for k, v in outcomes_by_book.items() if k in sharp_books}
-        if not books_to_use:
-            books_to_use = outcomes_by_book  # Fallback to all books
+    sharp_set = set(sharp_books) if sharp_books else set()
 
     # Count how many books list each outcome
     outcome_book_count = {}
@@ -183,18 +181,18 @@ def calculate_consensus_probabilities(
     effective_min = min(min_books, max(1, total_books))
     qualified_outcomes = {o for o, c in outcome_book_count.items() if c >= effective_min}
 
-    # Calculate weights: inverse of overround (sharper = higher weight)
+    # Calculate weights: inverse of overround × sharp multiplier
     book_weights = {}
-    if vig_weight and not sharp_books:
-        for book, probs in books_to_use.items():
+    for book, probs in books_to_use.items():
+        if vig_weight:
             overround = sum(probs.values())
-            # Weight = 1 / overround. A book at 1.32 (32% vig) gets weight ~0.76,
-            # while a book at 1.67 (67% vig) gets weight ~0.60
-            book_weights[book] = 1.0 / overround if overround > 0 else 0
-    else:
-        # Equal weight if using sharp books or vig_weight disabled
-        for book in books_to_use:
-            book_weights[book] = 1.0
+            w = 1.0 / overround if overround > 0 else 0
+        else:
+            w = 1.0
+        # Sharp books get extra weight
+        if book in sharp_set:
+            w *= sharp_weight
+        book_weights[book] = w
 
     # Weighted average of implied probabilities (only qualified outcomes)
     avg_probs = {}
