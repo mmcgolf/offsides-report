@@ -170,44 +170,53 @@ def calculate_consensus_probabilities(
     Returns:
         {outcome: true_probability}
     """
-    books_to_use = outcomes_by_book
-    sharp_set = set(sharp_books) if sharp_books else set()
     nc_set = set(nc_books) if nc_books else set()
+    sharp_set = set(sharp_books) if sharp_books else set()
 
-    # Count how many books list each outcome (total and NC separately)
-    outcome_book_count = {}
+    # When sharp books provided, use ONLY them for probability calculation
+    # (they're the most accurate reference). Otherwise use all books.
+    if sharp_set:
+        prob_books = {k: v for k, v in outcomes_by_book.items() if k in sharp_set}
+        if not prob_books:
+            prob_books = outcomes_by_book  # Fallback
+    else:
+        prob_books = outcomes_by_book
+
+    # Count NC book coverage (using ALL books, not just prob_books)
     outcome_nc_count = {}
-    for book_key, book_probs in books_to_use.items():
-        for outcome in book_probs:
-            outcome_book_count[outcome] = outcome_book_count.get(outcome, 0) + 1
-            if book_key in nc_set:
+    for book_key, book_probs in outcomes_by_book.items():
+        if book_key in nc_set:
+            for outcome in book_probs:
                 outcome_nc_count[outcome] = outcome_nc_count.get(outcome, 0) + 1
 
+    # Count how many prob_books list each outcome
+    outcome_book_count = {}
+    for book_probs in prob_books.values():
+        for outcome in book_probs:
+            outcome_book_count[outcome] = outcome_book_count.get(outcome, 0) + 1
+
     # Only include outcomes that:
-    # 1. Appear at min_books or more total books
-    # 2. Appear at 1+ NC book (if nc_books provided) — no point pricing
-    #    outcomes you can't bet on, and they distort vig removal
-    total_books = len(books_to_use)
+    # 1. Appear at min_books or more probability books
+    # 2. Appear at 1+ NC book — no point pricing outcomes you can't bet on,
+    #    and garbage data (Tiger at +100) distorts vig removal for everyone
+    total_books = len(prob_books)
     effective_min = min(min_books, max(1, total_books))
     qualified_outcomes = set()
     for outcome, count in outcome_book_count.items():
         if count < effective_min:
             continue
         if nc_set and outcome_nc_count.get(outcome, 0) == 0:
-            continue  # Skip outcomes with no NC book (e.g., Tiger Woods)
+            continue
         qualified_outcomes.add(outcome)
 
-    # Calculate weights: inverse of overround × sharp multiplier
+    # Calculate weights for prob_books
     book_weights = {}
-    for book, probs in books_to_use.items():
+    for book, probs in prob_books.items():
         if vig_weight:
             overround = sum(probs.values())
             w = 1.0 / overround if overround > 0 else 0
         else:
             w = 1.0
-        # Sharp books get extra weight
-        if book in sharp_set:
-            w *= sharp_weight
         book_weights[book] = w
 
     # Weighted average of implied probabilities (only qualified outcomes)
@@ -215,7 +224,7 @@ def calculate_consensus_probabilities(
     for outcome in qualified_outcomes:
         weighted_sum = 0.0
         weight_total = 0.0
-        for book, book_probs in books_to_use.items():
+        for book, book_probs in prob_books.items():
             if outcome in book_probs:
                 imp = book_probs[outcome]
                 w = book_weights.get(book, 1.0)

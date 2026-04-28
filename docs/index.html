@@ -538,12 +538,15 @@ function renderOddsTable(mkt) {
   mkt.odds_table.forEach(r => Object.keys(r.books).forEach(b => allBooks.add(b)));
   const books = Array.from(allBooks).sort();
   let html = `<div class="section"><div class="section-title">&#x1F4CA; Odds Comparison</div>
-    <div class="odds-table-wrapper"><table class="odds-table"><thead><tr><th>Name</th><th>Fair</th>`;
+    <div class="odds-table-wrapper"><table class="odds-table"><thead><tr><th>Name</th><th>True %</th><th>Fair</th>`;
   books.forEach(b => { html += '<th>' + b + '</th>'; });
   html += '</tr></thead><tbody>';
+  let totalProb = 0;
   mkt.odds_table.forEach(row => {
+    totalProb += row.true_prob;
+    const pct = (row.true_prob * 100).toFixed(2) + '%';
     const fs = row.fair_american > 0 ? '+' + row.fair_american : '' + row.fair_american;
-    html += '<tr><td>' + row.player + '</td><td class="fair-odds">' + fs + '</td>';
+    html += '<tr><td>' + row.player + '</td><td class="fair-odds">' + pct + '</td><td class="fair-odds">' + fs + '</td>';
     // Find best odds (highest decimal = best price for bettor)
     let bestDec = 0, bestBook = '';
     books.forEach(b => { if (row.books[b] && row.books[b].decimal > bestDec) { bestDec = row.books[b].decimal; bestBook = b; } });
@@ -559,6 +562,9 @@ function renderOddsTable(mkt) {
     });
     html += '</tr>';
   });
+  // Sum row — should be close to 100% (will be less if table is capped below total players)
+  const probColor = Math.abs(totalProb - 1.0) < 0.01 ? '#3fb950' : '#d29922';
+  html += '<tr style="border-top:2px solid #30363d"><td style="font-weight:700">Total</td><td style="font-weight:700;color:' + probColor + '">' + (totalProb * 100).toFixed(2) + '%</td><td colspan="' + (books.length + 1) + '"></td></tr>';
   html += '</tbody></table></div></div>';
   return html;
 }

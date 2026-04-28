@@ -60,18 +60,23 @@ def analyze_outright_market(market_data: dict, market_key: str,
         vig = calculate_market_vig(list(probs.values()))
         book_vigs[book] = vig
 
-    # Build consensus from ALL books, weighted by inverse overround.
-    # Sharp books naturally get higher weight due to lower vig.
-    # Previously using sharp-only consensus caused every longshot at NC
-    # books to show +EV (because NC books charge more vig on longshots,
-    # not because they're genuinely mispriced).
+    # Build consensus from sharp books when available (most accurate),
+    # falling back to all books weighted by inverse overround.
+    # Key safeguards:
+    #   - Outcomes must appear at 1+ NC book (filters data errors like Tiger)
+    #   - Picks are deduplicated: one per player, best book only
     available_sharp = [b for b in SHARP_REFERENCE_BOOKS if b in outcomes_by_book]
     available_nc = [b for b in NC_BOOKS if b in outcomes_by_book]
 
-    consensus = calculate_consensus_probabilities(
-        outcomes_by_book, method="power", vig_weight=True,
-        sharp_books=available_sharp if available_sharp else None,
-        nc_books=list(NC_BOOKS))
+    if available_sharp:
+        consensus = calculate_consensus_probabilities(
+            outcomes_by_book, method="power",
+            sharp_books=available_sharp, sharp_weight=1.0,
+            nc_books=list(NC_BOOKS))
+    else:
+        consensus = calculate_consensus_probabilities(
+            outcomes_by_book, method="power", vig_weight=True,
+            nc_books=list(NC_BOOKS))
 
     min_edge = minimum_edge_threshold(days_to_resolution, RISK_FREE_RATE, BASE_EDGE_MINIMUM)
 
@@ -167,7 +172,7 @@ def analyze_outright_market(market_data: dict, market_key: str,
         row["best_book_display"] = BOOK_DISPLAY_NAMES.get(best_book, "") if best_book else ""
         odds_table.append(row)
 
-    # Detect outliers
+    # Detect outliers (only HIGHER = value for the bettor, not lower)
     outlier_summary = []
     for outcome in consensus.keys():
         outcome_odds_all = {}
@@ -178,6 +183,8 @@ def analyze_outright_market(market_data: dict, market_key: str,
         for o in outliers:
             if o["book"] not in NC_BOOKS:
                 continue
+            if o["direction"] != "higher":
+                continue  # Skip negative outliers — you'd never bet those
             o["player"] = outcome
             o["book_display"] = BOOK_DISPLAY_NAMES.get(o["book"], o["book"])
             outlier_summary.append(o)
