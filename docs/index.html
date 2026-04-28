@@ -208,7 +208,8 @@
   .odds-table tr:hover td { background: rgba(88,166,255,0.04); }
   .odds-cell { font-family: 'SF Mono', 'Cascadia Code', monospace; font-size: 11px; }
   .odds-cell.positive-ev { color: #3fb950; font-weight: 700; }
-  .odds-cell.best-odds { color: #58a6ff; font-weight: 700; }
+  .odds-cell.best-odds { color: #58a6ff; font-weight: 700; background: rgba(88,166,255,0.08); border-radius: 4px; }
+  .odds-cell.best-ev { color: #3fb950; font-weight: 700; background: rgba(63,185,80,0.1); border-radius: 4px; }
   .odds-cell.negative-ev { color: #8b949e; }
   .fair-odds { color: #6e7681; font-size: 11px; }
 
@@ -543,6 +544,7 @@ function renderOddsTable(mkt) {
   mkt.odds_table.forEach(row => {
     const fs = row.fair_american > 0 ? '+' + row.fair_american : '' + row.fair_american;
     html += '<tr><td>' + row.player + '</td><td class="fair-odds">' + fs + '</td>';
+    // Find best odds (highest decimal = best price for bettor)
     let bestDec = 0, bestBook = '';
     books.forEach(b => { if (row.books[b] && row.books[b].decimal > bestDec) { bestDec = row.books[b].decimal; bestBook = b; } });
     books.forEach(b => {
@@ -550,8 +552,8 @@ function renderOddsTable(mkt) {
       if (!c) { html += '<td class="odds-cell">\u2014</td>'; return; }
       const am = c.american > 0 ? '+' + c.american : '' + c.american;
       let cls = 'odds-cell';
-      if (c.ev_pct > 0 && b === bestBook) cls += ' best-odds';
-      else if (c.ev_pct > 0) cls += ' positive-ev';
+      if (b === bestBook) cls += ' best-odds';
+      if (c.ev_pct > 0) cls += ' positive-ev';
       else cls += ' negative-ev';
       html += '<td class="' + cls + '" title="EV: ' + (c.ev_pct > 0 ? '+' : '') + c.ev_pct.toFixed(1) + '%">' + am + '</td>';
     });

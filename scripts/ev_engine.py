@@ -67,9 +67,16 @@ def remove_vig_power(implied_probs: list[float], tol: float = 1e-8) -> list[floa
     if not implied_probs or all(p == 0 for p in implied_probs):
         return implied_probs
 
-    # Binary search for k
-    lo, hi = 0.5, 2.0
-    for _ in range(200):
+    # Check if vig removal is even needed
+    total_raw = sum(p for p in implied_probs if p > 0)
+    if abs(total_raw - 1.0) < tol:
+        return implied_probs
+
+    # Binary search for k — wide range to handle extreme futures markets
+    # (e.g., 150-player golf fields with 200%+ overround)
+    lo, hi = 0.01, 50.0
+    k = 1.0  # default fallback
+    for _ in range(500):
         k = (lo + hi) / 2
         total = sum(p ** k for p in implied_probs if p > 0)
         if total > 1.0:
@@ -79,7 +86,14 @@ def remove_vig_power(implied_probs: list[float], tol: float = 1e-8) -> list[floa
         if abs(total - 1.0) < tol:
             break
 
-    return [p ** k if p > 0 else 0 for p in implied_probs]
+    result = [p ** k if p > 0 else 0 for p in implied_probs]
+
+    # Sanity check: if power method produced degenerate results, fall back
+    # to multiplicative (simpler but always works)
+    if any(r > 0.99 for r in result) and len(result) > 2:
+        return remove_vig_multiplicative(implied_probs)
+
+    return result
 
 
 def remove_vig_additive(implied_probs: list[float]) -> list[float]:
@@ -124,6 +138,7 @@ def calculate_consensus_probabilities(
     method: str = "power",
     sharp_books: Optional[list[str]] = None,
     vig_weight: bool = True,
+    min_books: int = 2,
 ) -> dict[str, float]:
     """
     Calculate consensus (true) probability for each outcome.
@@ -142,21 +157,31 @@ def calculate_consensus_probabilities(
         method: vig removal method ("multiplicative", "power", "additive")
         sharp_books: if provided, only use these books for consensus
         vig_weight: if True, weight books by inverse overround (default)
+        min_books: minimum number of books that must list an outcome
+                   for it to be included in consensus (prevents distortion
+                   from single-book outliers like Tiger Woods at 1 book)
 
     Returns:
         {outcome: true_probability}
     """
-    # Collect all unique outcomes
-    all_outcomes = set()
-    for book_probs in outcomes_by_book.values():
-        all_outcomes.update(book_probs.keys())
-
     # Filter to sharp books if specified
     books_to_use = outcomes_by_book
     if sharp_books:
         books_to_use = {k: v for k, v in outcomes_by_book.items() if k in sharp_books}
         if not books_to_use:
             books_to_use = outcomes_by_book  # Fallback to all books
+
+    # Count how many books list each outcome
+    outcome_book_count = {}
+    for book_probs in books_to_use.values():
+        for outcome in book_probs:
+            outcome_book_count[outcome] = outcome_book_count.get(outcome, 0) + 1
+
+    # Only include outcomes listed at min_books or more books
+    # (For small markets like 2-way moneyline, relax to 1)
+    total_books = len(books_to_use)
+    effective_min = min(min_books, max(1, total_books))
+    qualified_outcomes = {o for o, c in outcome_book_count.items() if c >= effective_min}
 
     # Calculate weights: inverse of overround (sharper = higher weight)
     book_weights = {}
@@ -171,9 +196,9 @@ def calculate_consensus_probabilities(
         for book in books_to_use:
             book_weights[book] = 1.0
 
-    # Weighted average of implied probabilities
+    # Weighted average of implied probabilities (only qualified outcomes)
     avg_probs = {}
-    for outcome in all_outcomes:
+    for outcome in qualified_outcomes:
         weighted_sum = 0.0
         weight_total = 0.0
         for book, book_probs in books_to_use.items():

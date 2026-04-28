@@ -118,8 +118,8 @@ def analyze_outright_market(market_data: dict, market_key: str,
     strong_picks = [v for v in value_selections if v["value_tier"] == "STRONG VALUE"]
     notable_picks = [v for v in value_selections if v["value_tier"] == "Notable Value"]
 
-    # Odds comparison table (top 20 by consensus prob, NC books only)
-    top_outcomes = sorted(consensus.items(), key=lambda x: x[1], reverse=True)[:20]
+    # Odds comparison table (top 100 by consensus prob, NC books only)
+    top_outcomes = sorted(consensus.items(), key=lambda x: x[1], reverse=True)[:100]
     odds_table = []
     for outcome, true_prob in top_outcomes:
         analytics = None
@@ -147,6 +147,7 @@ def analyze_outright_market(market_data: dict, market_key: str,
                     "decimal": round(dec, 3),
                     "ev_pct": round(ev, 2),
                 }
+                # Track best odds = highest decimal (best price for bettor)
                 if dec > best_odds:
                     best_odds = dec
                     best_book = book
