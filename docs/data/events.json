@@ -1,7 +1,7 @@
 {
   "site_name": "The Offsides Report",
   "tagline": "Finding where the books disagree",
-  "generated_at": "2026-04-28 19:21:53",
+  "generated_at": "2026-04-29 00:09:31",
   "risk_free_rate": 0.045,
   "base_edge_minimum": 0.02,
   "sport_groups": [
@@ -10,33 +10,14 @@
       "display_name": "Golf",
       "icon": "\u26f3",
       "num_events": 3,
-      "total_strong": 40,
-      "total_notable": 4,
+      "total_strong": 8,
+      "total_notable": 0,
       "events": [
         {
-          "event_id": "demo_zurich_classic_2026",
-          "event_name": "Zurich Classic of New Orleans",
-          "sport_key": "golf_pga_tour",
-          "event_date": "2026-04-30T13:00:00Z",
-          "days_to_resolution": 1,
-          "event_type": "current_week",
-          "is_major": false,
-          "data_file": "golf_pga_tour.json",
-          "available_markets": [
-            {
-              "key": "outrights",
-              "name": "Futures / Winner"
-            }
-          ],
-          "total_strong_picks": 20,
-          "total_notable_picks": 0,
-          "generated_at": "2026-04-28 19:21:52"
-        },
-        {
-          "event_id": "demo_pga_champ_2026",
+          "event_id": "ed0e20cdae17e62069f08ed9d3bc8f6f",
           "event_name": "PGA Championship",
           "sport_key": "golf_pga_championship_winner",
-          "event_date": "2026-05-14T13:00:00Z",
+          "event_date": "2026-05-14T10:00:00Z",
           "days_to_resolution": 15,
           "event_type": "futures",
           "is_major": true,
@@ -47,15 +28,15 @@
               "name": "Futures / Winner"
             }
           ],
-          "total_strong_picks": 9,
-          "total_notable_picks": 3,
-          "generated_at": "2026-04-28 19:21:52"
+          "total_strong_picks": 3,
+          "total_notable_picks": 0,
+          "generated_at": "2026-04-29 00:09:31"
         },
         {
-          "event_id": "demo_us_open_2026",
+          "event_id": "cfbf8baac8b2b9e462de66c714bb72f8",
           "event_name": "US Open",
           "sport_key": "golf_us_open_winner",
-          "event_date": "2026-06-18T13:00:00Z",
+          "event_date": "2026-06-18T10:00:00Z",
           "days_to_resolution": 50,
           "event_type": "futures",
           "is_major": true,
@@ -66,9 +47,28 @@
               "name": "Futures / Winner"
             }
           ],
-          "total_strong_picks": 11,
-          "total_notable_picks": 1,
-          "generated_at": "2026-04-28 19:21:52"
+          "total_strong_picks": 1,
+          "total_notable_picks": 0,
+          "generated_at": "2026-04-29 00:09:31"
+        },
+        {
+          "event_id": "bf607cce9940286b32608179113475dc",
+          "event_name": "The Open Championship",
+          "sport_key": "golf_the_open_championship_winner",
+          "event_date": "2026-07-16T05:00:00Z",
+          "days_to_resolution": 78,
+          "event_type": "futures",
+          "is_major": true,
+          "data_file": "golf_the_open_championship_winner.json",
+          "available_markets": [
+            {
+              "key": "outrights",
+              "name": "Futures / Winner"
+            }
+          ],
+          "total_strong_picks": 4,
+          "total_notable_picks": 0,
+          "generated_at": "2026-04-29 00:09:31"
         }
       ]
     },
@@ -76,54 +76,16 @@
       "group_key": "nba",
       "display_name": "NBA",
       "icon": "\ud83c\udfc0",
-      "num_events": 3,
-      "total_strong": 3,
-      "total_notable": 1,
+      "num_events": 1,
+      "total_strong": 4,
+      "total_notable": 2,
       "events": [
         {
-          "event_id": "demo_nba_east",
-          "event_name": "Eastern Conference",
-          "sport_key": "basketball_nba_eastern_conference_winner",
-          "event_date": "2026-06-01T00:00:00Z",
-          "days_to_resolution": 33,
-          "event_type": "futures",
-          "is_major": true,
-          "data_file": "basketball_nba_eastern_conference_winner.json",
-          "available_markets": [
-            {
-              "key": "outrights",
-              "name": "Futures / Winner"
-            }
-          ],
-          "total_strong_picks": 1,
-          "total_notable_picks": 0,
-          "generated_at": "2026-04-28 19:21:52"
-        },
-        {
-          "event_id": "demo_nba_west",
-          "event_name": "Western Conference",
-          "sport_key": "basketball_nba_western_conference_winner",
-          "event_date": "2026-06-01T00:00:00Z",
-          "days_to_resolution": 33,
-          "event_type": "futures",
-          "is_major": true,
-          "data_file": "basketball_nba_western_conference_winner.json",
-          "available_markets": [
-            {
-              "key": "outrights",
-              "name": "Futures / Winner"
-            }
-          ],
-          "total_strong_picks": 1,
-          "total_notable_picks": 1,
-          "generated_at": "2026-04-28 19:21:52"
-        },
-        {
-          "event_id": "demo_nba_champ",
+          "event_id": "0646d720c3fd59168e130d26a5a9d3ca",
           "event_name": "NBA Championship",
           "sport_key": "basketball_nba_championship_winner",
-          "event_date": "2026-06-15T00:00:00Z",
-          "days_to_resolution": 47,
+          "event_date": "2026-06-10T21:00:00Z",
+          "days_to_resolution": 42,
           "event_type": "futures",
           "is_major": true,
           "data_file": "basketball_nba_championship_winner.json",
@@ -133,38 +95,9 @@
               "name": "Futures / Winner"
             }
           ],
-          "total_strong_picks": 1,
-          "total_notable_picks": 0,
-          "generated_at": "2026-04-28 19:21:52"
-        }
-      ]
-    },
-    {
-      "group_key": "ncaab",
-      "display_name": "NCAAB",
-      "icon": "\ud83c\udfc0",
-      "num_events": 1,
-      "total_strong": 1,
-      "total_notable": 0,
-      "events": [
-        {
-          "event_id": "demo_ncaab_champ",
-          "event_name": "NCAAB Championship",
-          "sport_key": "basketball_ncaab_championship_winner",
-          "event_date": "2027-04-07T00:00:00Z",
-          "days_to_resolution": 343,
-          "event_type": "futures",
-          "is_major": true,
-          "data_file": "basketball_ncaab_championship_winner.json",
-          "available_markets": [
-            {
-              "key": "outrights",
-              "name": "Futures / Winner"
-            }
-          ],
-          "total_strong_picks": 1,
-          "total_notable_picks": 0,
-          "generated_at": "2026-04-28 19:21:52"
+          "total_strong_picks": 4,
+          "total_notable_picks": 2,
+          "generated_at": "2026-04-29 00:09:31"
         }
       ]
     },
@@ -172,53 +105,15 @@
       "group_key": "nfl",
       "display_name": "NFL",
       "icon": "\ud83c\udfc8",
-      "num_events": 3,
-      "total_strong": 3,
-      "total_notable": 2,
+      "num_events": 1,
+      "total_strong": 5,
+      "total_notable": 1,
       "events": [
         {
-          "event_id": "demo_nfl_afc",
-          "event_name": "AFC Champion",
-          "sport_key": "americanfootball_nfl_afc_conference_winner",
-          "event_date": "2027-01-25T00:00:00Z",
-          "days_to_resolution": 271,
-          "event_type": "futures",
-          "is_major": true,
-          "data_file": "americanfootball_nfl_afc_conference_winner.json",
-          "available_markets": [
-            {
-              "key": "outrights",
-              "name": "Futures / Winner"
-            }
-          ],
-          "total_strong_picks": 1,
-          "total_notable_picks": 0,
-          "generated_at": "2026-04-28 19:21:52"
-        },
-        {
-          "event_id": "demo_nfl_nfc",
-          "event_name": "NFC Champion",
-          "sport_key": "americanfootball_nfl_nfc_conference_winner",
-          "event_date": "2027-01-25T00:00:00Z",
-          "days_to_resolution": 271,
-          "event_type": "futures",
-          "is_major": true,
-          "data_file": "americanfootball_nfl_nfc_conference_winner.json",
-          "available_markets": [
-            {
-              "key": "outrights",
-              "name": "Futures / Winner"
-            }
-          ],
-          "total_strong_picks": 1,
-          "total_notable_picks": 2,
-          "generated_at": "2026-04-28 19:21:52"
-        },
-        {
-          "event_id": "demo_nfl_sb",
+          "event_id": "270f600435a20d2046a59fc89fe8e9b8",
           "event_name": "Super Bowl Winner",
           "sport_key": "americanfootball_nfl_super_bowl_winner",
-          "event_date": "2027-02-14T00:00:00Z",
+          "event_date": "2027-02-14T23:36:00Z",
           "days_to_resolution": 291,
           "event_type": "futures",
           "is_major": true,
@@ -229,9 +124,9 @@
               "name": "Futures / Winner"
             }
           ],
-          "total_strong_picks": 1,
-          "total_notable_picks": 0,
-          "generated_at": "2026-04-28 19:21:52"
+          "total_strong_picks": 5,
+          "total_notable_picks": 1,
+          "generated_at": "2026-04-29 00:09:31"
         }
       ]
     },
@@ -240,15 +135,15 @@
       "display_name": "NCAAF",
       "icon": "\ud83c\udfc8",
       "num_events": 1,
-      "total_strong": 1,
+      "total_strong": 23,
       "total_notable": 0,
       "events": [
         {
-          "event_id": "demo_ncaaf_champ",
+          "event_id": "5904871bd989dad2c930cf322e195358",
           "event_name": "CFP National Championship",
           "sport_key": "americanfootball_ncaaf_championship_winner",
-          "event_date": "2027-01-20T00:00:00Z",
-          "days_to_resolution": 266,
+          "event_date": "2027-01-26T00:30:00Z",
+          "days_to_resolution": 272,
           "event_type": "futures",
           "is_major": true,
           "data_file": "americanfootball_ncaaf_championship_winner.json",
@@ -258,9 +153,9 @@
               "name": "Futures / Winner"
             }
           ],
-          "total_strong_picks": 1,
+          "total_strong_picks": 23,
           "total_notable_picks": 0,
-          "generated_at": "2026-04-28 19:21:52"
+          "generated_at": "2026-04-29 00:09:31"
         }
       ]
     }
