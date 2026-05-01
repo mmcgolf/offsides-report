@@ -120,6 +120,32 @@ def generate_site_data(api_key: str = "", output_dir: str = ""):
     group_order = {"golf": 0, "nba": 1, "ncaab": 2, "nfl": 3, "ncaaf": 4}
     sport_groups_index.sort(key=lambda x: group_order.get(x["group_key"], 99))
 
+    # Build top picks across ALL sports for the summary page
+    top_picks = []
+    for group_key, event_reports in results_by_group.items():
+        group_cfg = SPORT_GROUPS.get(group_key, {})
+        for report in event_reports:
+            for mk, md in report.get("markets", {}).items():
+                if isinstance(md, dict) and "error" not in md:
+                    for pick in md.get("strong_picks", []) + md.get("notable_picks", []):
+                        top_picks.append({
+                            "player": pick["player"],
+                            "book": pick.get("book_display", pick.get("book", "")),
+                            "american_odds": pick["american_odds"],
+                            "fair_american": pick["fair_american"],
+                            "ev_pct": pick["ev_pct"],
+                            "true_prob": pick.get("true_prob", 0),
+                            "kelly_pct": pick.get("kelly_pct", 0),
+                            "value_tier": pick.get("value_tier", ""),
+                            "event_name": report["event_name"],
+                            "sport_group": group_key,
+                            "sport_icon": group_cfg.get("icon", ""),
+                            "sport_name": group_cfg.get("display_name", group_key),
+                            "days_to_resolution": report.get("days_to_resolution", 0),
+                            "market": MARKET_DISPLAY_NAMES.get(mk, mk),
+                        })
+    top_picks.sort(key=lambda x: x["ev_pct"], reverse=True)
+
     # Write main index
     index_data = {
         "site_name": NEWSLETTER_NAME,
@@ -127,6 +153,7 @@ def generate_site_data(api_key: str = "", output_dir: str = ""):
         "generated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "risk_free_rate": RISK_FREE_RATE,
         "base_edge_minimum": BASE_EDGE_MINIMUM,
+        "top_picks": top_picks[:50],  # Top 50 across all sports
         "sport_groups": sport_groups_index,
     }
 

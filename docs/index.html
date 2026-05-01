@@ -318,13 +318,8 @@ async function init() {
     siteData = await resp.json();
     document.getElementById('lastUpdated').textContent = 'Last updated: ' + siteData.generated_at;
     buildSportTabs();
-    // Select first sport with events
-    const firstGroup = siteData.sport_groups.find(g => g.num_events > 0);
-    if (firstGroup) {
-      selectSport(firstGroup.group_key);
-    } else {
-      showEmpty('No active events found across any sport.');
-    }
+    // Default to Top Picks summary
+    selectSport('_top_picks');
   } catch (e) {
     showEmpty('Error loading data. Please try again later.');
     console.error(e);
@@ -334,6 +329,17 @@ async function init() {
 function buildSportTabs() {
   const container = document.getElementById('sportTabs');
   container.innerHTML = '';
+
+  // Top Picks tab (first)
+  const totalPicks = siteData.top_picks ? siteData.top_picks.length : 0;
+  const topBtn = document.createElement('button');
+  topBtn.className = 'sport-tab';
+  topBtn.dataset.sport = '_top_picks';
+  topBtn.innerHTML = '<span class="tab-icon">🏆</span>Top Picks' +
+    (totalPicks > 0 ? `<span class="tab-count">${totalPicks}</span>` : '');
+  topBtn.onclick = () => selectSport('_top_picks');
+  container.appendChild(topBtn);
+
   siteData.sport_groups.forEach(group => {
     const btn = document.createElement('button');
     btn.className = 'sport-tab';
@@ -352,6 +358,15 @@ function selectSport(groupKey) {
     t.classList.toggle('active', t.dataset.sport === groupKey);
   });
 
+  if (groupKey === '_top_picks') {
+    document.getElementById('eventSelect').style.display = 'none';
+    document.getElementById('marketTabs').innerHTML = '';
+    document.getElementById('loadingState').style.display = 'none';
+    renderTopPicks();
+    return;
+  }
+
+  document.getElementById('eventSelect').style.display = '';
   const group = siteData.sport_groups.find(g => g.group_key === groupKey);
   if (!group || group.events.length === 0) {
     showEmpty('No active events for this sport right now.');
@@ -644,6 +659,71 @@ function renderAnalyticsCard(title, players, valFn) {
   });
   html += '</ul></div>';
   return html;
+}
+
+function renderTopPicks() {
+  const main = document.getElementById('mainContent');
+  main.style.display = 'block';
+  main.innerHTML = '';
+
+  const picks = siteData.top_picks || [];
+  if (picks.length === 0) {
+    main.innerHTML = '<div class="empty-state">No value picks found across any sport.</div>';
+    return;
+  }
+
+  const strong = picks.filter(p => p.value_tier === 'STRONG VALUE');
+  const notable = picks.filter(p => p.value_tier === 'Notable Value');
+
+  // Summary
+  const sports = [...new Set(picks.map(p => p.sport_name))];
+  const events = [...new Set(picks.map(p => p.event_name))];
+  main.innerHTML += `<div class="event-banner"><h2>🏆 Best Plays Across All Sports</h2>
+    <div class="meta"><span>${strong.length} strong + ${notable.length} notable picks</span><span>${events.length} events across ${sports.length} sports</span></div></div>`;
+
+  // Strong picks
+  if (strong.length > 0) {
+    let html = `<div class="section"><div class="section-title"><span class="icon">&#x1F7E2;</span> Strong Value <span class="count">${strong.length}</span></div>`;
+    html += '<div class="odds-table-wrapper"><table class="odds-table"><thead><tr><th></th><th>Player / Team</th><th>Event</th><th>Book</th><th>Odds</th><th>Fair</th><th>EV</th><th>Kelly</th></tr></thead><tbody>';
+    strong.forEach(p => {
+      const o = p.american_odds > 0 ? '+' + p.american_odds : '' + p.american_odds;
+      const f = p.fair_american > 0 ? '+' + p.fair_american : '' + p.fair_american;
+      html += `<tr>
+        <td>${p.sport_icon}</td>
+        <td style="font-weight:700">${p.player}</td>
+        <td style="color:#8b949e;font-size:11px">${p.event_name}</td>
+        <td>${p.book}</td>
+        <td class="odds-cell" style="color:#e6edf3;font-weight:700">${o}</td>
+        <td class="odds-cell fair-odds">${f}</td>
+        <td class="odds-cell positive-ev">+${p.ev_pct.toFixed(1)}%</td>
+        <td class="odds-cell" style="color:#8b949e">${p.kelly_pct.toFixed(1)}%</td>
+      </tr>`;
+    });
+    html += '</tbody></table></div></div>';
+    main.innerHTML += html;
+  }
+
+  // Notable picks
+  if (notable.length > 0) {
+    let html = `<div class="section"><div class="section-title"><span class="icon">&#x1F7E1;</span> Notable Value <span class="count">${notable.length}</span></div>`;
+    html += '<div class="odds-table-wrapper"><table class="odds-table"><thead><tr><th></th><th>Player / Team</th><th>Event</th><th>Book</th><th>Odds</th><th>Fair</th><th>EV</th><th>Kelly</th></tr></thead><tbody>';
+    notable.forEach(p => {
+      const o = p.american_odds > 0 ? '+' + p.american_odds : '' + p.american_odds;
+      const f = p.fair_american > 0 ? '+' + p.fair_american : '' + p.fair_american;
+      html += `<tr>
+        <td>${p.sport_icon}</td>
+        <td style="font-weight:700">${p.player}</td>
+        <td style="color:#8b949e;font-size:11px">${p.event_name}</td>
+        <td>${p.book}</td>
+        <td class="odds-cell" style="color:#e6edf3;font-weight:700">${o}</td>
+        <td class="odds-cell fair-odds">${f}</td>
+        <td class="odds-cell" style="color:#d29922">+${p.ev_pct.toFixed(1)}%</td>
+        <td class="odds-cell" style="color:#8b949e">${p.kelly_pct.toFixed(1)}%</td>
+      </tr>`;
+    });
+    html += '</tbody></table></div></div>';
+    main.innerHTML += html;
+  }
 }
 
 function showEmpty(msg) {
