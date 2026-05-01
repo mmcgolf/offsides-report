@@ -5,7 +5,7 @@
   "sport_group": "nba",
   "event_date": "2026-06-10T21:00:00Z",
   "days_to_resolution": 40,
-  "generated_at": "2026-05-01 14:13:49",
+  "generated_at": "2026-05-01 20:18:57",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -18,16 +18,16 @@
       "strong_picks": [
         {
           "player": "Minnesota Timberwolves",
-          "book": "fanduel",
-          "book_display": "FanDuel",
-          "american_odds": 22500,
-          "decimal_odds": 226.0,
+          "book": "betmgm",
+          "book_display": "BetMGM",
+          "american_odds": 20000,
+          "decimal_odds": 201.0,
           "fair_american": 9185,
-          "implied_prob": 0.00442,
+          "implied_prob": 0.00498,
           "true_prob": 0.01077,
-          "ev_pct": 143.41,
+          "ev_pct": 116.48,
           "value_tier": "STRONG VALUE",
-          "kelly_pct": 0.16,
+          "kelly_pct": 0.15,
           "analytics": null
         },
         {
@@ -263,9 +263,9 @@
               "ev_pct": 94.94
             },
             "fanduel": {
-              "american": 22500,
-              "decimal": 226.0,
-              "ev_pct": 143.41
+              "american": 17500,
+              "decimal": 176.0,
+              "ev_pct": 89.56
             },
             "betmgm": {
               "american": 20000,
@@ -273,8 +273,8 @@
               "ev_pct": 116.48
             }
           },
-          "best_book": "fanduel",
-          "best_book_display": "FanDuel"
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
         },
         {
           "player": "Philadelphia 76ers",
@@ -402,17 +402,6 @@
         },
         {
           "book": "fanduel",
-          "decimal_odds": 226.0,
-          "american_odds": 22500,
-          "median_odds": 181.0,
-          "median_american": 18000,
-          "deviation_pct": 24.9,
-          "direction": "higher",
-          "player": "Minnesota Timberwolves",
-          "book_display": "FanDuel"
-        },
-        {
-          "book": "fanduel",
           "decimal_odds": 126.0,
           "american_odds": 12500,
           "median_odds": 101.0,
@@ -436,7 +425,7 @@
       ],
       "book_vigs": {
         "DraftKings": 8.9,
-        "FanDuel": 9.9,
+        "FanDuel": 10.0,
         "BetRivers": 13.4,
         "BetOnline": 15.4,
         "BetMGM": 9.0
