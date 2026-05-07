@@ -4,8 +4,8 @@
   "sport_key": "americanfootball_nfl_super_bowl_winner",
   "sport_group": "nfl",
   "event_date": "2027-02-14T23:36:00Z",
-  "days_to_resolution": 284,
-  "generated_at": "2026-05-06 15:22:18",
+  "days_to_resolution": 283,
+  "generated_at": "2026-05-07 15:25:18",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 3,
       "num_sharp_books": 1,
       "num_players": 32,
-      "min_edge_threshold": 5.5,
+      "min_edge_threshold": 5.49,
       "strong_picks": [
         {
           "player": "Atlanta Falcons",
@@ -637,9 +637,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 7000,
-              "decimal": 71.0,
-              "ev_pct": -19.17
+              "american": 7500,
+              "decimal": 76.0,
+              "ev_pct": -13.47
             },
             "draftkings": {
               "american": 7000,
@@ -687,9 +687,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 7500,
-              "decimal": 76.0,
-              "ev_pct": -29.3
+              "american": 8000,
+              "decimal": 81.0,
+              "ev_pct": -24.65
             },
             "draftkings": {
               "american": 12000,
@@ -712,9 +712,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 7500,
-              "decimal": 76.0,
-              "ev_pct": -29.3
+              "american": 7000,
+              "decimal": 71.0,
+              "ev_pct": -33.95
             },
             "draftkings": {
               "american": 5000,
@@ -787,9 +787,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 17500,
-              "decimal": 176.0,
-              "ev_pct": -15.62
+              "american": 20000,
+              "decimal": 201.0,
+              "ev_pct": -3.64
             },
             "draftkings": {
               "american": 12000,
@@ -930,6 +930,17 @@
           "book_display": "DraftKings"
         },
         {
+          "book": "fanduel",
+          "decimal_odds": 201.0,
+          "american_odds": 20000,
+          "median_odds": 151.0,
+          "median_american": 15000,
+          "deviation_pct": 33.1,
+          "direction": "higher",
+          "player": "Tennessee Titans",
+          "book_display": "FanDuel"
+        },
+        {
           "book": "draftkings",
           "decimal_odds": 66.0,
           "american_odds": 6500,
@@ -994,23 +1005,12 @@
           "direction": "higher",
           "player": "Jacksonville Jaguars",
           "book_display": "DraftKings"
-        },
-        {
-          "book": "fanduel",
-          "decimal_odds": 176.0,
-          "american_odds": 17500,
-          "median_odds": 151.0,
-          "median_american": 15000,
-          "deviation_pct": 16.6,
-          "direction": "higher",
-          "player": "Tennessee Titans",
-          "book_display": "FanDuel"
         }
       ],
       "book_vigs": {
-        "FanDuel": 22.1,
+        "FanDuel": 21.9,
         "BetOnline": 20.9,
-        "BetRivers": 23.1,
+        "BetRivers": 23.2,
         "DraftKings": 22.3,
         "BetMGM": 22.3
       },
