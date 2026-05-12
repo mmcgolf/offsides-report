@@ -4,8 +4,8 @@
   "sport_key": "americanfootball_nfl_super_bowl_winner",
   "sport_group": "nfl",
   "event_date": "2027-02-14T23:36:00Z",
-  "days_to_resolution": 279,
-  "generated_at": "2026-05-11 15:52:19",
+  "days_to_resolution": 278,
+  "generated_at": "2026-05-12 15:36:14",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 3,
       "num_sharp_books": 1,
       "num_players": 32,
-      "min_edge_threshold": 5.44,
+      "min_edge_threshold": 5.43,
       "strong_picks": [
         {
           "player": "Atlanta Falcons",
@@ -57,9 +57,7 @@
           "value_tier": "STRONG VALUE",
           "kelly_pct": 0.02,
           "analytics": null
-        }
-      ],
-      "notable_picks": [
+        },
         {
           "player": "Kansas City Chiefs",
           "book": "fanduel",
@@ -70,10 +68,12 @@
           "implied_prob": 0.05882,
           "true_prob": 0.06521,
           "ev_pct": 10.86,
-          "value_tier": "Notable Value",
+          "value_tier": "STRONG VALUE",
           "kelly_pct": 0.17,
           "analytics": null
-        },
+        }
+      ],
+      "notable_picks": [
         {
           "player": "Minnesota Vikings",
           "book": "fanduel",
@@ -167,9 +167,9 @@
               "ev_pct": -14.31
             },
             "draftkings": {
-              "american": 1000,
-              "decimal": 11.0,
-              "ev_pct": -14.31
+              "american": 950,
+              "decimal": 10.5,
+              "ev_pct": -18.2
             },
             "betmgm": {
               "american": 950,
@@ -267,9 +267,9 @@
               "ev_pct": -16.68
             },
             "draftkings": {
-              "american": 1600,
-              "decimal": 17.0,
-              "ev_pct": -16.68
+              "american": 1500,
+              "decimal": 16.0,
+              "ev_pct": -21.58
             },
             "betmgm": {
               "american": 1600,
@@ -287,9 +287,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 1600,
-              "decimal": 17.0,
-              "ev_pct": -25.98
+              "american": 1700,
+              "decimal": 18.0,
+              "ev_pct": -21.63
             },
             "draftkings": {
               "american": 1600,
@@ -587,9 +587,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 4500,
-              "decimal": 46.0,
-              "ev_pct": -29.98
+              "american": 5000,
+              "decimal": 51.0,
+              "ev_pct": -22.37
             },
             "draftkings": {
               "american": 5000,
@@ -602,8 +602,8 @@
               "ev_pct": -37.59
             }
           },
-          "best_book": "draftkings",
-          "best_book_display": "DraftKings"
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
         },
         {
           "player": "Washington Commanders",
@@ -662,9 +662,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 6500,
-              "decimal": 66.0,
-              "ev_pct": -34.29
+              "american": 7000,
+              "decimal": 71.0,
+              "ev_pct": -29.32
             },
             "draftkings": {
               "american": 8000,
@@ -837,9 +837,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 22500,
-              "decimal": 226.0,
-              "ev_pct": -36.92
+              "american": 17500,
+              "decimal": 176.0,
+              "ev_pct": -50.87
             },
             "draftkings": {
               "american": 15000,
@@ -942,6 +942,17 @@
         },
         {
           "book": "betmgm",
+          "decimal_odds": 251.0,
+          "american_odds": 25000,
+          "median_odds": 201.0,
+          "median_american": 20000,
+          "deviation_pct": 24.9,
+          "direction": "higher",
+          "player": "Cleveland Browns",
+          "book_display": "BetMGM"
+        },
+        {
+          "book": "betmgm",
           "decimal_odds": 101.0,
           "american_odds": 10000,
           "median_odds": 81.0,
@@ -986,10 +997,10 @@
         }
       ],
       "book_vigs": {
-        "FanDuel": 22.7,
+        "FanDuel": 22.1,
         "BetOnline": 20.9,
         "BetRivers": 23.5,
-        "DraftKings": 22.3,
+        "DraftKings": 23.1,
         "BetMGM": 22.3
       },
       "nc_books_available": [
