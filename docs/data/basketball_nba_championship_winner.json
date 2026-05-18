@@ -4,8 +4,8 @@
   "sport_key": "basketball_nba_championship_winner",
   "sport_group": "nba",
   "event_date": "2026-06-10T21:00:00Z",
-  "days_to_resolution": 24,
-  "generated_at": "2026-05-17 14:21:55",
+  "days_to_resolution": 23,
+  "generated_at": "2026-05-18 16:17:28",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -13,72 +13,57 @@
       "num_books": 5,
       "num_nc_books": 3,
       "num_sharp_books": 1,
-      "num_players": 5,
-      "min_edge_threshold": 2.3,
-      "strong_picks": [
-        {
-          "player": "Cleveland Cavaliers",
-          "book": "betmgm",
-          "book_display": "BetMGM",
-          "american_odds": 8000,
-          "decimal_odds": 81.0,
-          "fair_american": 6794,
-          "implied_prob": 0.01235,
-          "true_prob": 0.0145,
-          "ev_pct": 17.49,
-          "value_tier": "STRONG VALUE",
-          "kelly_pct": 0.05,
-          "analytics": null
-        }
-      ],
+      "num_players": 4,
+      "min_edge_threshold": 2.28,
+      "strong_picks": [],
       "notable_picks": [],
-      "all_value_count": 1,
+      "all_value_count": 0,
       "odds_table": [
         {
           "player": "Oklahoma City Thunder",
-          "true_prob": 0.60769,
-          "fair_american": -155,
+          "true_prob": 0.60261,
+          "fair_american": -152,
           "analytics": null,
           "books": {
             "draftkings": {
               "american": -165,
               "decimal": 1.606,
-              "ev_pct": -2.4
+              "ev_pct": -3.22
             },
             "fanduel": {
               "american": -165,
               "decimal": 1.606,
-              "ev_pct": -2.4
+              "ev_pct": -3.22
             },
             "betmgm": {
-              "american": -165,
-              "decimal": 1.606,
-              "ev_pct": -2.4
+              "american": -160,
+              "decimal": 1.625,
+              "ev_pct": -2.08
             }
           },
-          "best_book": "draftkings",
-          "best_book_display": "DraftKings"
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
         },
         {
           "player": "San Antonio Spurs",
-          "true_prob": 0.22479,
-          "fair_american": 345,
+          "true_prob": 0.22718,
+          "fair_american": 340,
           "analytics": null,
           "books": {
             "draftkings": {
-              "american": 320,
-              "decimal": 4.2,
-              "ev_pct": -5.59
+              "american": 310,
+              "decimal": 4.1,
+              "ev_pct": -6.86
             },
             "fanduel": {
               "american": 310,
               "decimal": 4.1,
-              "ev_pct": -7.84
+              "ev_pct": -6.86
             },
             "betmgm": {
               "american": 300,
               "decimal": 4.0,
-              "ev_pct": -10.08
+              "ev_pct": -9.13
             }
           },
           "best_book": "draftkings",
@@ -86,49 +71,24 @@
         },
         {
           "player": "New York Knicks",
-          "true_prob": 0.12306,
-          "fair_american": 713,
+          "true_prob": 0.1352,
+          "fair_american": 640,
           "analytics": null,
           "books": {
             "draftkings": {
               "american": 550,
               "decimal": 6.5,
-              "ev_pct": -20.01
+              "ev_pct": -12.12
             },
             "fanduel": {
-              "american": 600,
-              "decimal": 7.0,
-              "ev_pct": -13.86
+              "american": 550,
+              "decimal": 6.5,
+              "ev_pct": -12.12
             },
             "betmgm": {
-              "american": 600,
-              "decimal": 7.0,
-              "ev_pct": -13.86
-            }
-          },
-          "best_book": "fanduel",
-          "best_book_display": "FanDuel"
-        },
-        {
-          "player": "Detroit Pistons",
-          "true_prob": 0.02996,
-          "fair_american": 3238,
-          "analytics": null,
-          "books": {
-            "draftkings": {
-              "american": 3000,
-              "decimal": 31.0,
-              "ev_pct": -7.12
-            },
-            "fanduel": {
-              "american": 2700,
-              "decimal": 28.0,
-              "ev_pct": -16.11
-            },
-            "betmgm": {
-              "american": 3000,
-              "decimal": 31.0,
-              "ev_pct": -7.12
+              "american": 550,
+              "decimal": 6.5,
+              "ev_pct": -12.12
             }
           },
           "best_book": "draftkings",
@@ -136,49 +96,37 @@
         },
         {
           "player": "Cleveland Cavaliers",
-          "true_prob": 0.0145,
-          "fair_american": 6794,
+          "true_prob": 0.03502,
+          "fair_american": 2756,
           "analytics": null,
           "books": {
             "draftkings": {
-              "american": 5000,
-              "decimal": 51.0,
-              "ev_pct": -26.03
+              "american": 2000,
+              "decimal": 21.0,
+              "ev_pct": -26.47
             },
             "fanduel": {
-              "american": 5500,
-              "decimal": 56.0,
-              "ev_pct": -18.77
+              "american": 2000,
+              "decimal": 21.0,
+              "ev_pct": -26.47
             },
             "betmgm": {
-              "american": 8000,
-              "decimal": 81.0,
-              "ev_pct": 17.49
+              "american": 2200,
+              "decimal": 23.0,
+              "ev_pct": -19.46
             }
           },
           "best_book": "betmgm",
           "best_book_display": "BetMGM"
         }
       ],
-      "outlier_summary": [
-        {
-          "book": "betmgm",
-          "decimal_odds": 81.0,
-          "american_odds": 8000,
-          "median_odds": 51.0,
-          "median_american": 5000,
-          "deviation_pct": 58.8,
-          "direction": "higher",
-          "player": "Cleveland Cavaliers",
-          "book_display": "BetMGM"
-        }
-      ],
+      "outlier_summary": [],
       "book_vigs": {
-        "DraftKings": 6.6,
-        "FanDuel": 6.3,
-        "BetRivers": 10.0,
-        "BetOnline": 8.1,
-        "BetMGM": 6.0
+        "DraftKings": 6.8,
+        "FanDuel": 6.8,
+        "BetRivers": 9.0,
+        "BetOnline": 7.0,
+        "BetMGM": 6.3
       },
       "nc_books_available": [
         "FanDuel",
