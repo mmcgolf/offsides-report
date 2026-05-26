@@ -4,8 +4,8 @@
   "sport_key": "basketball_nba_championship_winner",
   "sport_group": "nba",
   "event_date": "2026-06-10T21:00:00Z",
-  "days_to_resolution": 16,
-  "generated_at": "2026-05-25 15:45:30",
+  "days_to_resolution": 15,
+  "generated_at": "2026-05-26 16:36:36",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -13,132 +13,95 @@
       "num_books": 5,
       "num_nc_books": 3,
       "num_sharp_books": 1,
-      "num_players": 4,
-      "min_edge_threshold": 2.2,
+      "num_players": 3,
+      "min_edge_threshold": 2.18,
       "strong_picks": [],
       "notable_picks": [],
       "all_value_count": 0,
       "odds_table": [
         {
           "player": "Oklahoma City Thunder",
-          "true_prob": 0.50026,
-          "fair_american": -100,
+          "true_prob": 0.44453,
+          "fair_american": 125,
           "analytics": null,
           "books": {
             "draftkings": {
-              "american": -115,
-              "decimal": 1.87,
-              "ev_pct": -6.47
+              "american": 110,
+              "decimal": 2.1,
+              "ev_pct": -6.65
             },
             "fanduel": {
-              "american": -115,
-              "decimal": 1.87,
-              "ev_pct": -6.47
+              "american": 105,
+              "decimal": 2.05,
+              "ev_pct": -8.87
             },
             "betmgm": {
-              "american": -115,
-              "decimal": 1.87,
-              "ev_pct": -6.47
-            }
-          },
-          "best_book": "draftkings",
-          "best_book_display": "DraftKings"
-        },
-        {
-          "player": "New York Knicks",
-          "true_prob": 0.25359,
-          "fair_american": 294,
-          "analytics": null,
-          "books": {
-            "draftkings": {
-              "american": 260,
-              "decimal": 3.6,
-              "ev_pct": -8.71
-            },
-            "fanduel": {
-              "american": 280,
-              "decimal": 3.8,
-              "ev_pct": -3.64
-            },
-            "betmgm": {
-              "american": 260,
-              "decimal": 3.6,
-              "ev_pct": -8.71
-            }
-          },
-          "best_book": "fanduel",
-          "best_book_display": "FanDuel"
-        },
-        {
-          "player": "San Antonio Spurs",
-          "true_prob": 0.24274,
-          "fair_american": 312,
-          "analytics": null,
-          "books": {
-            "draftkings": {
-              "american": 300,
-              "decimal": 4.0,
-              "ev_pct": -2.9
-            },
-            "fanduel": {
-              "american": 270,
-              "decimal": 3.7,
-              "ev_pct": -10.19
-            },
-            "betmgm": {
-              "american": 275,
-              "decimal": 3.75,
-              "ev_pct": -8.97
-            }
-          },
-          "best_book": "draftkings",
-          "best_book_display": "DraftKings"
-        },
-        {
-          "player": "Cleveland Cavaliers",
-          "true_prob": 0.00341,
-          "fair_american": 29210,
-          "analytics": null,
-          "books": {
-            "draftkings": {
-              "american": 20000,
-              "decimal": 201.0,
-              "ev_pct": -31.42
-            },
-            "fanduel": {
-              "american": 20000,
-              "decimal": 201.0,
-              "ev_pct": -31.42
-            },
-            "betmgm": {
-              "american": 25000,
-              "decimal": 251.0,
-              "ev_pct": -14.37
+              "american": 115,
+              "decimal": 2.15,
+              "ev_pct": -4.43
             }
           },
           "best_book": "betmgm",
           "best_book_display": "BetMGM"
-        }
-      ],
-      "outlier_summary": [
+        },
         {
-          "book": "betmgm",
-          "decimal_odds": 251.0,
-          "american_odds": 25000,
-          "median_odds": 201.0,
-          "median_american": 20000,
-          "deviation_pct": 24.9,
-          "direction": "higher",
-          "player": "Cleveland Cavaliers",
-          "book_display": "BetMGM"
+          "player": "New York Knicks",
+          "true_prob": 0.3017,
+          "fair_american": 231,
+          "analytics": null,
+          "books": {
+            "draftkings": {
+              "american": 210,
+              "decimal": 3.1,
+              "ev_pct": -6.47
+            },
+            "fanduel": {
+              "american": 210,
+              "decimal": 3.1,
+              "ev_pct": -6.47
+            },
+            "betmgm": {
+              "american": 225,
+              "decimal": 3.25,
+              "ev_pct": -1.95
+            }
+          },
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
+        },
+        {
+          "player": "San Antonio Spurs",
+          "true_prob": 0.25377,
+          "fair_american": 294,
+          "analytics": null,
+          "books": {
+            "draftkings": {
+              "american": 270,
+              "decimal": 3.7,
+              "ev_pct": -6.1
+            },
+            "fanduel": {
+              "american": 270,
+              "decimal": 3.7,
+              "ev_pct": -6.1
+            },
+            "betmgm": {
+              "american": 260,
+              "decimal": 3.6,
+              "ev_pct": -8.64
+            }
+          },
+          "best_book": "draftkings",
+          "best_book_display": "DraftKings"
         }
       ],
+      "outlier_summary": [],
       "book_vigs": {
-        "DraftKings": 6.8,
-        "FanDuel": 7.3,
-        "BetRivers": 9.8,
-        "BetOnline": 7.3,
-        "BetMGM": 8.3
+        "DraftKings": 6.9,
+        "FanDuel": 8.1,
+        "BetRivers": 7.6,
+        "BetOnline": 6.2,
+        "BetMGM": 5.1
       },
       "nc_books_available": [
         "FanDuel",

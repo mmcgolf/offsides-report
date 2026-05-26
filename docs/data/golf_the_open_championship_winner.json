@@ -4,8 +4,8 @@
   "sport_key": "golf_the_open_championship_winner",
   "sport_group": "golf",
   "event_date": "2026-07-16T05:00:00Z",
-  "days_to_resolution": 51,
-  "generated_at": "2026-05-25 15:45:30",
+  "days_to_resolution": 50,
+  "generated_at": "2026-05-26 16:36:36",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 3,
       "num_sharp_books": 2,
       "num_players": 73,
-      "min_edge_threshold": 2.63,
+      "min_edge_threshold": 2.62,
       "strong_picks": [
         {
           "player": "Min Woo Lee",
@@ -29,6 +29,29 @@
           "value_tier": "STRONG VALUE",
           "kelly_pct": 0.05,
           "analytics": null
+        },
+        {
+          "player": "Scottie Scheffler",
+          "book": "fanduel",
+          "book_display": "FanDuel",
+          "american_odds": 650,
+          "decimal_odds": 7.5,
+          "fair_american": 535,
+          "implied_prob": 0.13333,
+          "true_prob": 0.15754,
+          "ev_pct": 18.16,
+          "value_tier": "STRONG VALUE",
+          "kelly_pct": 0.7,
+          "analytics": {
+            "name": "Scottie Scheffler",
+            "dg_rank": 1,
+            "dg_skill": 2.85,
+            "sg_total": 2.42,
+            "course_fit": 8.5,
+            "owgr": 1,
+            "trend_rank": 1,
+            "trend_sg20": 2.55
+          }
         },
         {
           "player": "Brooks Koepka",
@@ -80,29 +103,6 @@
           "value_tier": "STRONG VALUE",
           "kelly_pct": 0.01,
           "analytics": null
-        },
-        {
-          "player": "Scottie Scheffler",
-          "book": "fanduel",
-          "book_display": "FanDuel",
-          "american_odds": 600,
-          "decimal_odds": 7.0,
-          "fair_american": 535,
-          "implied_prob": 0.14286,
-          "true_prob": 0.15754,
-          "ev_pct": 10.28,
-          "value_tier": "STRONG VALUE",
-          "kelly_pct": 0.43,
-          "analytics": {
-            "name": "Scottie Scheffler",
-            "dg_rank": 1,
-            "dg_skill": 2.85,
-            "sg_total": 2.42,
-            "course_fit": 8.5,
-            "owgr": 1,
-            "trend_rank": 1,
-            "trend_sg20": 2.55
-          }
         },
         {
           "player": "Haotong Li",
@@ -171,9 +171,9 @@
               "ev_pct": -29.11
             },
             "fanduel": {
-              "american": 600,
-              "decimal": 7.0,
-              "ev_pct": 10.28
+              "american": 650,
+              "decimal": 7.5,
+              "ev_pct": 18.16
             }
           },
           "best_book": "fanduel",
@@ -693,13 +693,13 @@
               "ev_pct": -56.32
             },
             "fanduel": {
-              "american": 2500,
-              "decimal": 26.0,
-              "ev_pct": -63.37
+              "american": 4500,
+              "decimal": 46.0,
+              "ev_pct": -35.19
             }
           },
-          "best_book": "draftkings",
-          "best_book_display": "DraftKings"
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
         },
         {
           "player": "Russell Henley",
@@ -2068,6 +2068,17 @@
           "book_display": "DraftKings"
         },
         {
+          "book": "fanduel",
+          "decimal_odds": 7.5,
+          "american_odds": 650,
+          "median_odds": 5.5,
+          "median_american": 450,
+          "deviation_pct": 36.4,
+          "direction": "higher",
+          "player": "Scottie Scheffler",
+          "book_display": "FanDuel"
+        },
+        {
           "book": "draftkings",
           "decimal_odds": 201.0,
           "american_odds": 20000,
@@ -2077,17 +2088,6 @@
           "direction": "higher",
           "player": "Sahith Theegala",
           "book_display": "DraftKings"
-        },
-        {
-          "book": "fanduel",
-          "decimal_odds": 7.0,
-          "american_odds": 600,
-          "median_odds": 5.5,
-          "median_american": 450,
-          "deviation_pct": 27.3,
-          "direction": "higher",
-          "player": "Scottie Scheffler",
-          "book_display": "FanDuel"
         },
         {
           "book": "draftkings",
@@ -2173,7 +2173,7 @@
         "BetOnline": 136.5,
         "BetMGM": 65.5,
         "DraftKings": 57.7,
-        "FanDuel": 57.7
+        "FanDuel": 55.1
       },
       "nc_books_available": [
         "FanDuel",
