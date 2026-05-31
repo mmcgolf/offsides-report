@@ -4,8 +4,8 @@
   "sport_key": "golf_the_open_championship_winner",
   "sport_group": "golf",
   "event_date": "2026-07-16T05:00:00Z",
-  "days_to_resolution": 46,
-  "generated_at": "2026-05-30 14:23:41",
+  "days_to_resolution": 45,
+  "generated_at": "2026-05-31 14:25:22",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 3,
       "num_sharp_books": 2,
       "num_players": 73,
-      "min_edge_threshold": 2.57,
+      "min_edge_threshold": 2.55,
       "strong_picks": [
         {
           "player": "Min Woo Lee",
@@ -133,9 +133,32 @@
             "trend_rank": 1,
             "trend_sg20": 2.55
           }
+        },
+        {
+          "player": "Cameron Young",
+          "book": "fanduel",
+          "book_display": "FanDuel",
+          "american_odds": 2200,
+          "decimal_odds": 23.0,
+          "fair_american": 2131,
+          "implied_prob": 0.04348,
+          "true_prob": 0.04482,
+          "ev_pct": 3.09,
+          "value_tier": "Notable Value",
+          "kelly_pct": 0.04,
+          "analytics": {
+            "name": "Cameron Young",
+            "dg_rank": 15,
+            "dg_skill": 1.25,
+            "sg_total": 1.05,
+            "course_fit": 6.5,
+            "owgr": 18,
+            "trend_rank": 20,
+            "trend_sg20": 0.95
+          }
         }
       ],
-      "all_value_count": 7,
+      "all_value_count": 8,
       "odds_table": [
         {
           "player": "Scottie Scheffler",
@@ -231,13 +254,13 @@
               "ev_pct": -5.87
             },
             "fanduel": {
-              "american": 2000,
-              "decimal": 21.0,
-              "ev_pct": -5.87
+              "american": 2200,
+              "decimal": 23.0,
+              "ev_pct": 3.09
             }
           },
-          "best_book": "draftkings",
-          "best_book_display": "DraftKings"
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
         },
         {
           "player": "Jon Rahm",
@@ -853,9 +876,9 @@
               "ev_pct": -21.31
             },
             "fanduel": {
-              "american": 6500,
-              "decimal": 66.0,
-              "ev_pct": -35.88
+              "american": 5000,
+              "decimal": 51.0,
+              "ev_pct": -50.46
             }
           },
           "best_book": "draftkings",
