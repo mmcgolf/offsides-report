@@ -4,8 +4,8 @@
   "sport_key": "americanfootball_nfl_super_bowl_winner",
   "sport_group": "nfl",
   "event_date": "2027-02-14T23:36:00Z",
-  "days_to_resolution": 257,
-  "generated_at": "2026-06-02 17:14:08",
+  "days_to_resolution": 256,
+  "generated_at": "2026-06-03 17:56:06",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 3,
       "num_sharp_books": 1,
       "num_players": 32,
-      "min_edge_threshold": 5.17,
+      "min_edge_threshold": 5.16,
       "strong_picks": [
         {
           "player": "Las Vegas Raiders",
@@ -73,6 +73,20 @@
           "analytics": null
         },
         {
+          "player": "Kansas City Chiefs",
+          "book": "fanduel",
+          "book_display": "FanDuel",
+          "american_odds": 1700,
+          "decimal_odds": 18.0,
+          "fair_american": 1436,
+          "implied_prob": 0.05556,
+          "true_prob": 0.06512,
+          "ev_pct": 17.22,
+          "value_tier": "STRONG VALUE",
+          "kelly_pct": 0.25,
+          "analytics": null
+        },
+        {
           "player": "Atlanta Falcons",
           "book": "draftkings",
           "book_display": "DraftKings",
@@ -84,20 +98,6 @@
           "ev_pct": 12.3,
           "value_tier": "STRONG VALUE",
           "kelly_pct": 0.03,
-          "analytics": null
-        },
-        {
-          "player": "Kansas City Chiefs",
-          "book": "fanduel",
-          "book_display": "FanDuel",
-          "american_odds": 1600,
-          "decimal_odds": 17.0,
-          "fair_american": 1436,
-          "implied_prob": 0.05882,
-          "true_prob": 0.06512,
-          "ev_pct": 10.71,
-          "value_tier": "STRONG VALUE",
-          "kelly_pct": 0.17,
           "analytics": null
         }
       ],
@@ -116,9 +116,9 @@
               "ev_pct": -18.17
             },
             "draftkings": {
-              "american": 600,
-              "decimal": 7.0,
-              "ev_pct": -11.87
+              "american": 550,
+              "decimal": 6.5,
+              "ev_pct": -18.17
             },
             "betmgm": {
               "american": 500,
@@ -126,8 +126,8 @@
               "ev_pct": -24.46
             }
           },
-          "best_book": "draftkings",
-          "best_book_display": "DraftKings"
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
         },
         {
           "player": "Baltimore Ravens",
@@ -161,9 +161,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 1000,
-              "decimal": 11.0,
-              "ev_pct": -21.99
+              "american": 1100,
+              "decimal": 12.0,
+              "ev_pct": -14.9
             },
             "draftkings": {
               "american": 1000,
@@ -211,9 +211,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 1600,
-              "decimal": 17.0,
-              "ev_pct": 10.71
+              "american": 1700,
+              "decimal": 18.0,
+              "ev_pct": 17.22
             },
             "draftkings": {
               "american": 1500,
@@ -1040,10 +1040,10 @@
         }
       ],
       "book_vigs": {
-        "FanDuel": 22.3,
+        "FanDuel": 21.3,
         "BetOnline": 21.0,
         "BetRivers": 21.2,
-        "DraftKings": 22.9,
+        "DraftKings": 24.0,
         "BetMGM": 21.0
       },
       "nc_books_available": [
