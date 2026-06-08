@@ -4,8 +4,8 @@
   "sport_key": "basketball_nba_championship_winner",
   "sport_group": "nba",
   "event_date": "2026-06-10T21:00:00Z",
-  "days_to_resolution": 3,
-  "generated_at": "2026-06-07 14:46:20",
+  "days_to_resolution": 2,
+  "generated_at": "2026-06-08 16:43:27",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,66 +14,66 @@
       "num_nc_books": 3,
       "num_sharp_books": 0,
       "num_players": 2,
-      "min_edge_threshold": 2.04,
+      "min_edge_threshold": 2.02,
       "strong_picks": [],
       "notable_picks": [],
       "all_value_count": 0,
       "odds_table": [
         {
           "player": "New York Knicks",
-          "true_prob": 0.81917,
-          "fair_american": -453,
+          "true_prob": 0.81356,
+          "fair_american": -436,
           "analytics": null,
           "books": {
             "draftkings": {
               "american": -500,
               "decimal": 1.2,
-              "ev_pct": -1.7
+              "ev_pct": -2.37
             },
             "fanduel": {
-              "american": -500,
-              "decimal": 1.2,
-              "ev_pct": -1.7
+              "american": -430,
+              "decimal": 1.233,
+              "ev_pct": 0.28
             },
             "betmgm": {
               "american": -500,
               "decimal": 1.2,
-              "ev_pct": -1.7
+              "ev_pct": -2.37
             }
           },
-          "best_book": "draftkings",
-          "best_book_display": "DraftKings"
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
         },
         {
           "player": "San Antonio Spurs",
-          "true_prob": 0.18083,
-          "fair_american": 453,
+          "true_prob": 0.18644,
+          "fair_american": 436,
           "analytics": null,
           "books": {
             "draftkings": {
               "american": 380,
               "decimal": 4.8,
-              "ev_pct": -13.2
+              "ev_pct": -10.51
             },
             "fanduel": {
-              "american": 385,
-              "decimal": 4.85,
-              "ev_pct": -12.3
+              "american": 340,
+              "decimal": 4.4,
+              "ev_pct": -17.97
             },
             "betmgm": {
               "american": 375,
               "decimal": 4.75,
-              "ev_pct": -14.11
+              "ev_pct": -11.44
             }
           },
-          "best_book": "fanduel",
-          "best_book_display": "FanDuel"
+          "best_book": "draftkings",
+          "best_book_display": "DraftKings"
         }
       ],
       "outlier_summary": [],
       "book_vigs": {
         "DraftKings": 4.2,
-        "FanDuel": 4.0,
+        "FanDuel": 3.9,
         "BetRivers": 4.6,
         "BetMGM": 4.4
       },
