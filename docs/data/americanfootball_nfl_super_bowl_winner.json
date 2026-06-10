@@ -4,8 +4,8 @@
   "sport_key": "americanfootball_nfl_super_bowl_winner",
   "sport_group": "nfl",
   "event_date": "2027-02-14T23:35:00Z",
-  "days_to_resolution": 250,
-  "generated_at": "2026-06-09 15:49:41",
+  "days_to_resolution": 249,
+  "generated_at": "2026-06-10 16:29:00",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 3,
       "num_sharp_books": 1,
       "num_players": 32,
-      "min_edge_threshold": 5.08,
+      "min_edge_threshold": 5.07,
       "strong_picks": [
         {
           "player": "Las Vegas Raiders",
@@ -45,6 +45,20 @@
           "analytics": null
         },
         {
+          "player": "Kansas City Chiefs",
+          "book": "fanduel",
+          "book_display": "FanDuel",
+          "american_odds": 1800,
+          "decimal_odds": 19.0,
+          "fair_american": 1447,
+          "implied_prob": 0.05263,
+          "true_prob": 0.06463,
+          "ev_pct": 22.79,
+          "value_tier": "STRONG VALUE",
+          "kelly_pct": 0.32,
+          "analytics": null
+        },
+        {
           "player": "Atlanta Falcons",
           "book": "draftkings",
           "book_display": "DraftKings",
@@ -70,20 +84,6 @@
           "ev_pct": 18.23,
           "value_tier": "STRONG VALUE",
           "kelly_pct": 0.02,
-          "analytics": null
-        },
-        {
-          "player": "Kansas City Chiefs",
-          "book": "fanduel",
-          "book_display": "FanDuel",
-          "american_odds": 1700,
-          "decimal_odds": 18.0,
-          "fair_american": 1447,
-          "implied_prob": 0.05556,
-          "true_prob": 0.06463,
-          "ev_pct": 16.33,
-          "value_tier": "STRONG VALUE",
-          "kelly_pct": 0.24,
           "analytics": null
         },
         {
@@ -211,9 +211,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 1700,
-              "decimal": 18.0,
-              "ev_pct": 16.33
+              "american": 1800,
+              "decimal": 19.0,
+              "ev_pct": 22.79
             },
             "draftkings": {
               "american": 1600,
@@ -636,9 +636,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 7000,
-              "decimal": 71.0,
-              "ev_pct": -20.35
+              "american": 7500,
+              "decimal": 76.0,
+              "ev_pct": -14.74
             },
             "draftkings": {
               "american": 7000,
@@ -1015,10 +1015,21 @@
           "direction": "higher",
           "player": "Indianapolis Colts",
           "book_display": "DraftKings"
+        },
+        {
+          "book": "fanduel",
+          "decimal_odds": 19.0,
+          "american_odds": 1800,
+          "median_odds": 16.0,
+          "median_american": 1500,
+          "deviation_pct": 18.8,
+          "direction": "higher",
+          "player": "Kansas City Chiefs",
+          "book_display": "FanDuel"
         }
       ],
       "book_vigs": {
-        "FanDuel": 23.1,
+        "FanDuel": 22.7,
         "BetOnline": 21.9,
         "BetRivers": 22.4,
         "DraftKings": 22.5,
