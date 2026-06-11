@@ -3,9 +3,9 @@
   "event_name": "NBA Championship",
   "sport_key": "basketball_nba_championship_winner",
   "sport_group": "nba",
-  "event_date": "2026-06-30T22:00:00Z",
-  "days_to_resolution": 20,
-  "generated_at": "2026-06-10 16:29:00",
+  "event_date": "2026-06-11T09:00:00Z",
+  "days_to_resolution": 1,
+  "generated_at": "2026-06-11 16:44:04",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,57 +14,57 @@
       "num_nc_books": 2,
       "num_sharp_books": 0,
       "num_players": 2,
-      "min_edge_threshold": 2.25,
+      "min_edge_threshold": 2.01,
       "strong_picks": [],
       "notable_picks": [],
       "all_value_count": 0,
       "odds_table": [
         {
           "player": "New York Knicks",
-          "true_prob": 0.63149,
-          "fair_american": -171,
+          "true_prob": 0.82792,
+          "fair_american": -481,
           "analytics": null,
           "books": {
             "draftkings": {
-              "american": -190,
-              "decimal": 1.526,
-              "ev_pct": -3.61
+              "american": -500,
+              "decimal": 1.2,
+              "ev_pct": -0.65
             },
             "betmgm": {
-              "american": -185,
-              "decimal": 1.541,
-              "ev_pct": -2.72
-            }
-          },
-          "best_book": "betmgm",
-          "best_book_display": "BetMGM"
-        },
-        {
-          "player": "San Antonio Spurs",
-          "true_prob": 0.36851,
-          "fair_american": 171,
-          "analytics": null,
-          "books": {
-            "draftkings": {
-              "american": 160,
-              "decimal": 2.6,
-              "ev_pct": -4.19
-            },
-            "betmgm": {
-              "american": 155,
-              "decimal": 2.55,
-              "ev_pct": -6.03
+              "american": -550,
+              "decimal": 1.182,
+              "ev_pct": -2.15
             }
           },
           "best_book": "draftkings",
           "best_book_display": "DraftKings"
+        },
+        {
+          "player": "San Antonio Spurs",
+          "true_prob": 0.17208,
+          "fair_american": 481,
+          "analytics": null,
+          "books": {
+            "draftkings": {
+              "american": 380,
+              "decimal": 4.8,
+              "ev_pct": -17.4
+            },
+            "betmgm": {
+              "american": 400,
+              "decimal": 5.0,
+              "ev_pct": -13.96
+            }
+          },
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
         }
       ],
       "outlier_summary": [],
       "book_vigs": {
-        "DraftKings": 4.0,
-        "BetRivers": 4.5,
-        "BetMGM": 4.1
+        "DraftKings": 4.2,
+        "BetRivers": 4.8,
+        "BetMGM": 4.6
       },
       "nc_books_available": [
         "DraftKings",
