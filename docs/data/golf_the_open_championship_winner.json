@@ -4,8 +4,8 @@
   "sport_key": "golf_the_open_championship_winner",
   "sport_group": "golf",
   "event_date": "2026-07-16T05:00:00Z",
-  "days_to_resolution": 32,
-  "generated_at": "2026-06-13 14:55:24",
+  "days_to_resolution": 31,
+  "generated_at": "2026-06-14 15:03:58",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 3,
       "num_sharp_books": 2,
       "num_players": 74,
-      "min_edge_threshold": 2.39,
+      "min_edge_threshold": 2.38,
       "strong_picks": [
         {
           "player": "J.T. Poston",
@@ -1597,6 +1597,11 @@
               "american": 25000,
               "decimal": 251.0,
               "ev_pct": 20.85
+            },
+            "fanduel": {
+              "american": 10000,
+              "decimal": 101.0,
+              "ev_pct": -51.37
             }
           },
           "best_book": "draftkings",
@@ -2020,7 +2025,7 @@
           "best_book_display": "BetMGM"
         },
         {
-          "player": "Nico Echavarria",
+          "player": "Nicolas Echavarria",
           "true_prob": 0.00231,
           "fair_american": 43157,
           "analytics": null,
@@ -2029,10 +2034,15 @@
               "american": 25000,
               "decimal": 251.0,
               "ev_pct": -41.98
+            },
+            "draftkings": {
+              "american": 35000,
+              "decimal": 351.0,
+              "ev_pct": -18.86
             }
           },
-          "best_book": "betmgm",
-          "best_book_display": "BetMGM"
+          "best_book": "draftkings",
+          "best_book_display": "DraftKings"
         }
       ],
       "outlier_summary": [
@@ -2203,12 +2213,12 @@
         }
       ],
       "book_vigs": {
-        "BetRivers": 61.3,
+        "BetRivers": 61.9,
         "LowVig": 128.6,
         "BetOnline": 128.6,
-        "BetMGM": 66.2,
+        "BetMGM": 66.8,
         "DraftKings": 57.7,
-        "FanDuel": 59.9
+        "FanDuel": 61.2
       },
       "nc_books_available": [
         "FanDuel",
