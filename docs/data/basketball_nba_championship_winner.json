@@ -4,8 +4,8 @@
   "sport_key": "basketball_nba_championship_winner",
   "sport_group": "nba",
   "event_date": "2027-06-19T00:40:00Z",
-  "days_to_resolution": 337,
-  "generated_at": "2026-07-16 14:52:03",
+  "days_to_resolution": 336,
+  "generated_at": "2026-07-17 14:24:29",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 1,
       "num_sharp_books": 1,
       "num_players": 30,
-      "min_edge_threshold": 6.15,
+      "min_edge_threshold": 6.14,
       "strong_picks": [
         {
           "player": "Charlotte Hornets",
@@ -84,9 +84,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 250,
-              "decimal": 3.5,
-              "ev_pct": -14.59
+              "american": 260,
+              "decimal": 3.6,
+              "ev_pct": -12.15
             }
           },
           "best_book": "fanduel",
@@ -369,9 +369,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 12500,
-              "decimal": 126.0,
-              "ev_pct": -38.69
+              "american": 15000,
+              "decimal": 151.0,
+              "ev_pct": -26.52
             }
           },
           "best_book": "fanduel",
@@ -384,9 +384,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 20000,
-              "decimal": 201.0,
-              "ev_pct": -41.52
+              "american": 15000,
+              "decimal": 151.0,
+              "ev_pct": -56.06
             }
           },
           "best_book": "fanduel",
@@ -429,9 +429,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 75000,
-              "decimal": 751.0,
-              "ev_pct": -20.07
+              "american": 70000,
+              "decimal": 701.0,
+              "ev_pct": -25.39
             }
           },
           "best_book": "fanduel",
@@ -531,17 +531,6 @@
       "outlier_summary": [
         {
           "book": "fanduel",
-          "decimal_odds": 751.0,
-          "american_odds": 75000,
-          "median_odds": 501.0,
-          "median_american": 50000,
-          "deviation_pct": 49.9,
-          "direction": "higher",
-          "player": "Los Angeles Clippers",
-          "book_display": "FanDuel"
-        },
-        {
-          "book": "fanduel",
           "decimal_odds": 301.0,
           "american_odds": 30000,
           "median_odds": 201.0,
@@ -549,6 +538,17 @@
           "deviation_pct": 49.8,
           "direction": "higher",
           "player": "Utah Jazz",
+          "book_display": "FanDuel"
+        },
+        {
+          "book": "fanduel",
+          "decimal_odds": 701.0,
+          "american_odds": 70000,
+          "median_odds": 501.0,
+          "median_american": 50000,
+          "deviation_pct": 39.9,
+          "direction": "higher",
+          "player": "Los Angeles Clippers",
           "book_display": "FanDuel"
         },
         {
@@ -597,7 +597,7 @@
         }
       ],
       "book_vigs": {
-        "FanDuel": 23.3,
+        "FanDuel": 22.6,
         "BetRivers": 20.4,
         "BetOnline": 26.0
       },
