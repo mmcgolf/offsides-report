@@ -4,8 +4,8 @@
   "sport_key": "americanfootball_ncaaf_championship_winner",
   "sport_group": "ncaaf",
   "event_date": "2027-01-26T00:30:00Z",
-  "days_to_resolution": 190,
-  "generated_at": "2026-07-19 14:19:51",
+  "days_to_resolution": 189,
+  "generated_at": "2026-07-20 15:01:12",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,22 +14,8 @@
       "num_nc_books": 3,
       "num_sharp_books": 1,
       "num_players": 135,
-      "min_edge_threshold": 4.34,
+      "min_edge_threshold": 4.33,
       "strong_picks": [
-        {
-          "player": "Georgia Tech Yellow Jackets",
-          "book": "fanduel",
-          "book_display": "FanDuel",
-          "american_odds": 75000,
-          "decimal_odds": 751.0,
-          "fair_american": 61654,
-          "implied_prob": 0.00133,
-          "true_prob": 0.00162,
-          "ev_pct": 21.61,
-          "value_tier": "STRONG VALUE",
-          "kelly_pct": 0.01,
-          "analytics": null
-        },
         {
           "player": "Colorado Buffaloes",
           "book": "fanduel",
@@ -40,6 +26,20 @@
           "implied_prob": 0.0008,
           "true_prob": 0.00091,
           "ev_pct": 14.15,
+          "value_tier": "STRONG VALUE",
+          "kelly_pct": 0.0,
+          "analytics": null
+        },
+        {
+          "player": "Georgia Tech Yellow Jackets",
+          "book": "fanduel",
+          "book_display": "FanDuel",
+          "american_odds": 70000,
+          "decimal_odds": 701.0,
+          "fair_american": 61654,
+          "implied_prob": 0.00143,
+          "true_prob": 0.00162,
+          "ev_pct": 13.52,
           "value_tier": "STRONG VALUE",
           "kelly_pct": 0.0,
           "analytics": null
@@ -139,9 +139,9 @@
               "ev_pct": -12.06
             },
             "draftkings": {
-              "american": 750,
-              "decimal": 8.5,
-              "ev_pct": -12.06
+              "american": 670,
+              "decimal": 7.7,
+              "ev_pct": -20.34
             },
             "betmgm": {
               "american": 750,
@@ -164,9 +164,9 @@
               "ev_pct": -13.42
             },
             "draftkings": {
-              "american": 800,
-              "decimal": 9.0,
-              "ev_pct": -13.42
+              "american": 750,
+              "decimal": 8.5,
+              "ev_pct": -18.23
             },
             "betmgm": {
               "american": 800,
@@ -309,9 +309,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 2500,
-              "decimal": 26.0,
-              "ev_pct": -23.83
+              "american": 2200,
+              "decimal": 23.0,
+              "ev_pct": -32.62
             },
             "draftkings": {
               "american": 3000,
@@ -709,9 +709,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 17500,
-              "decimal": 176.0,
-              "ev_pct": -38.03
+              "american": 15000,
+              "decimal": 151.0,
+              "ev_pct": -46.83
             },
             "draftkings": {
               "american": 12000,
@@ -759,9 +759,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 15000,
-              "decimal": 151.0,
-              "ev_pct": -61.47
+              "american": 17500,
+              "decimal": 176.0,
+              "ev_pct": -55.09
             },
             "draftkings": {
               "american": 11000,
@@ -809,9 +809,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 75000,
-              "decimal": 751.0,
-              "ev_pct": 21.61
+              "american": 70000,
+              "decimal": 701.0,
+              "ev_pct": 13.52
             },
             "draftkings": {
               "american": 40000,
@@ -909,9 +909,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 30000,
-              "decimal": 301.0,
-              "ev_pct": -51.26
+              "american": 35000,
+              "decimal": 351.0,
+              "ev_pct": -43.16
             },
             "draftkings": {
               "american": 25000,
@@ -1269,9 +1269,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 100000,
-              "decimal": 1001.0,
-              "ev_pct": -42.1
+              "american": 75000,
+              "decimal": 751.0,
+              "ev_pct": -56.56
             },
             "draftkings": {
               "american": 20000,
@@ -1334,9 +1334,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 60000,
-              "decimal": 601.0,
-              "ev_pct": -65.24
+              "american": 50000,
+              "decimal": 501.0,
+              "ev_pct": -71.02
             },
             "draftkings": {
               "american": 80000,
@@ -1399,9 +1399,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 70000,
-              "decimal": 701.0,
-              "ev_pct": -70.66
+              "american": 75000,
+              "decimal": 751.0,
+              "ev_pct": -68.57
             },
             "draftkings": {
               "american": 40000,
@@ -2387,11 +2387,11 @@
         },
         {
           "book": "fanduel",
-          "decimal_odds": 751.0,
-          "american_odds": 75000,
+          "decimal_odds": 701.0,
+          "american_odds": 70000,
           "median_odds": 401.0,
           "median_american": 40000,
-          "deviation_pct": 87.3,
+          "deviation_pct": 74.8,
           "direction": "higher",
           "player": "Georgia Tech Yellow Jackets",
           "book_display": "FanDuel"
@@ -2503,17 +2503,6 @@
           "median_american": 75000,
           "deviation_pct": 33.3,
           "direction": "higher",
-          "player": "Illinois Fighting Illini",
-          "book_display": "FanDuel"
-        },
-        {
-          "book": "fanduel",
-          "decimal_odds": 1001.0,
-          "american_odds": 100000,
-          "median_odds": 751.0,
-          "median_american": 75000,
-          "deviation_pct": 33.3,
-          "direction": "higher",
           "player": "Kansas Jayhawks",
           "book_display": "FanDuel"
         },
@@ -2538,11 +2527,22 @@
           "direction": "higher",
           "player": "Air Force Falcons",
           "book_display": "FanDuel"
+        },
+        {
+          "book": "fanduel",
+          "decimal_odds": 1251.0,
+          "american_odds": 125000,
+          "median_odds": 1001.0,
+          "median_american": 100000,
+          "deviation_pct": 25.0,
+          "direction": "higher",
+          "player": "Army Black Knights",
+          "book_display": "FanDuel"
         }
       ],
       "book_vigs": {
-        "FanDuel": 36.7,
-        "DraftKings": 39.4,
+        "FanDuel": 37.2,
+        "DraftKings": 41.2,
         "BetMGM": 45.6,
         "BetOnline": 42.5
       },
