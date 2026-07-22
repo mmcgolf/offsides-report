@@ -4,17 +4,17 @@
   "sport_key": "americanfootball_nfl_super_bowl_winner",
   "sport_group": "nfl",
   "event_date": "2027-02-14T23:35:00Z",
-  "days_to_resolution": 208,
-  "generated_at": "2026-07-21 14:55:01",
+  "days_to_resolution": 207,
+  "generated_at": "2026-07-22 14:55:23",
   "markets": {
     "outrights": {
       "market_key": "outrights",
       "market_name": "Futures / Winner",
-      "num_books": 5,
+      "num_books": 6,
       "num_nc_books": 3,
       "num_sharp_books": 1,
       "num_players": 32,
-      "min_edge_threshold": 4.56,
+      "min_edge_threshold": 4.55,
       "strong_picks": [
         {
           "player": "Las Vegas Raiders",
@@ -904,17 +904,6 @@
           "book_display": "FanDuel"
         },
         {
-          "book": "fanduel",
-          "decimal_odds": 751.0,
-          "american_odds": 75000,
-          "median_odds": 401.0,
-          "median_american": 40000,
-          "deviation_pct": 87.3,
-          "direction": "higher",
-          "player": "Miami Dolphins",
-          "book_display": "FanDuel"
-        },
-        {
           "book": "betmgm",
           "decimal_odds": 251.0,
           "american_odds": 25000,
@@ -924,17 +913,6 @@
           "direction": "higher",
           "player": "Tennessee Titans",
           "book_display": "BetMGM"
-        },
-        {
-          "book": "draftkings",
-          "decimal_odds": 131.0,
-          "american_odds": 13000,
-          "median_odds": 81.0,
-          "median_american": 8000,
-          "deviation_pct": 61.7,
-          "direction": "higher",
-          "player": "Atlanta Falcons",
-          "book_display": "DraftKings"
         },
         {
           "book": "fanduel",
@@ -948,23 +926,34 @@
           "book_display": "FanDuel"
         },
         {
-          "book": "betmgm",
-          "decimal_odds": 501.0,
-          "american_odds": 50000,
-          "median_odds": 401.0,
-          "median_american": 40000,
-          "deviation_pct": 24.9,
+          "book": "draftkings",
+          "decimal_odds": 131.0,
+          "american_odds": 13000,
+          "median_odds": 86.0,
+          "median_american": 8500,
+          "deviation_pct": 52.3,
+          "direction": "higher",
+          "player": "Atlanta Falcons",
+          "book_display": "DraftKings"
+        },
+        {
+          "book": "fanduel",
+          "decimal_odds": 751.0,
+          "american_odds": 75000,
+          "median_odds": 501.0,
+          "median_american": 50000,
+          "deviation_pct": 49.9,
           "direction": "higher",
           "player": "Miami Dolphins",
-          "book_display": "BetMGM"
+          "book_display": "FanDuel"
         },
         {
           "book": "betmgm",
           "decimal_odds": 101.0,
           "american_odds": 10000,
-          "median_odds": 81.0,
-          "median_american": 8000,
-          "deviation_pct": 24.7,
+          "median_odds": 86.0,
+          "median_american": 8500,
+          "deviation_pct": 17.4,
           "direction": "higher",
           "player": "Atlanta Falcons",
           "book_display": "BetMGM"
@@ -973,9 +962,9 @@
           "book": "betmgm",
           "decimal_odds": 101.0,
           "american_odds": 10000,
-          "median_odds": 81.0,
-          "median_american": 8000,
-          "deviation_pct": 24.7,
+          "median_odds": 86.0,
+          "median_american": 8500,
+          "deviation_pct": 17.4,
           "direction": "higher",
           "player": "Carolina Panthers",
           "book_display": "BetMGM"
@@ -986,6 +975,7 @@
         "BetOnline": 21.0,
         "BetRivers": 22.4,
         "DraftKings": 22.7,
+        "Bovada": 18.0,
         "BetMGM": 20.0
       },
       "nc_books_available": [
