@@ -4,8 +4,8 @@
   "sport_key": "americanfootball_nfl_super_bowl_winner",
   "sport_group": "nfl",
   "event_date": "2027-02-14T23:35:00Z",
-  "days_to_resolution": 200,
-  "generated_at": "2026-07-29 15:04:14",
+  "days_to_resolution": 199,
+  "generated_at": "2026-07-30 15:01:37",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,20 +14,20 @@
       "num_nc_books": 3,
       "num_sharp_books": 1,
       "num_players": 32,
-      "min_edge_threshold": 4.47,
+      "min_edge_threshold": 4.45,
       "strong_picks": [
         {
           "player": "Miami Dolphins",
           "book": "fanduel",
           "book_display": "FanDuel",
-          "american_odds": 100000,
-          "decimal_odds": 1001.0,
+          "american_odds": 75000,
+          "decimal_odds": 751.0,
           "fair_american": 58394,
-          "implied_prob": 0.001,
+          "implied_prob": 0.00133,
           "true_prob": 0.00171,
-          "ev_pct": 71.13,
+          "ev_pct": 28.39,
           "value_tier": "STRONG VALUE",
-          "kelly_pct": 0.02,
+          "kelly_pct": 0.01,
           "analytics": null
         },
         {
@@ -130,9 +130,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 1200,
-              "decimal": 13.0,
-              "ev_pct": -7.36
+              "american": 1100,
+              "decimal": 12.0,
+              "ev_pct": -14.49
             },
             "draftkings": {
               "american": 1100,
@@ -230,9 +230,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 1600,
-              "decimal": 17.0,
-              "ev_pct": -25.67
+              "american": 1700,
+              "decimal": 18.0,
+              "ev_pct": -21.3
             },
             "draftkings": {
               "american": 1900,
@@ -530,9 +530,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 5500,
-              "decimal": 56.0,
-              "ev_pct": -22.4
+              "american": 5000,
+              "decimal": 51.0,
+              "ev_pct": -29.33
             },
             "draftkings": {
               "american": 6000,
@@ -805,9 +805,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 100000,
-              "decimal": 1001.0,
-              "ev_pct": 71.13
+              "american": 75000,
+              "decimal": 751.0,
+              "ev_pct": 28.39
             },
             "draftkings": {
               "american": 35000,
@@ -830,9 +830,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 75000,
-              "decimal": 751.0,
-              "ev_pct": 1.33
+              "american": 70000,
+              "decimal": 701.0,
+              "ev_pct": -5.42
             },
             "draftkings": {
               "american": 50000,
@@ -851,17 +851,6 @@
       ],
       "outlier_summary": [
         {
-          "book": "fanduel",
-          "decimal_odds": 1001.0,
-          "american_odds": 100000,
-          "median_odds": 501.0,
-          "median_american": 50000,
-          "deviation_pct": 99.8,
-          "direction": "higher",
-          "player": "Miami Dolphins",
-          "book_display": "FanDuel"
-        },
-        {
           "book": "betmgm",
           "decimal_odds": 251.0,
           "american_odds": 25000,
@@ -879,6 +868,17 @@
           "median_odds": 501.0,
           "median_american": 50000,
           "deviation_pct": 49.9,
+          "direction": "higher",
+          "player": "Miami Dolphins",
+          "book_display": "FanDuel"
+        },
+        {
+          "book": "fanduel",
+          "decimal_odds": 701.0,
+          "american_odds": 70000,
+          "median_odds": 501.0,
+          "median_american": 50000,
+          "deviation_pct": 39.9,
           "direction": "higher",
           "player": "Arizona Cardinals",
           "book_display": "FanDuel"
@@ -907,7 +907,7 @@
         }
       ],
       "book_vigs": {
-        "FanDuel": 21.2,
+        "FanDuel": 21.7,
         "BetOnline": 20.0,
         "BetRivers": 22.8,
         "DraftKings": 22.7,
