@@ -4,8 +4,8 @@
   "sport_key": "basketball_nba_championship_winner",
   "sport_group": "nba",
   "event_date": "2027-06-19T00:40:00Z",
-  "days_to_resolution": 322,
-  "generated_at": "2026-07-31 15:12:33",
+  "days_to_resolution": 321,
+  "generated_at": "2026-08-01 14:22:06",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 2,
       "num_sharp_books": 1,
       "num_players": 30,
-      "min_edge_threshold": 5.97,
+      "min_edge_threshold": 5.96,
       "strong_picks": [
         {
           "player": "Philadelphia 76ers",
@@ -156,9 +156,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 2500,
-              "decimal": 26.0,
-              "ev_pct": -9.33
+              "american": 2200,
+              "decimal": 23.0,
+              "ev_pct": -19.8
             },
             "betmgm": {
               "american": 3000,
@@ -296,9 +296,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 5000,
-              "decimal": 51.0,
-              "ev_pct": -33.13
+              "american": 5500,
+              "decimal": 56.0,
+              "ev_pct": -26.57
             },
             "betmgm": {
               "american": 6600,
@@ -675,6 +675,17 @@
         },
         {
           "book": "betmgm",
+          "decimal_odds": 31.0,
+          "american_odds": 3000,
+          "median_odds": 23.0,
+          "median_american": 2200,
+          "deviation_pct": 34.8,
+          "direction": "higher",
+          "player": "Toronto Raptors",
+          "book_display": "BetMGM"
+        },
+        {
+          "book": "betmgm",
           "decimal_odds": 1001.0,
           "american_odds": 100000,
           "median_odds": 751.0,
@@ -716,21 +727,10 @@
           "direction": "higher",
           "player": "Detroit Pistons",
           "book_display": "BetMGM"
-        },
-        {
-          "book": "betmgm",
-          "decimal_odds": 31.0,
-          "american_odds": 3000,
-          "median_odds": 26.0,
-          "median_american": 2500,
-          "deviation_pct": 19.2,
-          "direction": "higher",
-          "player": "Toronto Raptors",
-          "book_display": "BetMGM"
         }
       ],
       "book_vigs": {
-        "FanDuel": 22.0,
+        "FanDuel": 22.4,
         "BetRivers": 25.0,
         "BetOnline": 25.7,
         "BetMGM": 20.1
