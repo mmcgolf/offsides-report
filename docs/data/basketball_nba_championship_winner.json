@@ -4,8 +4,8 @@
   "sport_key": "basketball_nba_championship_winner",
   "sport_group": "nba",
   "event_date": "2027-06-19T00:40:00Z",
-  "days_to_resolution": 321,
-  "generated_at": "2026-08-01 14:22:06",
+  "days_to_resolution": 320,
+  "generated_at": "2026-08-02 14:22:39",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,20 +14,20 @@
       "num_nc_books": 2,
       "num_sharp_books": 1,
       "num_players": 30,
-      "min_edge_threshold": 5.96,
+      "min_edge_threshold": 5.95,
       "strong_picks": [
         {
           "player": "Philadelphia 76ers",
           "book": "fanduel",
           "book_display": "FanDuel",
-          "american_odds": 1000,
-          "decimal_odds": 11.0,
+          "american_odds": 1100,
+          "decimal_odds": 12.0,
           "fair_american": 822,
-          "implied_prob": 0.09091,
+          "implied_prob": 0.08333,
           "true_prob": 0.10849,
-          "ev_pct": 19.34,
+          "ev_pct": 30.19,
           "value_tier": "STRONG VALUE",
-          "kelly_pct": 0.48,
+          "kelly_pct": 0.69,
           "analytics": null
         }
       ],
@@ -56,9 +56,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 270,
-              "decimal": 3.7,
-              "ev_pct": -9.85
+              "american": 280,
+              "decimal": 3.8,
+              "ev_pct": -7.41
             },
             "betmgm": {
               "american": 260,
@@ -96,9 +96,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 1000,
-              "decimal": 11.0,
-              "ev_pct": 19.34
+              "american": 1100,
+              "decimal": 12.0,
+              "ev_pct": 30.19
             },
             "betmgm": {
               "american": 800,
@@ -216,9 +216,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 2200,
-              "decimal": 23.0,
-              "ev_pct": -36.62
+              "american": 2500,
+              "decimal": 26.0,
+              "ev_pct": -28.35
             },
             "betmgm": {
               "american": 3000,
@@ -296,9 +296,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 5500,
-              "decimal": 56.0,
-              "ev_pct": -26.57
+              "american": 5000,
+              "decimal": 51.0,
+              "ev_pct": -33.13
             },
             "betmgm": {
               "american": 6600,
@@ -396,9 +396,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 8000,
-              "decimal": 81.0,
-              "ev_pct": -31.58
+              "american": 7500,
+              "decimal": 76.0,
+              "ev_pct": -35.8
             },
             "betmgm": {
               "american": 8000,
@@ -406,8 +406,8 @@
               "ev_pct": -31.58
             }
           },
-          "best_book": "fanduel",
-          "best_book_display": "FanDuel"
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
         },
         {
           "player": "Charlotte Hornets",
@@ -476,9 +476,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 15000,
-              "decimal": 151.0,
-              "ev_pct": -56.34
+              "american": 10000,
+              "decimal": 101.0,
+              "ev_pct": -70.8
             },
             "betmgm": {
               "american": 20000,
@@ -616,9 +616,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 75000,
-              "decimal": 751.0,
-              "ev_pct": -49.22
+              "american": 70000,
+              "decimal": 701.0,
+              "ev_pct": -52.6
             },
             "betmgm": {
               "american": 50000,
@@ -718,6 +718,17 @@
           "book_display": "FanDuel"
         },
         {
+          "book": "fanduel",
+          "decimal_odds": 12.0,
+          "american_odds": 1100,
+          "median_odds": 10.0,
+          "median_american": 900,
+          "deviation_pct": 20.0,
+          "direction": "higher",
+          "player": "Philadelphia 76ers",
+          "book_display": "FanDuel"
+        },
+        {
           "book": "betmgm",
           "decimal_odds": 31.0,
           "american_odds": 3000,
@@ -730,7 +741,7 @@
         }
       ],
       "book_vigs": {
-        "FanDuel": 22.4,
+        "FanDuel": 21.0,
         "BetRivers": 25.0,
         "BetOnline": 25.7,
         "BetMGM": 20.1
