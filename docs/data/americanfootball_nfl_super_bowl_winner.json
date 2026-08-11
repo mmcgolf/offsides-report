@@ -4,8 +4,8 @@
   "sport_key": "americanfootball_nfl_super_bowl_winner",
   "sport_group": "nfl",
   "event_date": "2027-02-14T23:35:00Z",
-  "days_to_resolution": 188,
-  "generated_at": "2026-08-10 14:12:22",
+  "days_to_resolution": 187,
+  "generated_at": "2026-08-11 14:11:39",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,20 +14,20 @@
       "num_nc_books": 3,
       "num_sharp_books": 2,
       "num_players": 32,
-      "min_edge_threshold": 4.32,
+      "min_edge_threshold": 4.31,
       "strong_picks": [
         {
           "player": "Miami Dolphins",
           "book": "fanduel",
           "book_display": "FanDuel",
-          "american_odds": 100000,
-          "decimal_odds": 1001.0,
+          "american_odds": 75000,
+          "decimal_odds": 751.0,
           "fair_american": 58394,
-          "implied_prob": 0.001,
+          "implied_prob": 0.00133,
           "true_prob": 0.00171,
-          "ev_pct": 71.13,
+          "ev_pct": 28.39,
           "value_tier": "STRONG VALUE",
-          "kelly_pct": 0.02,
+          "kelly_pct": 0.01,
           "analytics": null
         },
         {
@@ -494,9 +494,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 4000,
-              "decimal": 41.0,
-              "ev_pct": -20.86
+              "american": 4500,
+              "decimal": 46.0,
+              "ev_pct": -11.21
             },
             "draftkings": {
               "american": 5000,
@@ -619,9 +619,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 5500,
-              "decimal": 56.0,
-              "ev_pct": -47.58
+              "american": 5000,
+              "decimal": 51.0,
+              "ev_pct": -52.26
             },
             "draftkings": {
               "american": 5000,
@@ -719,9 +719,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 8000,
-              "decimal": 81.0,
-              "ev_pct": -40.03
+              "american": 7500,
+              "decimal": 76.0,
+              "ev_pct": -43.73
             },
             "draftkings": {
               "american": 9000,
@@ -769,9 +769,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 35000,
-              "decimal": 351.0,
-              "ev_pct": -1.26
+              "american": 30000,
+              "decimal": 301.0,
+              "ev_pct": -15.33
             },
             "draftkings": {
               "american": 20000,
@@ -819,9 +819,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 100000,
-              "decimal": 1001.0,
-              "ev_pct": 71.13
+              "american": 75000,
+              "decimal": 751.0,
+              "ev_pct": 28.39
             },
             "draftkings": {
               "american": 35000,
@@ -866,11 +866,11 @@
       "outlier_summary": [
         {
           "book": "fanduel",
-          "decimal_odds": 1001.0,
-          "american_odds": 100000,
+          "decimal_odds": 751.0,
+          "american_odds": 75000,
           "median_odds": 401.0,
           "median_american": 40000,
-          "deviation_pct": 149.6,
+          "deviation_pct": 87.3,
           "direction": "higher",
           "player": "Miami Dolphins",
           "book_display": "FanDuel"
@@ -895,17 +895,6 @@
           "deviation_pct": 49.9,
           "direction": "higher",
           "player": "Arizona Cardinals",
-          "book_display": "FanDuel"
-        },
-        {
-          "book": "fanduel",
-          "decimal_odds": 351.0,
-          "american_odds": 35000,
-          "median_odds": 251.0,
-          "median_american": 25000,
-          "deviation_pct": 39.8,
-          "direction": "higher",
-          "player": "New York Jets",
           "book_display": "FanDuel"
         },
         {
@@ -953,6 +942,17 @@
           "book_display": "BetMGM"
         },
         {
+          "book": "fanduel",
+          "decimal_odds": 301.0,
+          "american_odds": 30000,
+          "median_odds": 251.0,
+          "median_american": 25000,
+          "deviation_pct": 19.9,
+          "direction": "higher",
+          "player": "New York Jets",
+          "book_display": "FanDuel"
+        },
+        {
           "book": "draftkings",
           "decimal_odds": 151.0,
           "american_odds": 15000,
@@ -976,7 +976,7 @@
         }
       ],
       "book_vigs": {
-        "FanDuel": 23.2,
+        "FanDuel": 23.3,
         "BetOnline": 20.0,
         "BetRivers": 23.6,
         "DraftKings": 22.5,

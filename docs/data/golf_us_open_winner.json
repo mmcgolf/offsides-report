@@ -4,8 +4,8 @@
   "sport_key": "golf_us_open_winner",
   "sport_group": "golf",
   "event_date": "2027-06-17T10:00:00Z",
-  "days_to_resolution": 310,
-  "generated_at": "2026-08-10 14:12:22",
+  "days_to_resolution": 309,
+  "generated_at": "2026-08-11 14:11:39",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 2,
       "num_sharp_books": 2,
       "num_players": 65,
-      "min_edge_threshold": 5.82,
+      "min_edge_threshold": 5.81,
       "strong_picks": [
         {
           "player": "Jackson Koivun",
@@ -1447,6 +1447,17 @@
         },
         {
           "book": "draftkings",
+          "decimal_odds": 176.0,
+          "american_odds": 17500,
+          "median_odds": 126.0,
+          "median_american": 12500,
+          "deviation_pct": 39.7,
+          "direction": "higher",
+          "player": "Michael Brennan",
+          "book_display": "DraftKings"
+        },
+        {
+          "book": "draftkings",
           "decimal_odds": 251.0,
           "american_odds": 25000,
           "median_odds": 201.0,
@@ -1554,21 +1565,10 @@
           "direction": "higher",
           "player": "Brian Harman",
           "book_display": "DraftKings"
-        },
-        {
-          "book": "betmgm",
-          "decimal_odds": 151.0,
-          "american_odds": 15000,
-          "median_odds": 126.0,
-          "median_american": 12500,
-          "deviation_pct": 19.8,
-          "direction": "higher",
-          "player": "Brian Harman",
-          "book_display": "BetMGM"
         }
       ],
       "book_vigs": {
-        "BetRivers": 53.8,
+        "BetRivers": 56.4,
         "DraftKings": 47.6,
         "BetOnline": 40.8,
         "LowVig": 40.8,
