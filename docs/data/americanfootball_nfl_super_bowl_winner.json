@@ -4,8 +4,8 @@
   "sport_key": "americanfootball_nfl_super_bowl_winner",
   "sport_group": "nfl",
   "event_date": "2027-02-14T23:35:00Z",
-  "days_to_resolution": 181,
-  "generated_at": "2026-08-17 13:31:38",
+  "days_to_resolution": 180,
+  "generated_at": "2026-08-18 13:34:42",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 3,
       "num_sharp_books": 2,
       "num_players": 32,
-      "min_edge_threshold": 4.23,
+      "min_edge_threshold": 4.22,
       "strong_picks": [
         {
           "player": "Arizona Cardinals",
@@ -46,8 +46,8 @@
         },
         {
           "player": "Las Vegas Raiders",
-          "book": "draftkings",
-          "book_display": "DraftKings",
+          "book": "fanduel",
+          "book_display": "FanDuel",
           "american_odds": 15000,
           "decimal_odds": 151.0,
           "fair_american": 13460,
@@ -544,9 +544,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 7000,
-              "decimal": 71.0,
-              "ev_pct": -10.47
+              "american": 6500,
+              "decimal": 66.0,
+              "ev_pct": -16.77
             },
             "draftkings": {
               "american": 6000,
@@ -559,8 +559,8 @@
               "ev_pct": -15.51
             }
           },
-          "best_book": "fanduel",
-          "best_book_display": "FanDuel"
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
         },
         {
           "player": "Indianapolis Colts",
@@ -594,9 +594,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 6500,
-              "decimal": 66.0,
-              "ev_pct": -24.68
+              "american": 6000,
+              "decimal": 61.0,
+              "ev_pct": -30.39
             },
             "draftkings": {
               "american": 7000,
@@ -644,9 +644,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 7500,
-              "decimal": 76.0,
-              "ev_pct": -43.95
+              "american": 8000,
+              "decimal": 81.0,
+              "ev_pct": -40.27
             },
             "draftkings": {
               "american": 13000,
@@ -694,9 +694,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 12500,
-              "decimal": 126.0,
-              "ev_pct": -7.08
+              "american": 15000,
+              "decimal": 151.0,
+              "ev_pct": 11.36
             },
             "draftkings": {
               "american": 15000,
@@ -709,8 +709,8 @@
               "ev_pct": 11.36
             }
           },
-          "best_book": "draftkings",
-          "best_book_display": "DraftKings"
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
         },
         {
           "player": "New Orleans Saints",
@@ -929,45 +929,12 @@
           "direction": "higher",
           "player": "Pittsburgh Steelers",
           "book_display": "BetMGM"
-        },
-        {
-          "book": "draftkings",
-          "decimal_odds": 151.0,
-          "american_odds": 15000,
-          "median_odds": 126.0,
-          "median_american": 12500,
-          "deviation_pct": 19.8,
-          "direction": "higher",
-          "player": "Las Vegas Raiders",
-          "book_display": "DraftKings"
-        },
-        {
-          "book": "betmgm",
-          "decimal_odds": 151.0,
-          "american_odds": 15000,
-          "median_odds": 126.0,
-          "median_american": 12500,
-          "deviation_pct": 19.8,
-          "direction": "higher",
-          "player": "Las Vegas Raiders",
-          "book_display": "BetMGM"
-        },
-        {
-          "book": "fanduel",
-          "decimal_odds": 71.0,
-          "american_odds": 7000,
-          "median_odds": 61.0,
-          "median_american": 6000,
-          "deviation_pct": 16.4,
-          "direction": "higher",
-          "player": "Washington Commanders",
-          "book_display": "FanDuel"
         }
       ],
       "book_vigs": {
         "FanDuel": 22.3,
         "BetOnline": 20.2,
-        "BetRivers": 23.4,
+        "BetRivers": 23.9,
         "DraftKings": 22.5,
         "Bovada": 19.7,
         "BetMGM": 20.1,

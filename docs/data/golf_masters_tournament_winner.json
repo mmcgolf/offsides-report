@@ -4,17 +4,17 @@
   "sport_key": "golf_masters_tournament_winner",
   "sport_group": "golf",
   "event_date": "2027-04-08T11:00:00Z",
-  "days_to_resolution": 233,
-  "generated_at": "2026-08-17 13:31:38",
+  "days_to_resolution": 232,
+  "generated_at": "2026-08-18 13:34:42",
   "markets": {
     "outrights": {
       "market_key": "outrights",
       "market_name": "Futures / Winner",
-      "num_books": 6,
+      "num_books": 7,
       "num_nc_books": 3,
       "num_sharp_books": 2,
       "num_players": 62,
-      "min_edge_threshold": 4.87,
+      "min_edge_threshold": 4.86,
       "strong_picks": [
         {
           "player": "Kristoffer Reitan",
@@ -159,9 +159,9 @@
               "ev_pct": -33.97
             },
             "fanduel": {
-              "american": 900,
-              "decimal": 10.0,
-              "ev_pct": -5.67
+              "american": 950,
+              "decimal": 10.5,
+              "ev_pct": -0.96
             }
           },
           "best_book": "fanduel",
@@ -1852,6 +1852,17 @@
           "book_display": "DraftKings"
         },
         {
+          "book": "fanduel",
+          "decimal_odds": 10.5,
+          "american_odds": 950,
+          "median_odds": 8.0,
+          "median_american": 700,
+          "deviation_pct": 31.2,
+          "direction": "higher",
+          "player": "Rory McIlroy",
+          "book_display": "FanDuel"
+        },
+        {
           "book": "betmgm",
           "decimal_odds": 34.0,
           "american_odds": 3300,
@@ -1860,6 +1871,39 @@
           "deviation_pct": 30.8,
           "direction": "higher",
           "player": "Matthew Fitzpatrick",
+          "book_display": "BetMGM"
+        },
+        {
+          "book": "betmgm",
+          "decimal_odds": 126.0,
+          "american_odds": 12500,
+          "median_odds": 101.0,
+          "median_american": 10000,
+          "deviation_pct": 24.8,
+          "direction": "higher",
+          "player": "Cameron Smith",
+          "book_display": "BetMGM"
+        },
+        {
+          "book": "fanduel",
+          "decimal_odds": 126.0,
+          "american_odds": 12500,
+          "median_odds": 101.0,
+          "median_american": 10000,
+          "deviation_pct": 24.8,
+          "direction": "higher",
+          "player": "Cameron Smith",
+          "book_display": "FanDuel"
+        },
+        {
+          "book": "betmgm",
+          "decimal_odds": 51.0,
+          "american_odds": 5000,
+          "median_odds": 41.0,
+          "median_american": 4000,
+          "deviation_pct": 24.4,
+          "direction": "higher",
+          "player": "Patrick Reed",
           "book_display": "BetMGM"
         },
         {
@@ -1872,6 +1916,39 @@
           "direction": "higher",
           "player": "Jon Rahm",
           "book_display": "FanDuel"
+        },
+        {
+          "book": "draftkings",
+          "decimal_odds": 41.0,
+          "american_odds": 4000,
+          "median_odds": 34.0,
+          "median_american": 3300,
+          "deviation_pct": 20.6,
+          "direction": "higher",
+          "player": "Justin Rose",
+          "book_display": "DraftKings"
+        },
+        {
+          "book": "draftkings",
+          "decimal_odds": 121.0,
+          "american_odds": 12000,
+          "median_odds": 101.0,
+          "median_american": 10000,
+          "deviation_pct": 19.8,
+          "direction": "higher",
+          "player": "Cameron Smith",
+          "book_display": "DraftKings"
+        },
+        {
+          "book": "draftkings",
+          "decimal_odds": 121.0,
+          "american_odds": 12000,
+          "median_odds": 101.0,
+          "median_american": 10000,
+          "deviation_pct": 19.8,
+          "direction": "higher",
+          "player": "Michael Brennan",
+          "book_display": "DraftKings"
         },
         {
           "book": "fanduel",
@@ -1894,48 +1971,16 @@
           "direction": "higher",
           "player": "Christopher Gotterup",
           "book_display": "DraftKings"
-        },
-        {
-          "book": "fanduel",
-          "decimal_odds": 61.0,
-          "american_odds": 6000,
-          "median_odds": 51.0,
-          "median_american": 5000,
-          "deviation_pct": 19.6,
-          "direction": "higher",
-          "player": "Christopher Gotterup",
-          "book_display": "FanDuel"
-        },
-        {
-          "book": "fanduel",
-          "decimal_odds": 61.0,
-          "american_odds": 6000,
-          "median_odds": 51.0,
-          "median_american": 5000,
-          "deviation_pct": 19.6,
-          "direction": "higher",
-          "player": "Wyndham Clark",
-          "book_display": "FanDuel"
-        },
-        {
-          "book": "betmgm",
-          "decimal_odds": 15.0,
-          "american_odds": 1400,
-          "median_odds": 13.0,
-          "median_american": 1200,
-          "deviation_pct": 15.4,
-          "direction": "higher",
-          "player": "Jon Rahm",
-          "book_display": "BetMGM"
         }
       ],
       "book_vigs": {
         "DraftKings": 58.2,
         "BetOnline": 34.7,
         "LowVig": 34.7,
-        "BetRivers": 63.2,
+        "BetRivers": 63.7,
         "BetMGM": 53.6,
-        "FanDuel": 50.8
+        "FanDuel": 50.3,
+        "Bovada": 41.0
       },
       "nc_books_available": [
         "FanDuel",
