@@ -4,8 +4,8 @@
   "sport_key": "golf_masters_tournament_winner",
   "sport_group": "golf",
   "event_date": "2027-04-08T11:00:00Z",
-  "days_to_resolution": 230,
-  "generated_at": "2026-08-20 13:37:58",
+  "days_to_resolution": 229,
+  "generated_at": "2026-08-21 13:36:49",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 3,
       "num_sharp_books": 2,
       "num_players": 62,
-      "min_edge_threshold": 4.84,
+      "min_edge_threshold": 4.82,
       "strong_picks": [
         {
           "player": "Kristoffer Reitan",
@@ -159,9 +159,9 @@
               "ev_pct": -33.97
             },
             "fanduel": {
-              "american": 950,
-              "decimal": 10.5,
-              "ev_pct": -0.96
+              "american": 900,
+              "decimal": 10.0,
+              "ev_pct": -5.67
             }
           },
           "best_book": "fanduel",
@@ -420,9 +420,9 @@
               "ev_pct": -37.12
             },
             "fanduel": {
-              "american": 3300,
-              "decimal": 34.0,
-              "ev_pct": -37.12
+              "american": 3500,
+              "decimal": 36.0,
+              "ev_pct": -33.42
             }
           },
           "best_book": "draftkings",
@@ -1852,17 +1852,6 @@
           "book_display": "DraftKings"
         },
         {
-          "book": "fanduel",
-          "decimal_odds": 10.5,
-          "american_odds": 950,
-          "median_odds": 8.0,
-          "median_american": 700,
-          "deviation_pct": 31.2,
-          "direction": "higher",
-          "player": "Rory McIlroy",
-          "book_display": "FanDuel"
-        },
-        {
           "book": "betmgm",
           "decimal_odds": 34.0,
           "american_odds": 3300,
@@ -1872,6 +1861,17 @@
           "direction": "higher",
           "player": "Matthew Fitzpatrick",
           "book_display": "BetMGM"
+        },
+        {
+          "book": "fanduel",
+          "decimal_odds": 10.0,
+          "american_odds": 900,
+          "median_odds": 8.0,
+          "median_american": 700,
+          "deviation_pct": 25.0,
+          "direction": "higher",
+          "player": "Rory McIlroy",
+          "book_display": "FanDuel"
         },
         {
           "book": "betmgm",
@@ -1979,7 +1979,7 @@
         "LowVig": 34.7,
         "BetRivers": 63.7,
         "BetMGM": 53.9,
-        "FanDuel": 50.3,
+        "FanDuel": 50.7,
         "Bovada": 41.0
       },
       "nc_books_available": [
