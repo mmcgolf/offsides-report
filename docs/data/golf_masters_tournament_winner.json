@@ -4,8 +4,8 @@
   "sport_key": "golf_masters_tournament_winner",
   "sport_group": "golf",
   "event_date": "2027-04-08T11:00:00Z",
-  "days_to_resolution": 227,
-  "generated_at": "2026-08-23 13:24:54",
+  "days_to_resolution": 226,
+  "generated_at": "2026-08-24 13:41:37",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 3,
       "num_sharp_books": 2,
       "num_players": 66,
-      "min_edge_threshold": 4.8,
+      "min_edge_threshold": 4.79,
       "strong_picks": [
         {
           "player": "Kristoffer Reitan",
@@ -439,9 +439,9 @@
               "ev_pct": -5.37
             },
             "betmgm": {
-              "american": 5000,
-              "decimal": 51.0,
-              "ev_pct": 30.44
+              "american": 4000,
+              "decimal": 41.0,
+              "ev_pct": 4.86
             },
             "fanduel": {
               "american": 5000,
@@ -449,8 +449,8 @@
               "ev_pct": 30.44
             }
           },
-          "best_book": "betmgm",
-          "best_book_display": "BetMGM"
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
         },
         {
           "player": "Christopher Gotterup",
@@ -564,9 +564,9 @@
               "ev_pct": -51.33
             },
             "fanduel": {
-              "american": 2700,
-              "decimal": 28.0,
-              "ev_pct": -53.01
+              "american": 3000,
+              "decimal": 31.0,
+              "ev_pct": -47.98
             }
           },
           "best_book": "draftkings",
@@ -1965,6 +1965,17 @@
           "book_display": "FanDuel"
         },
         {
+          "book": "fanduel",
+          "decimal_odds": 51.0,
+          "american_odds": 5000,
+          "median_odds": 37.0,
+          "median_american": 3600,
+          "deviation_pct": 37.8,
+          "direction": "higher",
+          "player": "Wyndham Clark",
+          "book_display": "FanDuel"
+        },
+        {
           "book": "draftkings",
           "decimal_odds": 201.0,
           "american_odds": 20000,
@@ -2084,27 +2095,16 @@
           "direction": "higher",
           "player": "Christopher Gotterup",
           "book_display": "FanDuel"
-        },
-        {
-          "book": "betmgm",
-          "decimal_odds": 34.0,
-          "american_odds": 3300,
-          "median_odds": 29.0,
-          "median_american": 2800,
-          "deviation_pct": 17.2,
-          "direction": "higher",
-          "player": "Matthew Fitzpatrick",
-          "book_display": "BetMGM"
         }
       ],
       "book_vigs": {
         "DraftKings": 58.6,
         "BetOnline": 34.2,
         "LowVig": 34.2,
-        "BetRivers": 63.7,
-        "BetMGM": 53.9,
-        "FanDuel": 51.0,
-        "Bovada": 41.0
+        "BetRivers": 64.2,
+        "BetMGM": 54.4,
+        "FanDuel": 50.6,
+        "Bovada": 42.3
       },
       "nc_books_available": [
         "FanDuel",
