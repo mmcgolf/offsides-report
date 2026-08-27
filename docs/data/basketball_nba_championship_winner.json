@@ -4,8 +4,8 @@
   "sport_key": "basketball_nba_championship_winner",
   "sport_group": "nba",
   "event_date": "2027-06-19T00:40:00Z",
-  "days_to_resolution": 296,
-  "generated_at": "2026-08-26 13:44:31",
+  "days_to_resolution": 295,
+  "generated_at": "2026-08-27 22:41:15",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,20 +14,20 @@
       "num_nc_books": 2,
       "num_sharp_books": 1,
       "num_players": 30,
-      "min_edge_threshold": 5.65,
+      "min_edge_threshold": 5.64,
       "strong_picks": [
         {
           "player": "Dallas Mavericks",
           "book": "fanduel",
           "book_display": "FanDuel",
-          "american_odds": 40000,
-          "decimal_odds": 401.0,
+          "american_odds": 50000,
+          "decimal_odds": 501.0,
           "fair_american": 25257,
-          "implied_prob": 0.00249,
+          "implied_prob": 0.002,
           "true_prob": 0.00394,
-          "ev_pct": 58.14,
+          "ev_pct": 97.58,
           "value_tier": "STRONG VALUE",
-          "kelly_pct": 0.04,
+          "kelly_pct": 0.05,
           "analytics": null
         },
         {
@@ -149,9 +149,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 1400,
-              "decimal": 15.0,
-              "ev_pct": -30.61
+              "american": 1500,
+              "decimal": 16.0,
+              "ev_pct": -25.98
             },
             "betmgm": {
               "american": 1400,
@@ -189,9 +189,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 3000,
-              "decimal": 31.0,
-              "ev_pct": 3.37
+              "american": 2700,
+              "decimal": 28.0,
+              "ev_pct": -6.63
             },
             "betmgm": {
               "american": 2500,
@@ -329,9 +329,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 4500,
-              "decimal": 46.0,
-              "ev_pct": -31.14
+              "american": 4000,
+              "decimal": 41.0,
+              "ev_pct": -38.62
             },
             "betmgm": {
               "american": 5000,
@@ -469,9 +469,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 40000,
-              "decimal": 401.0,
-              "ev_pct": 58.14
+              "american": 50000,
+              "decimal": 501.0,
+              "ev_pct": 97.58
             },
             "betmgm": {
               "american": 20000,
@@ -509,9 +509,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 20000,
-              "decimal": 201.0,
-              "ev_pct": -20.73
+              "american": 17500,
+              "decimal": 176.0,
+              "ev_pct": -30.59
             },
             "betmgm": {
               "american": 15000,
@@ -666,11 +666,11 @@
       "outlier_summary": [
         {
           "book": "fanduel",
-          "decimal_odds": 401.0,
-          "american_odds": 40000,
+          "decimal_odds": 501.0,
+          "american_odds": 50000,
           "median_odds": 201.0,
           "median_american": 20000,
-          "deviation_pct": 99.5,
+          "deviation_pct": 149.3,
           "direction": "higher",
           "player": "Dallas Mavericks",
           "book_display": "FanDuel"
@@ -762,21 +762,10 @@
           "direction": "higher",
           "player": "Orlando Magic",
           "book_display": "BetMGM"
-        },
-        {
-          "book": "fanduel",
-          "decimal_odds": 31.0,
-          "american_odds": 3000,
-          "median_odds": 26.0,
-          "median_american": 2500,
-          "deviation_pct": 19.2,
-          "direction": "higher",
-          "player": "Minnesota Timberwolves",
-          "book_display": "FanDuel"
         }
       ],
       "book_vigs": {
-        "FanDuel": 21.4,
+        "FanDuel": 21.7,
         "BetRivers": 24.1,
         "BetOnline": 10.9,
         "BetMGM": 18.2
