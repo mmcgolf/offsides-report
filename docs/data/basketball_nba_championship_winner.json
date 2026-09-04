@@ -4,8 +4,8 @@
   "sport_key": "basketball_nba_championship_winner",
   "sport_group": "nba",
   "event_date": "2027-06-19T00:40:00Z",
-  "days_to_resolution": 288,
-  "generated_at": "2026-09-03 16:44:53",
+  "days_to_resolution": 287,
+  "generated_at": "2026-09-04 16:38:58",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 2,
       "num_sharp_books": 1,
       "num_players": 30,
-      "min_edge_threshold": 5.55,
+      "min_edge_threshold": 5.54,
       "strong_picks": [
         {
           "player": "Dallas Mavericks",
@@ -34,14 +34,14 @@
           "player": "Los Angeles Clippers",
           "book": "fanduel",
           "book_display": "FanDuel",
-          "american_odds": 100000,
-          "decimal_odds": 1001.0,
+          "american_odds": 75000,
+          "decimal_odds": 751.0,
           "fair_american": 65297,
-          "implied_prob": 0.001,
+          "implied_prob": 0.00133,
           "true_prob": 0.00153,
-          "ev_pct": 53.06,
+          "ev_pct": 14.84,
           "value_tier": "STRONG VALUE",
-          "kelly_pct": 0.01,
+          "kelly_pct": 0.0,
           "analytics": null
         }
       ],
@@ -130,9 +130,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 950,
-              "decimal": 10.5,
-              "ev_pct": -13.87
+              "american": 1000,
+              "decimal": 11.0,
+              "ev_pct": -9.77
             },
             "betmgm": {
               "american": 900,
@@ -170,9 +170,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 2700,
-              "decimal": 28.0,
-              "ev_pct": -6.34
+              "american": 3000,
+              "decimal": 31.0,
+              "ev_pct": 3.69
             },
             "betmgm": {
               "american": 2500,
@@ -190,9 +190,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 2700,
-              "decimal": 28.0,
-              "ev_pct": -6.34
+              "american": 3000,
+              "decimal": 31.0,
+              "ev_pct": 3.69
             },
             "betmgm": {
               "american": 2500,
@@ -210,9 +210,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 2700,
-              "decimal": 28.0,
-              "ev_pct": -16.42
+              "american": 2500,
+              "decimal": 26.0,
+              "ev_pct": -22.39
             },
             "betmgm": {
               "american": 3000,
@@ -310,9 +310,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 3500,
-              "decimal": 36.0,
-              "ev_pct": -45.9
+              "american": 3300,
+              "decimal": 34.0,
+              "ev_pct": -48.91
             },
             "betmgm": {
               "american": 5000,
@@ -490,9 +490,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 15000,
-              "decimal": 151.0,
-              "ev_pct": -40.15
+              "american": 12500,
+              "decimal": 126.0,
+              "ev_pct": -50.06
             },
             "betmgm": {
               "american": 20000,
@@ -510,9 +510,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 17500,
-              "decimal": 176.0,
-              "ev_pct": -30.24
+              "american": 15000,
+              "decimal": 151.0,
+              "ev_pct": -40.15
             },
             "betmgm": {
               "american": 15000,
@@ -530,9 +530,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 100000,
-              "decimal": 1001.0,
-              "ev_pct": 53.06
+              "american": 75000,
+              "decimal": 751.0,
+              "ev_pct": 14.84
             },
             "betmgm": {
               "american": 75000,
@@ -695,17 +695,6 @@
           "median_american": 75000,
           "deviation_pct": 33.3,
           "direction": "higher",
-          "player": "Los Angeles Clippers",
-          "book_display": "FanDuel"
-        },
-        {
-          "book": "fanduel",
-          "decimal_odds": 1001.0,
-          "american_odds": 100000,
-          "median_odds": 751.0,
-          "median_american": 75000,
-          "deviation_pct": 33.3,
-          "direction": "higher",
           "player": "Memphis Grizzlies",
           "book_display": "FanDuel"
         },
@@ -744,6 +733,28 @@
         },
         {
           "book": "fanduel",
+          "decimal_odds": 31.0,
+          "american_odds": 3000,
+          "median_odds": 26.0,
+          "median_american": 2500,
+          "deviation_pct": 19.2,
+          "direction": "higher",
+          "player": "Denver Nuggets",
+          "book_display": "FanDuel"
+        },
+        {
+          "book": "fanduel",
+          "decimal_odds": 31.0,
+          "american_odds": 3000,
+          "median_odds": 26.0,
+          "median_american": 2500,
+          "deviation_pct": 19.2,
+          "direction": "higher",
+          "player": "Minnesota Timberwolves",
+          "book_display": "FanDuel"
+        },
+        {
+          "book": "fanduel",
           "decimal_odds": 36.0,
           "american_odds": 3500,
           "median_odds": 31.0,
@@ -755,7 +766,7 @@
         }
       ],
       "book_vigs": {
-        "FanDuel": 22.4,
+        "FanDuel": 21.9,
         "BetRivers": 24.1,
         "BetOnline": 10.7,
         "BetMGM": 19.3
