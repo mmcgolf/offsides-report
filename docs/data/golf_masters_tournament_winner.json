@@ -4,8 +4,8 @@
   "sport_key": "golf_masters_tournament_winner",
   "sport_group": "golf",
   "event_date": "2027-04-08T11:00:00Z",
-  "days_to_resolution": 214,
-  "generated_at": "2026-09-05 15:41:57",
+  "days_to_resolution": 213,
+  "generated_at": "2026-09-06 15:53:09",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 3,
       "num_sharp_books": 2,
       "num_players": 66,
-      "min_edge_threshold": 4.64,
+      "min_edge_threshold": 4.63,
       "strong_picks": [
         {
           "player": "Kristoffer Reitan",
@@ -48,14 +48,14 @@
           "player": "Jon Rahm",
           "book": "fanduel",
           "book_display": "FanDuel",
-          "american_odds": 1900,
-          "decimal_odds": 20.0,
+          "american_odds": 1700,
+          "decimal_odds": 18.0,
           "fair_american": 1475,
-          "implied_prob": 0.05,
+          "implied_prob": 0.05556,
           "true_prob": 0.06348,
-          "ev_pct": 26.95,
+          "ev_pct": 14.26,
           "value_tier": "STRONG VALUE",
-          "kelly_pct": 0.35,
+          "kelly_pct": 0.21,
           "analytics": null
         },
         {
@@ -175,9 +175,9 @@
               "ev_pct": -4.79
             },
             "fanduel": {
-              "american": 1900,
-              "decimal": 20.0,
-              "ev_pct": 26.95
+              "american": 1700,
+              "decimal": 18.0,
+              "ev_pct": 14.26
             }
           },
           "best_book": "fanduel",
@@ -1941,17 +1941,6 @@
           "book_display": "FanDuel"
         },
         {
-          "book": "fanduel",
-          "decimal_odds": 20.0,
-          "american_odds": 1900,
-          "median_odds": 15.0,
-          "median_american": 1400,
-          "deviation_pct": 33.3,
-          "direction": "higher",
-          "player": "Jon Rahm",
-          "book_display": "FanDuel"
-        },
-        {
           "book": "draftkings",
           "decimal_odds": 201.0,
           "american_odds": 20000,
@@ -2018,6 +2007,17 @@
           "book_display": "DraftKings"
         },
         {
+          "book": "fanduel",
+          "decimal_odds": 18.0,
+          "american_odds": 1700,
+          "median_odds": 15.0,
+          "median_american": 1400,
+          "deviation_pct": 20.0,
+          "direction": "higher",
+          "player": "Jon Rahm",
+          "book_display": "FanDuel"
+        },
+        {
           "book": "draftkings",
           "decimal_odds": 121.0,
           "american_odds": 12000,
@@ -2079,7 +2079,7 @@
         "LowVig": 36.8,
         "BetRivers": 64.4,
         "BetMGM": 54.4,
-        "FanDuel": 52.1,
+        "FanDuel": 52.7,
         "Bovada": 42.3
       },
       "nc_books_available": [
