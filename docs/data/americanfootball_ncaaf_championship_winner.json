@@ -4,8 +4,8 @@
   "sport_key": "americanfootball_ncaaf_championship_winner",
   "sport_group": "ncaaf",
   "event_date": "2027-01-26T00:30:00Z",
-  "days_to_resolution": 117,
-  "generated_at": "2026-09-30 18:11:43",
+  "days_to_resolution": 116,
+  "generated_at": "2026-10-01 18:37:10",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 3,
       "num_sharp_books": 1,
       "num_players": 40,
-      "min_edge_threshold": 3.44,
+      "min_edge_threshold": 3.43,
       "strong_picks": [
         {
           "player": "Texas A&M Aggies",
@@ -54,20 +54,6 @@
           "implied_prob": 0.0008,
           "true_prob": 0.00113,
           "ev_pct": 41.43,
-          "value_tier": "STRONG VALUE",
-          "kelly_pct": 0.01,
-          "analytics": null
-        },
-        {
-          "player": "Virginia Cavaliers",
-          "book": "fanduel",
-          "book_display": "FanDuel",
-          "american_odds": 70000,
-          "decimal_odds": 701.0,
-          "fair_american": 50623,
-          "implied_prob": 0.00143,
-          "true_prob": 0.00197,
-          "ev_pct": 38.2,
           "value_tier": "STRONG VALUE",
           "kelly_pct": 0.01,
           "analytics": null
@@ -143,6 +129,20 @@
           "value_tier": "Notable Value",
           "kelly_pct": 0.01,
           "analytics": null
+        },
+        {
+          "player": "BYU Cougars",
+          "book": "fanduel",
+          "book_display": "FanDuel",
+          "american_odds": 12500,
+          "decimal_odds": 126.0,
+          "fair_american": 12006,
+          "implied_prob": 0.00794,
+          "true_prob": 0.00826,
+          "ev_pct": 4.08,
+          "value_tier": "Notable Value",
+          "kelly_pct": 0.01,
+          "analytics": null
         }
       ],
       "all_value_count": 9,
@@ -154,9 +154,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 480,
-              "decimal": 5.8,
-              "ev_pct": -19.41
+              "american": 470,
+              "decimal": 5.7,
+              "ev_pct": -20.8
             },
             "draftkings": {
               "american": 475,
@@ -204,9 +204,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 500,
-              "decimal": 6.0,
-              "ev_pct": -25.35
+              "american": 550,
+              "decimal": 6.5,
+              "ev_pct": -19.13
             },
             "draftkings": {
               "american": 500,
@@ -219,8 +219,8 @@
               "ev_pct": -19.13
             }
           },
-          "best_book": "betmgm",
-          "best_book_display": "BetMGM"
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
         },
         {
           "player": "Notre Dame Fighting Irish",
@@ -429,9 +429,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 4500,
-              "decimal": 46.0,
-              "ev_pct": -43.15
+              "american": 5500,
+              "decimal": 56.0,
+              "ev_pct": -30.79
             },
             "draftkings": {
               "american": 6500,
@@ -504,9 +504,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 10000,
-              "decimal": 101.0,
-              "ev_pct": -16.57
+              "american": 12500,
+              "decimal": 126.0,
+              "ev_pct": 4.08
             },
             "draftkings": {
               "american": 9000,
@@ -604,9 +604,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 10000,
-              "decimal": 101.0,
-              "ev_pct": -48.49
+              "american": 12500,
+              "decimal": 126.0,
+              "ev_pct": -35.74
             },
             "draftkings": {
               "american": 10000,
@@ -754,9 +754,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 25000,
-              "decimal": 251.0,
-              "ev_pct": -23.11
+              "american": 20000,
+              "decimal": 201.0,
+              "ev_pct": -38.43
             },
             "draftkings": {
               "american": 40000,
@@ -829,9 +829,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 30000,
-              "decimal": 301.0,
-              "ev_pct": -27.65
+              "american": 25000,
+              "decimal": 251.0,
+              "ev_pct": -39.66
             },
             "draftkings": {
               "american": 40000,
@@ -854,9 +854,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 30000,
-              "decimal": 301.0,
-              "ev_pct": -40.66
+              "american": 40000,
+              "decimal": 401.0,
+              "ev_pct": -20.94
             },
             "draftkings": {
               "american": 35000,
@@ -869,8 +869,8 @@
               "ev_pct": -40.66
             }
           },
-          "best_book": "draftkings",
-          "best_book_display": "DraftKings"
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
         },
         {
           "player": "Virginia Cavaliers",
@@ -879,9 +879,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 70000,
-              "decimal": 701.0,
-              "ev_pct": 38.2
+              "american": 40000,
+              "decimal": 401.0,
+              "ev_pct": -20.94
             },
             "draftkings": {
               "american": 40000,
@@ -894,8 +894,8 @@
               "ev_pct": -1.23
             }
           },
-          "best_book": "fanduel",
-          "best_book_display": "FanDuel"
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
         },
         {
           "player": "Arizona State Sun Devils",
@@ -929,9 +929,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 40000,
-              "decimal": 401.0,
-              "ev_pct": -42.19
+              "american": 25000,
+              "decimal": 251.0,
+              "ev_pct": -63.82
             },
             "draftkings": {
               "american": 50000,
@@ -979,9 +979,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 35000,
-              "decimal": 351.0,
-              "ev_pct": -49.4
+              "american": 40000,
+              "decimal": 401.0,
+              "ev_pct": -42.19
             },
             "draftkings": {
               "american": 70000,
@@ -1054,9 +1054,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 30000,
-              "decimal": 301.0,
-              "ev_pct": -65.97
+              "american": 25000,
+              "decimal": 251.0,
+              "ev_pct": -71.62
             },
             "draftkings": {
               "american": 35000,
@@ -1079,9 +1079,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 100000,
-              "decimal": 1001.0,
-              "ev_pct": -7.22
+              "american": 60000,
+              "decimal": 601.0,
+              "ev_pct": -44.29
             },
             "draftkings": {
               "american": 80000,
@@ -1094,8 +1094,8 @@
               "ev_pct": -7.22
             }
           },
-          "best_book": "fanduel",
-          "best_book_display": "FanDuel"
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
         },
         {
           "player": "Wisconsin Badgers",
@@ -1129,9 +1129,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 60000,
-              "decimal": 601.0,
-              "ev_pct": -56.32
+              "american": 35000,
+              "decimal": 351.0,
+              "ev_pct": -74.49
             },
             "draftkings": {
               "american": 75000,
@@ -1151,6 +1151,17 @@
       "outlier_summary": [
         {
           "book": "betmgm",
+          "decimal_odds": 501.0,
+          "american_odds": 50000,
+          "median_odds": 251.0,
+          "median_american": 25000,
+          "deviation_pct": 99.6,
+          "direction": "higher",
+          "player": "Pittsburgh Panthers",
+          "book_display": "BetMGM"
+        },
+        {
+          "book": "betmgm",
           "decimal_odds": 751.0,
           "american_odds": 75000,
           "median_odds": 401.0,
@@ -1159,17 +1170,6 @@
           "direction": "higher",
           "player": "Washington Huskies",
           "book_display": "BetMGM"
-        },
-        {
-          "book": "fanduel",
-          "decimal_odds": 701.0,
-          "american_odds": 70000,
-          "median_odds": 401.0,
-          "median_american": 40000,
-          "deviation_pct": 74.8,
-          "direction": "higher",
-          "player": "Virginia Cavaliers",
-          "book_display": "FanDuel"
         },
         {
           "book": "draftkings",
@@ -1194,15 +1194,26 @@
           "book_display": "DraftKings"
         },
         {
-          "book": "betmgm",
+          "book": "draftkings",
           "decimal_odds": 501.0,
           "american_odds": 50000,
           "median_odds": 301.0,
           "median_american": 30000,
           "deviation_pct": 66.4,
           "direction": "higher",
+          "player": "Auburn Tigers",
+          "book_display": "DraftKings"
+        },
+        {
+          "book": "draftkings",
+          "decimal_odds": 401.0,
+          "american_odds": 40000,
+          "median_odds": 251.0,
+          "median_american": 25000,
+          "deviation_pct": 59.8,
+          "direction": "higher",
           "player": "Pittsburgh Panthers",
-          "book_display": "BetMGM"
+          "book_display": "DraftKings"
         },
         {
           "book": "draftkings",
@@ -1260,6 +1271,28 @@
           "book_display": "FanDuel"
         },
         {
+          "book": "fanduel",
+          "decimal_odds": 126.0,
+          "american_odds": 12500,
+          "median_odds": 91.0,
+          "median_american": 9000,
+          "deviation_pct": 38.5,
+          "direction": "higher",
+          "player": "BYU Cougars",
+          "book_display": "FanDuel"
+        },
+        {
+          "book": "betmgm",
+          "decimal_odds": 1001.0,
+          "american_odds": 100000,
+          "median_odds": 751.0,
+          "median_american": 75000,
+          "deviation_pct": 33.3,
+          "direction": "higher",
+          "player": "Duke Blue Devils",
+          "book_display": "BetMGM"
+        },
+        {
           "book": "draftkings",
           "decimal_odds": 401.0,
           "american_odds": 40000,
@@ -1271,52 +1304,19 @@
           "book_display": "DraftKings"
         },
         {
-          "book": "draftkings",
+          "book": "fanduel",
           "decimal_odds": 401.0,
           "american_odds": 40000,
           "median_odds": 301.0,
           "median_american": 30000,
           "deviation_pct": 33.2,
           "direction": "higher",
-          "player": "Pittsburgh Panthers",
-          "book_display": "DraftKings"
-        },
-        {
-          "book": "fanduel",
-          "decimal_odds": 1251.0,
-          "american_odds": 125000,
-          "median_odds": 1001.0,
-          "median_american": 100000,
-          "deviation_pct": 25.0,
-          "direction": "higher",
-          "player": "Clemson Tigers",
+          "player": "SMU Mustangs",
           "book_display": "FanDuel"
-        },
-        {
-          "book": "fanduel",
-          "decimal_odds": 1001.0,
-          "american_odds": 100000,
-          "median_odds": 801.0,
-          "median_american": 80000,
-          "deviation_pct": 25.0,
-          "direction": "higher",
-          "player": "Duke Blue Devils",
-          "book_display": "FanDuel"
-        },
-        {
-          "book": "betmgm",
-          "decimal_odds": 1001.0,
-          "american_odds": 100000,
-          "median_odds": 801.0,
-          "median_american": 80000,
-          "deviation_pct": 25.0,
-          "direction": "higher",
-          "player": "Duke Blue Devils",
-          "book_display": "BetMGM"
         }
       ],
       "book_vigs": {
-        "FanDuel": 33.3,
+        "FanDuel": 32.0,
         "DraftKings": 24.0,
         "BetMGM": 21.7,
         "BetOnline": 26.1,
