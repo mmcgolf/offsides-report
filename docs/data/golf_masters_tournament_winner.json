@@ -4,8 +4,8 @@
   "sport_key": "golf_masters_tournament_winner",
   "sport_group": "golf",
   "event_date": "2027-04-08T11:00:00Z",
-  "days_to_resolution": 183,
-  "generated_at": "2026-10-06 18:41:15",
+  "days_to_resolution": 182,
+  "generated_at": "2026-10-07 19:07:41",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 3,
       "num_sharp_books": 2,
       "num_players": 66,
-      "min_edge_threshold": 4.26,
+      "min_edge_threshold": 4.24,
       "strong_picks": [
         {
           "player": "Kristoffer Reitan",
@@ -42,20 +42,6 @@
           "ev_pct": 38.74,
           "value_tier": "STRONG VALUE",
           "kelly_pct": 0.05,
-          "analytics": null
-        },
-        {
-          "player": "Christopher Gotterup",
-          "book": "fanduel",
-          "book_display": "FanDuel",
-          "american_odds": 6000,
-          "decimal_odds": 61.0,
-          "fair_american": 5271,
-          "implied_prob": 0.01639,
-          "true_prob": 0.01862,
-          "ev_pct": 13.58,
-          "value_tier": "STRONG VALUE",
-          "kelly_pct": 0.06,
           "analytics": null
         },
         {
@@ -89,7 +75,7 @@
           "analytics": null
         }
       ],
-      "all_value_count": 5,
+      "all_value_count": 4,
       "odds_table": [
         {
           "player": "Scottie Scheffler",
@@ -319,9 +305,9 @@
               "ev_pct": -8.22
             },
             "fanduel": {
-              "american": 2200,
-              "decimal": 23.0,
-              "ev_pct": -37.91
+              "american": 2000,
+              "decimal": 21.0,
+              "ev_pct": -43.31
             }
           },
           "best_book": "betmgm",
@@ -446,13 +432,13 @@
               "ev_pct": -5.04
             },
             "fanduel": {
-              "american": 6000,
-              "decimal": 61.0,
-              "ev_pct": 13.58
+              "american": 4000,
+              "decimal": 41.0,
+              "ev_pct": -23.66
             }
           },
-          "best_book": "fanduel",
-          "best_book_display": "FanDuel"
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
         },
         {
           "player": "Sam Burns",
@@ -693,13 +679,13 @@
               "ev_pct": -49.91
             },
             "fanduel": {
-              "american": 5000,
-              "decimal": 51.0,
-              "ev_pct": -24.86
+              "american": 4000,
+              "decimal": 41.0,
+              "ev_pct": -39.6
             }
           },
-          "best_book": "fanduel",
-          "best_book_display": "FanDuel"
+          "best_book": "draftkings",
+          "best_book_display": "DraftKings"
         },
         {
           "player": "Russell Henley",
@@ -2030,17 +2016,6 @@
           "book_display": "FanDuel"
         },
         {
-          "book": "fanduel",
-          "decimal_odds": 61.0,
-          "american_odds": 6000,
-          "median_odds": 51.0,
-          "median_american": 5000,
-          "deviation_pct": 19.6,
-          "direction": "higher",
-          "player": "Christopher Gotterup",
-          "book_display": "FanDuel"
-        },
-        {
           "book": "betmgm",
           "decimal_odds": 34.0,
           "american_odds": 3300,
@@ -2058,7 +2033,7 @@
         "LowVig": 36.1,
         "BetRivers": 64.4,
         "BetMGM": 54.4,
-        "FanDuel": 55.6,
+        "FanDuel": 57.3,
         "Bovada": 39.8
       },
       "nc_books_available": [
