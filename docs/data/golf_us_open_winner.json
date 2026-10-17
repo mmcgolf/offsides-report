@@ -4,8 +4,8 @@
   "sport_key": "golf_us_open_winner",
   "sport_group": "golf",
   "event_date": "2027-06-17T10:00:00Z",
-  "days_to_resolution": 243,
-  "generated_at": "2026-10-16 17:03:47",
+  "days_to_resolution": 242,
+  "generated_at": "2026-10-17 16:01:12",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,20 +14,20 @@
       "num_nc_books": 2,
       "num_sharp_books": 2,
       "num_players": 65,
-      "min_edge_threshold": 5.0,
+      "min_edge_threshold": 4.98,
       "strong_picks": [
         {
           "player": "Michael Brennan",
           "book": "draftkings",
           "book_display": "DraftKings",
-          "american_odds": 15000,
-          "decimal_odds": 151.0,
+          "american_odds": 14000,
+          "decimal_odds": 141.0,
           "fair_american": 10744,
-          "implied_prob": 0.00662,
+          "implied_prob": 0.00709,
           "true_prob": 0.00922,
-          "ev_pct": 39.25,
+          "ev_pct": 30.03,
           "value_tier": "STRONG VALUE",
-          "kelly_pct": 0.07,
+          "kelly_pct": 0.05,
           "analytics": null
         },
         {
@@ -791,9 +791,9 @@
           "analytics": null,
           "books": {
             "draftkings": {
-              "american": 15000,
-              "decimal": 151.0,
-              "ev_pct": 39.25
+              "american": 14000,
+              "decimal": 141.0,
+              "ev_pct": 30.03
             }
           },
           "best_book": "draftkings",
@@ -1123,9 +1123,9 @@
           },
           "books": {
             "draftkings": {
-              "american": 14000,
-              "decimal": 141.0,
-              "ev_pct": -23.16
+              "american": 13000,
+              "decimal": 131.0,
+              "ev_pct": -28.61
             },
             "betmgm": {
               "american": 12500,
@@ -1446,17 +1446,6 @@
       "outlier_summary": [
         {
           "book": "draftkings",
-          "decimal_odds": 151.0,
-          "american_odds": 15000,
-          "median_odds": 91.0,
-          "median_american": 9000,
-          "deviation_pct": 65.9,
-          "direction": "higher",
-          "player": "Michael Brennan",
-          "book_display": "DraftKings"
-        },
-        {
-          "book": "draftkings",
           "decimal_odds": 401.0,
           "american_odds": 40000,
           "median_odds": 251.0,
@@ -1464,6 +1453,17 @@
           "deviation_pct": 59.8,
           "direction": "higher",
           "player": "Max McGreevy",
+          "book_display": "DraftKings"
+        },
+        {
+          "book": "draftkings",
+          "decimal_odds": 141.0,
+          "american_odds": 14000,
+          "median_odds": 91.0,
+          "median_american": 9000,
+          "deviation_pct": 54.9,
+          "direction": "higher",
+          "player": "Michael Brennan",
           "book_display": "DraftKings"
         },
         {
@@ -1535,7 +1535,7 @@
       ],
       "book_vigs": {
         "BetRivers": 56.6,
-        "DraftKings": 47.6,
+        "DraftKings": 47.7,
         "BetOnline": 17.6,
         "LowVig": 17.6,
         "BetMGM": 22.7
