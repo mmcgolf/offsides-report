@@ -4,8 +4,8 @@
   "sport_key": "basketball_nba_championship_winner",
   "sport_group": "nba",
   "event_date": "2027-06-19T00:40:00Z",
-  "days_to_resolution": 242,
-  "generated_at": "2026-10-19 18:53:29",
+  "days_to_resolution": 241,
+  "generated_at": "2026-10-20 17:36:59",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,12 +14,26 @@
       "num_nc_books": 2,
       "num_sharp_books": 1,
       "num_players": 30,
-      "min_edge_threshold": 4.98,
+      "min_edge_threshold": 4.97,
       "strong_picks": [
         {
-          "player": "Toronto Raptors",
+          "player": "Dallas Mavericks",
           "book": "fanduel",
           "book_display": "FanDuel",
+          "american_odds": 35000,
+          "decimal_odds": 351.0,
+          "fair_american": 24956,
+          "implied_prob": 0.00285,
+          "true_prob": 0.00399,
+          "ev_pct": 40.09,
+          "value_tier": "STRONG VALUE",
+          "kelly_pct": 0.03,
+          "analytics": null
+        },
+        {
+          "player": "Toronto Raptors",
+          "book": "betmgm",
+          "book_display": "BetMGM",
           "american_odds": 2500,
           "decimal_odds": 26.0,
           "fair_american": 1812,
@@ -28,20 +42,6 @@
           "ev_pct": 35.95,
           "value_tier": "STRONG VALUE",
           "kelly_pct": 0.36,
-          "analytics": null
-        },
-        {
-          "player": "Dallas Mavericks",
-          "book": "fanduel",
-          "book_display": "FanDuel",
-          "american_odds": 30000,
-          "decimal_odds": 301.0,
-          "fair_american": 24956,
-          "implied_prob": 0.00332,
-          "true_prob": 0.00399,
-          "ev_pct": 20.13,
-          "value_tier": "STRONG VALUE",
-          "kelly_pct": 0.02,
           "analytics": null
         }
       ],
@@ -55,9 +55,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 240,
-              "decimal": 3.4,
-              "ev_pct": -21.8
+              "american": 250,
+              "decimal": 3.5,
+              "ev_pct": -19.5
             },
             "betmgm": {
               "american": 260,
@@ -115,9 +115,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 1000,
-              "decimal": 11.0,
-              "ev_pct": -9.48
+              "american": 950,
+              "decimal": 10.5,
+              "ev_pct": -13.6
             },
             "betmgm": {
               "american": 1000,
@@ -125,8 +125,8 @@
               "ev_pct": -9.48
             }
           },
-          "best_book": "fanduel",
-          "best_book_display": "FanDuel"
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
         },
         {
           "player": "Toronto Raptors",
@@ -135,9 +135,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 2500,
-              "decimal": 26.0,
-              "ev_pct": 35.95
+              "american": 2200,
+              "decimal": 23.0,
+              "ev_pct": 20.27
             },
             "betmgm": {
               "american": 2500,
@@ -145,8 +145,8 @@
               "ev_pct": 35.95
             }
           },
-          "best_book": "fanduel",
-          "best_book_display": "FanDuel"
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
         },
         {
           "player": "Boston Celtics",
@@ -155,9 +155,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 1600,
-              "decimal": 17.0,
-              "ev_pct": -20.83
+              "american": 1500,
+              "decimal": 16.0,
+              "ev_pct": -25.49
             },
             "betmgm": {
               "american": 1400,
@@ -235,9 +235,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 2700,
-              "decimal": 28.0,
-              "ev_pct": -28.87
+              "american": 3000,
+              "decimal": 31.0,
+              "ev_pct": -21.25
             },
             "betmgm": {
               "american": 3000,
@@ -245,8 +245,8 @@
               "ev_pct": -21.25
             }
           },
-          "best_book": "betmgm",
-          "best_book_display": "BetMGM"
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
         },
         {
           "player": "Detroit Pistons",
@@ -255,9 +255,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 3000,
-              "decimal": 31.0,
-              "ev_pct": -25.8
+              "american": 2700,
+              "decimal": 28.0,
+              "ev_pct": -32.98
             },
             "betmgm": {
               "american": 3000,
@@ -265,8 +265,8 @@
               "ev_pct": -25.8
             }
           },
-          "best_book": "fanduel",
-          "best_book_display": "FanDuel"
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
         },
         {
           "player": "Indiana Pacers",
@@ -315,9 +315,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 2700,
-              "decimal": 28.0,
-              "ev_pct": -57.7
+              "american": 3000,
+              "decimal": 31.0,
+              "ev_pct": -53.17
             },
             "betmgm": {
               "american": 5000,
@@ -455,9 +455,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 30000,
-              "decimal": 301.0,
-              "ev_pct": 20.13
+              "american": 35000,
+              "decimal": 351.0,
+              "ev_pct": 40.09
             },
             "betmgm": {
               "american": 20000,
@@ -475,9 +475,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 12500,
-              "decimal": 126.0,
-              "ev_pct": -49.71
+              "american": 10000,
+              "decimal": 101.0,
+              "ev_pct": -59.69
             },
             "betmgm": {
               "american": 20000,
@@ -495,9 +495,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 17500,
-              "decimal": 176.0,
-              "ev_pct": -29.76
+              "american": 15000,
+              "decimal": 151.0,
+              "ev_pct": -39.74
             },
             "betmgm": {
               "american": 15000,
@@ -615,9 +615,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 100000,
-              "decimal": 1001.0,
-              "ev_pct": -24.96
+              "american": 75000,
+              "decimal": 751.0,
+              "ev_pct": -43.7
             },
             "betmgm": {
               "american": 75000,
@@ -652,6 +652,17 @@
       "outlier_summary": [
         {
           "book": "fanduel",
+          "decimal_odds": 351.0,
+          "american_odds": 35000,
+          "median_odds": 251.0,
+          "median_american": 25000,
+          "deviation_pct": 39.8,
+          "direction": "higher",
+          "player": "Dallas Mavericks",
+          "book_display": "FanDuel"
+        },
+        {
+          "book": "fanduel",
           "decimal_odds": 1001.0,
           "american_odds": 100000,
           "median_odds": 751.0,
@@ -682,21 +693,10 @@
           "direction": "higher",
           "player": "New Orleans Pelicans",
           "book_display": "FanDuel"
-        },
-        {
-          "book": "fanduel",
-          "decimal_odds": 301.0,
-          "american_odds": 30000,
-          "median_odds": 251.0,
-          "median_american": 25000,
-          "deviation_pct": 19.9,
-          "direction": "higher",
-          "player": "Dallas Mavericks",
-          "book_display": "FanDuel"
         }
       ],
       "book_vigs": {
-        "FanDuel": 21.6,
+        "FanDuel": 22.0,
         "BetRivers": 22.4,
         "BetOnline": 10.5,
         "BetMGM": 20.6
