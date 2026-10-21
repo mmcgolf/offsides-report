@@ -4,8 +4,8 @@
   "sport_key": "americanfootball_ncaaf_championship_winner",
   "sport_group": "ncaaf",
   "event_date": "2027-01-26T00:30:00Z",
-  "days_to_resolution": 97,
-  "generated_at": "2026-10-20 17:36:59",
+  "days_to_resolution": 96,
+  "generated_at": "2026-10-21 17:45:53",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 3,
       "num_sharp_books": 1,
       "num_players": 34,
-      "min_edge_threshold": 3.2,
+      "min_edge_threshold": 3.18,
       "strong_picks": [
         {
           "player": "Boise State Broncos",
@@ -28,6 +28,20 @@
           "ev_pct": 46.89,
           "value_tier": "STRONG VALUE",
           "kelly_pct": 0.02,
+          "analytics": null
+        },
+        {
+          "player": "James Madison Dukes",
+          "book": "fanduel",
+          "book_display": "FanDuel",
+          "american_odds": 125000,
+          "decimal_odds": 1251.0,
+          "fair_american": 89122,
+          "implied_prob": 0.0008,
+          "true_prob": 0.00112,
+          "ev_pct": 40.21,
+          "value_tier": "STRONG VALUE",
+          "kelly_pct": 0.01,
           "analytics": null
         },
         {
@@ -59,20 +73,6 @@
           "analytics": null
         },
         {
-          "player": "James Madison Dukes",
-          "book": "draftkings",
-          "book_display": "DraftKings",
-          "american_odds": 100000,
-          "decimal_odds": 1001.0,
-          "fair_american": 89122,
-          "implied_prob": 0.001,
-          "true_prob": 0.00112,
-          "ev_pct": 12.19,
-          "value_tier": "STRONG VALUE",
-          "kelly_pct": 0.0,
-          "analytics": null
-        },
-        {
           "player": "Iowa Hawkeyes",
           "book": "draftkings",
           "book_display": "DraftKings",
@@ -84,6 +84,20 @@
           "ev_pct": 10.31,
           "value_tier": "STRONG VALUE",
           "kelly_pct": 0.02,
+          "analytics": null
+        },
+        {
+          "player": "Alabama Crimson Tide",
+          "book": "draftkings",
+          "book_display": "DraftKings",
+          "american_odds": 1400,
+          "decimal_odds": 15.0,
+          "fair_american": 1274,
+          "implied_prob": 0.06667,
+          "true_prob": 0.07277,
+          "ev_pct": 9.15,
+          "value_tier": "STRONG VALUE",
+          "kelly_pct": 0.16,
           "analytics": null
         },
         {
@@ -101,22 +115,7 @@
           "analytics": null
         }
       ],
-      "notable_picks": [
-        {
-          "player": "Alabama Crimson Tide",
-          "book": "draftkings",
-          "book_display": "DraftKings",
-          "american_odds": 1350,
-          "decimal_odds": 14.5,
-          "fair_american": 1274,
-          "implied_prob": 0.06897,
-          "true_prob": 0.07277,
-          "ev_pct": 5.51,
-          "value_tier": "Notable Value",
-          "kelly_pct": 0.1,
-          "analytics": null
-        }
-      ],
+      "notable_picks": [],
       "all_value_count": 7,
       "odds_table": [
         {
@@ -126,14 +125,14 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 470,
-              "decimal": 5.7,
-              "ev_pct": -6.92
+              "american": 500,
+              "decimal": 6.0,
+              "ev_pct": -2.02
             },
             "draftkings": {
-              "american": 470,
-              "decimal": 5.7,
-              "ev_pct": -6.92
+              "american": 500,
+              "decimal": 6.0,
+              "ev_pct": -2.02
             },
             "betmgm": {
               "american": 500,
@@ -141,8 +140,8 @@
               "ev_pct": -2.02
             }
           },
-          "best_book": "betmgm",
-          "best_book_display": "BetMGM"
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
         },
         {
           "player": "Georgia Bulldogs",
@@ -156,9 +155,9 @@
               "ev_pct": -18.15
             },
             "draftkings": {
-              "american": 500,
-              "decimal": 6.0,
-              "ev_pct": -15.32
+              "american": 480,
+              "decimal": 5.8,
+              "ev_pct": -18.15
             },
             "betmgm": {
               "american": 500,
@@ -166,8 +165,8 @@
               "ev_pct": -15.32
             }
           },
-          "best_book": "draftkings",
-          "best_book_display": "DraftKings"
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
         },
         {
           "player": "Notre Dame Fighting Irish",
@@ -201,9 +200,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 750,
-              "decimal": 8.5,
-              "ev_pct": -2.45
+              "american": 700,
+              "decimal": 8.0,
+              "ev_pct": -8.19
             },
             "draftkings": {
               "american": 600,
@@ -226,9 +225,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 800,
-              "decimal": 9.0,
-              "ev_pct": -27.32
+              "american": 750,
+              "decimal": 8.5,
+              "ev_pct": -31.36
             },
             "draftkings": {
               "american": 750,
@@ -236,9 +235,9 @@
               "ev_pct": -31.36
             },
             "betmgm": {
-              "american": 1000,
-              "decimal": 11.0,
-              "ev_pct": -11.17
+              "american": 800,
+              "decimal": 9.0,
+              "ev_pct": -27.32
             }
           },
           "best_book": "betmgm",
@@ -256,9 +255,9 @@
               "ev_pct": -5.4
             },
             "draftkings": {
-              "american": 1350,
-              "decimal": 14.5,
-              "ev_pct": 5.51
+              "american": 1400,
+              "decimal": 15.0,
+              "ev_pct": 9.15
             },
             "betmgm": {
               "american": 1300,
@@ -301,14 +300,14 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 1600,
-              "decimal": 17.0,
-              "ev_pct": -31.93
+              "american": 1500,
+              "decimal": 16.0,
+              "ev_pct": -35.93
             },
             "draftkings": {
-              "american": 2150,
-              "decimal": 22.5,
-              "ev_pct": -9.9
+              "american": 2050,
+              "decimal": 21.5,
+              "ev_pct": -13.91
             },
             "betmgm": {
               "american": 2000,
@@ -326,9 +325,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 1600,
-              "decimal": 17.0,
-              "ev_pct": -38.98
+              "american": 1500,
+              "decimal": 16.0,
+              "ev_pct": -42.57
             },
             "draftkings": {
               "american": 2200,
@@ -426,9 +425,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 4000,
-              "decimal": 41.0,
-              "ev_pct": -44.19
+              "american": 4500,
+              "decimal": 46.0,
+              "ev_pct": -37.39
             },
             "draftkings": {
               "american": 5800,
@@ -451,9 +450,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 5500,
-              "decimal": 56.0,
-              "ev_pct": -31.18
+              "american": 5000,
+              "decimal": 51.0,
+              "ev_pct": -37.33
             },
             "draftkings": {
               "american": 7200,
@@ -476,9 +475,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 5500,
-              "decimal": 56.0,
-              "ev_pct": -31.18
+              "american": 6000,
+              "decimal": 61.0,
+              "ev_pct": -25.04
             },
             "draftkings": {
               "american": 5200,
@@ -501,9 +500,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 8000,
-              "decimal": 81.0,
-              "ev_pct": -18.17
+              "american": 7000,
+              "decimal": 71.0,
+              "ev_pct": -28.28
             },
             "draftkings": {
               "american": 8000,
@@ -526,9 +525,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 8000,
-              "decimal": 81.0,
-              "ev_pct": -28.7
+              "american": 7500,
+              "decimal": 76.0,
+              "ev_pct": -33.1
             },
             "draftkings": {
               "american": 13500,
@@ -701,9 +700,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 10000,
-              "decimal": 101.0,
-              "ev_pct": -69.29
+              "american": 12500,
+              "decimal": 126.0,
+              "ev_pct": -61.69
             },
             "draftkings": {
               "american": 30000,
@@ -751,9 +750,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 20000,
-              "decimal": 201.0,
-              "ev_pct": -46.23
+              "american": 17500,
+              "decimal": 176.0,
+              "ev_pct": -52.92
             },
             "draftkings": {
               "american": 30000,
@@ -776,9 +775,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 25000,
-              "decimal": 251.0,
-              "ev_pct": -40.13
+              "american": 30000,
+              "decimal": 301.0,
+              "ev_pct": -28.2
             },
             "draftkings": {
               "american": 40000,
@@ -801,9 +800,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 22500,
-              "decimal": 226.0,
-              "ev_pct": -55.8
+              "american": 25000,
+              "decimal": 251.0,
+              "ev_pct": -50.91
             },
             "draftkings": {
               "american": 60000,
@@ -826,9 +825,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 22500,
-              "decimal": 226.0,
-              "ev_pct": -55.8
+              "american": 20000,
+              "decimal": 201.0,
+              "ev_pct": -60.69
             },
             "draftkings": {
               "american": 50000,
@@ -846,9 +845,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 35000,
-              "decimal": 351.0,
-              "ev_pct": -31.35
+              "american": 30000,
+              "decimal": 301.0,
+              "ev_pct": -41.13
             },
             "draftkings": {
               "american": 40000,
@@ -871,9 +870,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 40000,
-              "decimal": 401.0,
-              "ev_pct": -42.68
+              "american": 30000,
+              "decimal": 301.0,
+              "ev_pct": -56.97
             },
             "draftkings": {
               "american": 60000,
@@ -896,9 +895,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 60000,
-              "decimal": 601.0,
-              "ev_pct": -32.64
+              "american": 125000,
+              "decimal": 1251.0,
+              "ev_pct": 40.21
             },
             "draftkings": {
               "american": 100000,
@@ -911,8 +910,8 @@
               "ev_pct": 12.19
             }
           },
-          "best_book": "draftkings",
-          "best_book_display": "DraftKings"
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
         },
         {
           "player": "Wisconsin Badgers",
@@ -921,9 +920,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 70000,
-              "decimal": 701.0,
-              "ev_pct": -49.52
+              "american": 125000,
+              "decimal": 1251.0,
+              "ev_pct": -9.91
             },
             "draftkings": {
               "american": 70000,
@@ -936,8 +935,8 @@
               "ev_pct": -45.92
             }
           },
-          "best_book": "betmgm",
-          "best_book_display": "BetMGM"
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
         },
         {
           "player": "North Dakota State Bison",
@@ -1022,6 +1021,17 @@
           "book_display": "DraftKings"
         },
         {
+          "book": "fanduel",
+          "decimal_odds": 1251.0,
+          "american_odds": 125000,
+          "median_odds": 751.0,
+          "median_american": 75000,
+          "deviation_pct": 66.6,
+          "direction": "higher",
+          "player": "Wisconsin Badgers",
+          "book_display": "FanDuel"
+        },
+        {
           "book": "draftkings",
           "decimal_odds": 401.0,
           "american_odds": 40000,
@@ -1041,6 +1051,17 @@
           "deviation_pct": 49.5,
           "direction": "higher",
           "player": "Iowa Hawkeyes",
+          "book_display": "BetMGM"
+        },
+        {
+          "book": "betmgm",
+          "decimal_odds": 101.0,
+          "american_odds": 10000,
+          "median_odds": 71.0,
+          "median_american": 7000,
+          "deviation_pct": 42.3,
+          "direction": "higher",
+          "player": "USC Trojans",
           "book_display": "BetMGM"
         },
         {
@@ -1108,34 +1129,12 @@
           "direction": "higher",
           "player": "SMU Mustangs",
           "book_display": "BetMGM"
-        },
-        {
-          "book": "betmgm",
-          "decimal_odds": 201.0,
-          "american_odds": 20000,
-          "median_odds": 151.0,
-          "median_american": 15000,
-          "deviation_pct": 33.1,
-          "direction": "higher",
-          "player": "Houston Cougars",
-          "book_display": "BetMGM"
-        },
-        {
-          "book": "fanduel",
-          "decimal_odds": 1251.0,
-          "american_odds": 125000,
-          "median_odds": 1001.0,
-          "median_american": 100000,
-          "deviation_pct": 25.0,
-          "direction": "higher",
-          "player": "North Dakota State Bison",
-          "book_display": "FanDuel"
         }
       ],
       "book_vigs": {
-        "FanDuel": 31.2,
-        "DraftKings": 20.2,
-        "BetMGM": 23.2,
+        "FanDuel": 32.0,
+        "DraftKings": 19.9,
+        "BetMGM": 25.2,
         "BetOnline": 25.7,
         "BetRivers": 30.2
       },
