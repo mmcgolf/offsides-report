@@ -4,8 +4,8 @@
   "sport_key": "americanfootball_nfl_super_bowl_winner",
   "sport_group": "nfl",
   "event_date": "2027-02-14T23:35:00Z",
-  "days_to_resolution": 114,
-  "generated_at": "2026-10-23 17:35:16",
+  "days_to_resolution": 113,
+  "generated_at": "2026-10-24 16:20:34",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 3,
       "num_sharp_books": 2,
       "num_players": 32,
-      "min_edge_threshold": 3.41,
+      "min_edge_threshold": 3.39,
       "strong_picks": [
         {
           "player": "New York Giants",
@@ -28,6 +28,20 @@
           "ev_pct": 25.87,
           "value_tier": "STRONG VALUE",
           "kelly_pct": 0.04,
+          "analytics": null
+        },
+        {
+          "player": "Kansas City Chiefs",
+          "book": "fanduel",
+          "book_display": "FanDuel",
+          "american_odds": 950,
+          "decimal_odds": 10.5,
+          "fair_american": 877,
+          "implied_prob": 0.09524,
+          "true_prob": 0.10237,
+          "ev_pct": 7.49,
+          "value_tier": "STRONG VALUE",
+          "kelly_pct": 0.2,
           "analytics": null
         }
       ],
@@ -61,7 +75,7 @@
           "analytics": null
         }
       ],
-      "all_value_count": 3,
+      "all_value_count": 4,
       "odds_table": [
         {
           "player": "San Francisco 49ers",
@@ -120,9 +134,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 900,
-              "decimal": 10.0,
-              "ev_pct": 2.37
+              "american": 950,
+              "decimal": 10.5,
+              "ev_pct": 7.49
             },
             "draftkings": {
               "american": 750,
@@ -245,9 +259,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 1300,
-              "decimal": 14.0,
-              "ev_pct": -25.9
+              "american": 1200,
+              "decimal": 13.0,
+              "ev_pct": -31.19
             },
             "draftkings": {
               "american": 1200,
@@ -260,8 +274,8 @@
               "ev_pct": -25.9
             }
           },
-          "best_book": "fanduel",
-          "best_book_display": "FanDuel"
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
         },
         {
           "player": "Minnesota Vikings",
@@ -320,9 +334,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 1700,
-              "decimal": 18.0,
-              "ev_pct": -38.69
+              "american": 1800,
+              "decimal": 19.0,
+              "ev_pct": -35.28
             },
             "draftkings": {
               "american": 2000,
@@ -370,9 +384,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 2500,
-              "decimal": 26.0,
-              "ev_pct": -11.44
+              "american": 2200,
+              "decimal": 23.0,
+              "ev_pct": -21.66
             },
             "draftkings": {
               "american": 2000,
@@ -670,9 +684,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 15000,
-              "decimal": 151.0,
-              "ev_pct": -38.35
+              "american": 17500,
+              "decimal": 176.0,
+              "ev_pct": -28.15
             },
             "draftkings": {
               "american": 12000,
@@ -695,9 +709,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 12500,
-              "decimal": 126.0,
-              "ev_pct": -48.56
+              "american": 10000,
+              "decimal": 101.0,
+              "ev_pct": -58.77
             },
             "draftkings": {
               "american": 15000,
@@ -745,9 +759,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 35000,
-              "decimal": 351.0,
-              "ev_pct": -44.43
+              "american": 40000,
+              "decimal": 401.0,
+              "ev_pct": -36.52
             },
             "draftkings": {
               "american": 50000,
@@ -930,10 +944,21 @@
           "direction": "higher",
           "player": "Washington Commanders",
           "book_display": "BetMGM"
+        },
+        {
+          "book": "fanduel",
+          "decimal_odds": 10.5,
+          "american_odds": 950,
+          "median_odds": 9.0,
+          "median_american": 800,
+          "deviation_pct": 16.7,
+          "direction": "higher",
+          "player": "Kansas City Chiefs",
+          "book_display": "FanDuel"
         }
       ],
       "book_vigs": {
-        "FanDuel": 20.9,
+        "FanDuel": 21.3,
         "BetOnline": 11.0,
         "BetRivers": 20.3,
         "DraftKings": 21.8,
