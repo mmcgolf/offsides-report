@@ -4,8 +4,8 @@
   "sport_key": "golf_us_open_winner",
   "sport_group": "golf",
   "event_date": "2027-06-17T10:00:00Z",
-  "days_to_resolution": 233,
-  "generated_at": "2026-10-26 18:55:28",
+  "days_to_resolution": 232,
+  "generated_at": "2026-10-27 18:27:51",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 2,
       "num_sharp_books": 2,
       "num_players": 65,
-      "min_edge_threshold": 4.87,
+      "min_edge_threshold": 4.86,
       "strong_picks": [
         {
           "player": "Max McGreevy",
@@ -28,20 +28,6 @@
           "ev_pct": 28.89,
           "value_tier": "STRONG VALUE",
           "kelly_pct": 0.02,
-          "analytics": null
-        },
-        {
-          "player": "Jackson Koivun",
-          "book": "draftkings",
-          "book_display": "DraftKings",
-          "american_odds": 6000,
-          "decimal_odds": 61.0,
-          "fair_american": 5238,
-          "implied_prob": 0.01639,
-          "true_prob": 0.01873,
-          "ev_pct": 14.28,
-          "value_tier": "STRONG VALUE",
-          "kelly_pct": 0.06,
           "analytics": null
         }
       ],
@@ -59,23 +45,9 @@
           "value_tier": "Notable Value",
           "kelly_pct": 0.04,
           "analytics": null
-        },
-        {
-          "player": "Ryan Fox",
-          "book": "draftkings",
-          "book_display": "DraftKings",
-          "american_odds": 17500,
-          "decimal_odds": 176.0,
-          "fair_american": 16361,
-          "implied_prob": 0.00568,
-          "true_prob": 0.00607,
-          "ev_pct": 6.92,
-          "value_tier": "Notable Value",
-          "kelly_pct": 0.01,
-          "analytics": null
         }
       ],
-      "all_value_count": 4,
+      "all_value_count": 2,
       "odds_table": [
         {
           "player": "Scottie Scheffler",
@@ -407,9 +379,9 @@
           "analytics": null,
           "books": {
             "draftkings": {
-              "american": 6000,
-              "decimal": 61.0,
-              "ev_pct": 14.28
+              "american": 5000,
+              "decimal": 51.0,
+              "ev_pct": -4.46
             },
             "betmgm": {
               "american": 4000,
@@ -436,9 +408,9 @@
           },
           "books": {
             "draftkings": {
-              "american": 5000,
-              "decimal": 51.0,
-              "ev_pct": -4.46
+              "american": 4500,
+              "decimal": 46.0,
+              "ev_pct": -13.83
             },
             "betmgm": {
               "american": 4000,
@@ -505,9 +477,9 @@
           },
           "books": {
             "draftkings": {
-              "american": 3500,
-              "decimal": 36.0,
-              "ev_pct": -49.7
+              "american": 4000,
+              "decimal": 41.0,
+              "ev_pct": -42.71
             },
             "betmgm": {
               "american": 4000,
@@ -515,8 +487,8 @@
               "ev_pct": -42.71
             }
           },
-          "best_book": "betmgm",
-          "best_book_display": "BetMGM"
+          "best_book": "draftkings",
+          "best_book_display": "DraftKings"
         },
         {
           "player": "Patrick Reed",
@@ -851,9 +823,9 @@
           },
           "books": {
             "draftkings": {
-              "american": 7000,
-              "decimal": 71.0,
-              "ev_pct": -41.25
+              "american": 6500,
+              "decimal": 66.0,
+              "ev_pct": -45.38
             },
             "betmgm": {
               "american": 6600,
@@ -861,8 +833,8 @@
               "ev_pct": -44.56
             }
           },
-          "best_book": "draftkings",
-          "best_book_display": "DraftKings"
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
         },
         {
           "player": "Alex Fitzpatrick",
@@ -1085,9 +1057,9 @@
           "analytics": null,
           "books": {
             "draftkings": {
-              "american": 17500,
-              "decimal": 176.0,
-              "ev_pct": 6.92
+              "american": 13000,
+              "decimal": 131.0,
+              "ev_pct": -20.42
             }
           },
           "best_book": "draftkings",
@@ -1306,9 +1278,9 @@
           "analytics": null,
           "books": {
             "draftkings": {
-              "american": 22500,
-              "decimal": 226.0,
-              "ev_pct": -8.5
+              "american": 18000,
+              "decimal": 181.0,
+              "ev_pct": -26.72
             }
           },
           "best_book": "draftkings",
@@ -1443,28 +1415,6 @@
         },
         {
           "book": "draftkings",
-          "decimal_odds": 61.0,
-          "american_odds": 6000,
-          "median_odds": 46.0,
-          "median_american": 4500,
-          "deviation_pct": 32.6,
-          "direction": "higher",
-          "player": "Jackson Koivun",
-          "book_display": "DraftKings"
-        },
-        {
-          "book": "draftkings",
-          "decimal_odds": 176.0,
-          "american_odds": 17500,
-          "median_odds": 136.0,
-          "median_american": 13500,
-          "deviation_pct": 29.4,
-          "direction": "higher",
-          "player": "Ryan Fox",
-          "book_display": "DraftKings"
-        },
-        {
-          "book": "draftkings",
           "decimal_odds": 251.0,
           "american_odds": 25000,
           "median_odds": 201.0,
@@ -1510,7 +1460,7 @@
       ],
       "book_vigs": {
         "BetRivers": 56.6,
-        "DraftKings": 48.2,
+        "DraftKings": 48.7,
         "BetOnline": 17.6,
         "LowVig": 17.6,
         "BetMGM": 24.2
