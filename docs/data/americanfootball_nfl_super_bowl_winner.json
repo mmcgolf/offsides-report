@@ -4,8 +4,8 @@
   "sport_key": "americanfootball_nfl_super_bowl_winner",
   "sport_group": "nfl",
   "event_date": "2027-02-14T23:35:00Z",
-  "days_to_resolution": 86,
-  "generated_at": "2026-11-20 20:50:45",
+  "days_to_resolution": 85,
+  "generated_at": "2026-11-21 19:52:20",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,7 +14,7 @@
       "num_nc_books": 3,
       "num_sharp_books": 2,
       "num_players": 32,
-      "min_edge_threshold": 3.06,
+      "min_edge_threshold": 3.05,
       "strong_picks": [
         {
           "player": "Minnesota Vikings",
@@ -481,9 +481,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 5000,
-              "decimal": 51.0,
-              "ev_pct": -58.17
+              "american": 5500,
+              "decimal": 56.0,
+              "ev_pct": -54.06
             },
             "draftkings": {
               "american": 6500,
@@ -506,9 +506,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 12500,
-              "decimal": 126.0,
-              "ev_pct": -17.9
+              "american": 10000,
+              "decimal": 101.0,
+              "ev_pct": -34.19
             },
             "draftkings": {
               "american": 10000,
@@ -631,9 +631,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 60000,
-              "decimal": 601.0,
-              "ev_pct": -6.9
+              "american": 50000,
+              "decimal": 501.0,
+              "ev_pct": -22.39
             },
             "draftkings": {
               "american": 50000,
@@ -984,17 +984,6 @@
           "book_display": "FanDuel"
         },
         {
-          "book": "fanduel",
-          "decimal_odds": 601.0,
-          "american_odds": 60000,
-          "median_odds": 501.0,
-          "median_american": 50000,
-          "deviation_pct": 20.0,
-          "direction": "higher",
-          "player": "Las Vegas Raiders",
-          "book_display": "FanDuel"
-        },
-        {
           "book": "betmgm",
           "decimal_odds": 301.0,
           "american_odds": 30000,
@@ -1015,10 +1004,21 @@
           "direction": "higher",
           "player": "Cleveland Browns",
           "book_display": "DraftKings"
+        },
+        {
+          "book": "betmgm",
+          "decimal_odds": 151.0,
+          "american_odds": 15000,
+          "median_odds": 126.0,
+          "median_american": 12500,
+          "deviation_pct": 19.8,
+          "direction": "higher",
+          "player": "New England Patriots",
+          "book_display": "BetMGM"
         }
       ],
       "book_vigs": {
-        "FanDuel": 20.7,
+        "FanDuel": 20.8,
         "BetOnline": 11.1,
         "BetRivers": 20.4,
         "DraftKings": 22.4,
