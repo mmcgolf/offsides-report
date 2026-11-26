@@ -4,8 +4,8 @@
   "sport_key": "basketball_nba_championship_winner",
   "sport_group": "nba",
   "event_date": "2027-06-19T00:40:00Z",
-  "days_to_resolution": 205,
-  "generated_at": "2026-11-25 22:02:47",
+  "days_to_resolution": 204,
+  "generated_at": "2026-11-26 22:00:34",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,18 +14,18 @@
       "num_nc_books": 2,
       "num_sharp_books": 1,
       "num_players": 30,
-      "min_edge_threshold": 4.53,
+      "min_edge_threshold": 4.52,
       "strong_picks": [
         {
           "player": "Washington Wizards",
           "book": "fanduel",
           "book_display": "FanDuel",
-          "american_odds": 200000,
-          "decimal_odds": 2001.0,
-          "fair_american": 98934,
-          "implied_prob": 0.0005,
+          "american_odds": 150000,
+          "decimal_odds": 1501.0,
+          "fair_american": 98652,
+          "implied_prob": 0.00067,
           "true_prob": 0.00101,
-          "ev_pct": 102.05,
+          "ev_pct": 52.0,
           "value_tier": "STRONG VALUE",
           "kelly_pct": 0.01,
           "analytics": null
@@ -36,54 +36,54 @@
           "book_display": "FanDuel",
           "american_odds": 200000,
           "decimal_odds": 2001.0,
-          "fair_american": 133496,
+          "fair_american": 133098,
           "implied_prob": 0.0005,
           "true_prob": 0.00075,
-          "ev_pct": 49.78,
+          "ev_pct": 50.23,
           "value_tier": "STRONG VALUE",
           "kelly_pct": 0.01,
+          "analytics": null
+        },
+        {
+          "player": "Dallas Mavericks",
+          "book": "fanduel",
+          "book_display": "FanDuel",
+          "american_odds": 25000,
+          "decimal_odds": 251.0,
+          "fair_american": 18481,
+          "implied_prob": 0.00398,
+          "true_prob": 0.00538,
+          "ev_pct": 35.08,
+          "value_tier": "STRONG VALUE",
+          "kelly_pct": 0.04,
           "analytics": null
         },
         {
           "player": "Toronto Raptors",
           "book": "fanduel",
           "book_display": "FanDuel",
-          "american_odds": 3000,
-          "decimal_odds": 31.0,
-          "fair_american": 2285,
-          "implied_prob": 0.03226,
-          "true_prob": 0.04193,
-          "ev_pct": 29.99,
+          "american_odds": 2700,
+          "decimal_odds": 28.0,
+          "fair_american": 2282,
+          "implied_prob": 0.03571,
+          "true_prob": 0.04199,
+          "ev_pct": 17.56,
           "value_tier": "STRONG VALUE",
-          "kelly_pct": 0.25,
+          "kelly_pct": 0.16,
           "analytics": null
         }
       ],
       "notable_picks": [
         {
-          "player": "Dallas Mavericks",
-          "book": "fanduel",
-          "book_display": "FanDuel",
-          "american_odds": 20000,
-          "decimal_odds": 201.0,
-          "fair_american": 18522,
-          "implied_prob": 0.00498,
-          "true_prob": 0.00537,
-          "ev_pct": 7.94,
-          "value_tier": "Notable Value",
-          "kelly_pct": 0.01,
-          "analytics": null
-        },
-        {
           "player": "Memphis Grizzlies",
-          "book": "fanduel",
-          "book_display": "FanDuel",
+          "book": "betmgm",
+          "book_display": "BetMGM",
           "american_odds": 20000,
           "decimal_odds": 201.0,
-          "fair_american": 18522,
+          "fair_american": 18481,
           "implied_prob": 0.00498,
-          "true_prob": 0.00537,
-          "ev_pct": 7.94,
+          "true_prob": 0.00538,
+          "ev_pct": 8.17,
           "value_tier": "Notable Value",
           "kelly_pct": 0.01,
           "analytics": null
@@ -94,46 +94,32 @@
           "book_display": "FanDuel",
           "american_odds": 5000,
           "decimal_odds": 51.0,
-          "fair_american": 4688,
+          "fair_american": 4680,
           "implied_prob": 0.01961,
-          "true_prob": 0.02088,
-          "ev_pct": 6.51,
+          "true_prob": 0.02092,
+          "ev_pct": 6.68,
           "value_tier": "Notable Value",
           "kelly_pct": 0.03,
           "analytics": null
-        },
-        {
-          "player": "Indiana Pacers",
-          "book": "fanduel",
-          "book_display": "FanDuel",
-          "american_odds": 7500,
-          "decimal_odds": 76.0,
-          "fair_american": 7143,
-          "implied_prob": 0.01316,
-          "true_prob": 0.01381,
-          "ev_pct": 4.93,
-          "value_tier": "Notable Value",
-          "kelly_pct": 0.02,
-          "analytics": null
         }
       ],
-      "all_value_count": 7,
+      "all_value_count": 6,
       "odds_table": [
         {
           "player": "San Antonio Spurs",
-          "true_prob": 0.23593,
+          "true_prob": 0.23607,
           "fair_american": 324,
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 260,
-              "decimal": 3.6,
-              "ev_pct": -15.06
+              "american": 270,
+              "decimal": 3.7,
+              "ev_pct": -12.65
             },
             "betmgm": {
               "american": 300,
               "decimal": 4.0,
-              "ev_pct": -5.63
+              "ev_pct": -5.57
             }
           },
           "best_book": "betmgm",
@@ -141,39 +127,39 @@
         },
         {
           "player": "Oklahoma City Thunder",
-          "true_prob": 0.10758,
-          "fair_american": 830,
+          "true_prob": 0.10768,
+          "fair_american": 829,
           "analytics": null,
           "books": {
             "fanduel": {
               "american": 650,
               "decimal": 7.5,
-              "ev_pct": -19.31
+              "ev_pct": -19.24
             },
             "betmgm": {
-              "american": 600,
-              "decimal": 7.0,
-              "ev_pct": -24.69
+              "american": 750,
+              "decimal": 8.5,
+              "ev_pct": -8.47
             }
           },
-          "best_book": "fanduel",
-          "best_book_display": "FanDuel"
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
         },
         {
           "player": "Philadelphia 76ers",
-          "true_prob": 0.09581,
-          "fair_american": 944,
+          "true_prob": 0.09591,
+          "fair_american": 943,
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 950,
-              "decimal": 10.5,
-              "ev_pct": 0.6
+              "american": 900,
+              "decimal": 10.0,
+              "ev_pct": -4.09
             },
             "betmgm": {
               "american": 800,
               "decimal": 9.0,
-              "ev_pct": -13.77
+              "ev_pct": -13.68
             }
           },
           "best_book": "fanduel",
@@ -181,39 +167,39 @@
         },
         {
           "player": "Boston Celtics",
-          "true_prob": 0.08633,
-          "fair_american": 1058,
+          "true_prob": 0.08641,
+          "fair_american": 1057,
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 800,
-              "decimal": 9.0,
-              "ev_pct": -22.31
+              "american": 750,
+              "decimal": 8.5,
+              "ev_pct": -26.55
             },
             "betmgm": {
               "american": 800,
               "decimal": 9.0,
-              "ev_pct": -22.31
+              "ev_pct": -22.23
             }
           },
-          "best_book": "fanduel",
-          "best_book_display": "FanDuel"
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
         },
         {
           "player": "Houston Rockets",
-          "true_prob": 0.06911,
-          "fair_american": 1347,
+          "true_prob": 0.06918,
+          "fair_american": 1345,
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 1200,
-              "decimal": 13.0,
-              "ev_pct": -10.16
+              "american": 1100,
+              "decimal": 12.0,
+              "ev_pct": -16.98
             },
             "betmgm": {
               "american": 1100,
               "decimal": 12.0,
-              "ev_pct": -17.07
+              "ev_pct": -16.98
             }
           },
           "best_book": "fanduel",
@@ -221,19 +207,19 @@
         },
         {
           "player": "New York Knicks",
-          "true_prob": 0.06911,
-          "fair_american": 1347,
+          "true_prob": 0.06918,
+          "fair_american": 1345,
           "analytics": null,
           "books": {
             "fanduel": {
               "american": 800,
               "decimal": 9.0,
-              "ev_pct": -37.8
+              "ev_pct": -37.74
             },
             "betmgm": {
               "american": 1000,
               "decimal": 11.0,
-              "ev_pct": -23.98
+              "ev_pct": -23.9
             }
           },
           "best_book": "betmgm",
@@ -241,19 +227,19 @@
         },
         {
           "player": "Minnesota Timberwolves",
-          "true_prob": 0.05226,
-          "fair_american": 1814,
+          "true_prob": 0.05232,
+          "fair_american": 1811,
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 1200,
-              "decimal": 13.0,
-              "ev_pct": -32.07
+              "american": 1300,
+              "decimal": 14.0,
+              "ev_pct": -26.75
             },
             "betmgm": {
-              "american": 1600,
-              "decimal": 17.0,
-              "ev_pct": -11.16
+              "american": 1400,
+              "decimal": 15.0,
+              "ev_pct": -21.52
             }
           },
           "best_book": "betmgm",
@@ -261,19 +247,19 @@
         },
         {
           "player": "Toronto Raptors",
-          "true_prob": 0.04193,
-          "fair_american": 2285,
+          "true_prob": 0.04199,
+          "fair_american": 2282,
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 3000,
-              "decimal": 31.0,
-              "ev_pct": 29.99
+              "american": 2700,
+              "decimal": 28.0,
+              "ev_pct": 17.56
             },
             "betmgm": {
               "american": 2500,
               "decimal": 26.0,
-              "ev_pct": 9.02
+              "ev_pct": 9.16
             }
           },
           "best_book": "fanduel",
@@ -281,19 +267,19 @@
         },
         {
           "player": "Detroit Pistons",
-          "true_prob": 0.03814,
-          "fair_american": 2522,
+          "true_prob": 0.03819,
+          "fair_american": 2518,
           "analytics": null,
           "books": {
             "fanduel": {
               "american": 2000,
               "decimal": 21.0,
-              "ev_pct": -19.91
+              "ev_pct": -19.8
             },
             "betmgm": {
               "american": 2000,
               "decimal": 21.0,
-              "ev_pct": -19.91
+              "ev_pct": -19.8
             }
           },
           "best_book": "fanduel",
@@ -301,19 +287,19 @@
         },
         {
           "player": "Los Angeles Lakers",
-          "true_prob": 0.03814,
-          "fair_american": 2522,
+          "true_prob": 0.03819,
+          "fair_american": 2518,
           "analytics": null,
           "books": {
             "fanduel": {
               "american": 2200,
               "decimal": 23.0,
-              "ev_pct": -12.28
+              "ev_pct": -12.16
             },
             "betmgm": {
               "american": 2000,
               "decimal": 21.0,
-              "ev_pct": -19.91
+              "ev_pct": -19.8
             }
           },
           "best_book": "fanduel",
@@ -321,19 +307,19 @@
         },
         {
           "player": "Denver Nuggets",
-          "true_prob": 0.02996,
-          "fair_american": 3238,
+          "true_prob": 0.03,
+          "fair_american": 3233,
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 2700,
-              "decimal": 28.0,
-              "ev_pct": -16.12
+              "american": 2500,
+              "decimal": 26.0,
+              "ev_pct": -22.0
             },
             "betmgm": {
               "american": 2500,
               "decimal": 26.0,
-              "ev_pct": -22.11
+              "ev_pct": -22.0
             }
           },
           "best_book": "fanduel",
@@ -341,19 +327,19 @@
         },
         {
           "player": "Miami Heat",
-          "true_prob": 0.02392,
-          "fair_american": 4081,
+          "true_prob": 0.02395,
+          "fair_american": 4075,
           "analytics": null,
           "books": {
             "fanduel": {
               "american": 3500,
               "decimal": 36.0,
-              "ev_pct": -13.91
+              "ev_pct": -13.77
             },
             "betmgm": {
               "american": 3500,
               "decimal": 36.0,
-              "ev_pct": -13.91
+              "ev_pct": -13.77
             }
           },
           "best_book": "fanduel",
@@ -361,19 +347,19 @@
         },
         {
           "player": "Portland Trail Blazers",
-          "true_prob": 0.02392,
-          "fair_american": 4081,
+          "true_prob": 0.02395,
+          "fair_american": 4075,
           "analytics": null,
           "books": {
             "fanduel": {
               "american": 3000,
               "decimal": 31.0,
-              "ev_pct": -25.86
+              "ev_pct": -25.75
             },
             "betmgm": {
               "american": 3500,
               "decimal": 36.0,
-              "ev_pct": -13.91
+              "ev_pct": -13.77
             }
           },
           "best_book": "betmgm",
@@ -381,19 +367,19 @@
         },
         {
           "player": "Cleveland Cavaliers",
-          "true_prob": 0.02088,
-          "fair_american": 4688,
+          "true_prob": 0.02092,
+          "fair_american": 4680,
           "analytics": null,
           "books": {
             "fanduel": {
               "american": 3500,
               "decimal": 36.0,
-              "ev_pct": -24.81
+              "ev_pct": -24.69
             },
             "betmgm": {
               "american": 3500,
               "decimal": 36.0,
-              "ev_pct": -24.81
+              "ev_pct": -24.69
             }
           },
           "best_book": "fanduel",
@@ -401,19 +387,19 @@
         },
         {
           "player": "Golden State Warriors",
-          "true_prob": 0.02088,
-          "fair_american": 4688,
+          "true_prob": 0.02092,
+          "fair_american": 4680,
           "analytics": null,
           "books": {
             "fanduel": {
               "american": 5000,
               "decimal": 51.0,
-              "ev_pct": 6.51
+              "ev_pct": 6.68
             },
             "betmgm": {
               "american": 4000,
               "decimal": 41.0,
-              "ev_pct": -14.37
+              "ev_pct": -14.23
             }
           },
           "best_book": "fanduel",
@@ -421,19 +407,19 @@
         },
         {
           "player": "Indiana Pacers",
-          "true_prob": 0.01381,
-          "fair_american": 7143,
+          "true_prob": 0.01383,
+          "fair_american": 7130,
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 7500,
-              "decimal": 76.0,
-              "ev_pct": 4.93
+              "american": 6500,
+              "decimal": 66.0,
+              "ev_pct": -8.72
             },
             "betmgm": {
               "american": 6000,
               "decimal": 61.0,
-              "ev_pct": -15.78
+              "ev_pct": -15.63
             }
           },
           "best_book": "fanduel",
@@ -441,19 +427,19 @@
         },
         {
           "player": "Atlanta Hawks",
-          "true_prob": 0.00816,
-          "fair_american": 12148,
+          "true_prob": 0.00818,
+          "fair_american": 12124,
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 8000,
-              "decimal": 81.0,
-              "ev_pct": -33.87
+              "american": 10000,
+              "decimal": 101.0,
+              "ev_pct": -17.37
             },
             "betmgm": {
               "american": 8000,
               "decimal": 81.0,
-              "ev_pct": -33.87
+              "ev_pct": -33.73
             }
           },
           "best_book": "fanduel",
@@ -461,19 +447,19 @@
         },
         {
           "player": "Dallas Mavericks",
-          "true_prob": 0.00537,
-          "fair_american": 18522,
+          "true_prob": 0.00538,
+          "fair_american": 18481,
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 20000,
-              "decimal": 201.0,
-              "ev_pct": 7.94
+              "american": 25000,
+              "decimal": 251.0,
+              "ev_pct": 35.08
             },
             "betmgm": {
               "american": 20000,
               "decimal": 201.0,
-              "ev_pct": 7.94
+              "ev_pct": 8.17
             }
           },
           "best_book": "fanduel",
@@ -481,39 +467,39 @@
         },
         {
           "player": "Memphis Grizzlies",
-          "true_prob": 0.00537,
-          "fair_american": 18522,
+          "true_prob": 0.00538,
+          "fair_american": 18481,
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 20000,
-              "decimal": 201.0,
-              "ev_pct": 7.94
+              "american": 17500,
+              "decimal": 176.0,
+              "ev_pct": -5.28
             },
             "betmgm": {
               "american": 20000,
               "decimal": 201.0,
-              "ev_pct": 7.94
+              "ev_pct": 8.17
             }
           },
-          "best_book": "fanduel",
-          "best_book_display": "FanDuel"
+          "best_book": "betmgm",
+          "best_book_display": "BetMGM"
         },
         {
           "player": "Orlando Magic",
-          "true_prob": 0.00537,
-          "fair_american": 18522,
+          "true_prob": 0.00538,
+          "fair_american": 18481,
           "analytics": null,
           "books": {
             "fanduel": {
               "american": 8000,
               "decimal": 81.0,
-              "ev_pct": -56.5
+              "ev_pct": -56.41
             },
             "betmgm": {
               "american": 10000,
               "decimal": 101.0,
-              "ev_pct": -45.76
+              "ev_pct": -45.64
             }
           },
           "best_book": "betmgm",
@@ -521,39 +507,39 @@
         },
         {
           "player": "Charlotte Hornets",
-          "true_prob": 0.00262,
-          "fair_american": 38105,
+          "true_prob": 0.00154,
+          "fair_american": 64685,
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 25000,
-              "decimal": 251.0,
-              "ev_pct": -34.3
+              "american": 35000,
+              "decimal": 351.0,
+              "ev_pct": -45.82
             },
             "betmgm": {
               "american": 35000,
               "decimal": 351.0,
-              "ev_pct": -8.13
+              "ev_pct": -45.82
             }
           },
-          "best_book": "betmgm",
-          "best_book_display": "BetMGM"
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
         },
         {
           "player": "Phoenix Suns",
           "true_prob": 0.00154,
-          "fair_american": 64859,
+          "fair_american": 64685,
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 35000,
-              "decimal": 351.0,
-              "ev_pct": -45.97
+              "american": 30000,
+              "decimal": 301.0,
+              "ev_pct": -53.54
             },
             "betmgm": {
               "american": 50000,
               "decimal": 501.0,
-              "ev_pct": -22.87
+              "ev_pct": -22.67
             }
           },
           "best_book": "betmgm",
@@ -562,18 +548,18 @@
         {
           "player": "Washington Wizards",
           "true_prob": 0.00101,
-          "fair_american": 98934,
+          "fair_american": 98652,
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 200000,
-              "decimal": 2001.0,
-              "ev_pct": 102.05
+              "american": 150000,
+              "decimal": 1501.0,
+              "ev_pct": 52.0
             },
             "betmgm": {
               "american": 100000,
               "decimal": 1001.0,
-              "ev_pct": 1.08
+              "ev_pct": 1.37
             }
           },
           "best_book": "fanduel",
@@ -582,18 +568,18 @@
         {
           "player": "Los Angeles Clippers",
           "true_prob": 0.00075,
-          "fair_american": 133496,
+          "fair_american": 133098,
           "analytics": null,
           "books": {
             "fanduel": {
               "american": 200000,
               "decimal": 2001.0,
-              "ev_pct": 49.78
+              "ev_pct": 50.23
             },
             "betmgm": {
               "american": 200000,
               "decimal": 2001.0,
-              "ev_pct": 49.78
+              "ev_pct": 50.23
             }
           },
           "best_book": "fanduel",
@@ -602,18 +588,18 @@
         {
           "player": "New Orleans Pelicans",
           "true_prob": 0.00049,
-          "fair_american": 203647,
+          "fair_american": 203005,
           "analytics": null,
           "books": {
             "fanduel": {
               "american": 200000,
               "decimal": 2001.0,
-              "ev_pct": -1.79
+              "ev_pct": -1.48
             },
             "betmgm": {
               "american": 100000,
               "decimal": 1001.0,
-              "ev_pct": -50.87
+              "ev_pct": -50.72
             }
           },
           "best_book": "fanduel",
@@ -622,18 +608,18 @@
         {
           "player": "Utah Jazz",
           "true_prob": 0.00049,
-          "fair_american": 203647,
+          "fair_american": 203005,
           "analytics": null,
           "books": {
             "fanduel": {
               "american": 200000,
               "decimal": 2001.0,
-              "ev_pct": -1.79
+              "ev_pct": -1.48
             },
             "betmgm": {
               "american": 200000,
               "decimal": 2001.0,
-              "ev_pct": -1.79
+              "ev_pct": -1.48
             }
           },
           "best_book": "fanduel",
@@ -642,18 +628,18 @@
         {
           "player": "Chicago Bulls",
           "true_prob": 0.00036,
-          "fair_american": 274800,
+          "fair_american": 273899,
           "analytics": null,
           "books": {
             "fanduel": {
               "american": 200000,
               "decimal": 2001.0,
-              "ev_pct": -27.21
+              "ev_pct": -26.97
             },
             "betmgm": {
               "american": 200000,
               "decimal": 2001.0,
-              "ev_pct": -27.21
+              "ev_pct": -26.97
             }
           },
           "best_book": "fanduel",
@@ -662,18 +648,18 @@
         {
           "player": "Brooklyn Nets",
           "true_prob": 0.00029,
-          "fair_american": 346708,
+          "fair_american": 345538,
           "analytics": null,
           "books": {
             "fanduel": {
               "american": 200000,
               "decimal": 2001.0,
-              "ev_pct": -42.3
+              "ev_pct": -42.11
             },
             "betmgm": {
-              "american": 100000,
-              "decimal": 1001.0,
-              "ev_pct": -71.14
+              "american": 200000,
+              "decimal": 2001.0,
+              "ev_pct": -42.11
             }
           },
           "best_book": "fanduel",
@@ -682,18 +668,18 @@
         {
           "player": "Milwaukee Bucks",
           "true_prob": 0.00024,
-          "fair_american": 419223,
+          "fair_american": 417775,
           "analytics": null,
           "books": {
             "fanduel": {
               "american": 200000,
               "decimal": 2001.0,
-              "ev_pct": -52.28
+              "ev_pct": -52.11
             },
             "betmgm": {
               "american": 200000,
               "decimal": 2001.0,
-              "ev_pct": -52.28
+              "ev_pct": -52.11
             }
           },
           "best_book": "fanduel",
@@ -702,18 +688,18 @@
         {
           "player": "Sacramento Kings",
           "true_prob": 0.00024,
-          "fair_american": 419223,
+          "fair_american": 417775,
           "analytics": null,
           "books": {
             "fanduel": {
               "american": 200000,
               "decimal": 2001.0,
-              "ev_pct": -52.28
+              "ev_pct": -52.11
             },
             "betmgm": {
               "american": 200000,
               "decimal": 2001.0,
-              "ev_pct": -52.28
+              "ev_pct": -52.11
             }
           },
           "best_book": "fanduel",
@@ -723,24 +709,24 @@
       "outlier_summary": [
         {
           "book": "fanduel",
-          "decimal_odds": 2001.0,
-          "american_odds": 200000,
+          "decimal_odds": 1501.0,
+          "american_odds": 150000,
           "median_odds": 1001.0,
           "median_american": 100000,
-          "deviation_pct": 99.9,
+          "deviation_pct": 50.0,
           "direction": "higher",
           "player": "Washington Wizards",
           "book_display": "FanDuel"
         },
         {
           "book": "fanduel",
-          "decimal_odds": 76.0,
-          "american_odds": 7500,
-          "median_odds": 61.0,
-          "median_american": 6000,
-          "deviation_pct": 24.6,
+          "decimal_odds": 251.0,
+          "american_odds": 25000,
+          "median_odds": 201.0,
+          "median_american": 20000,
+          "deviation_pct": 24.9,
           "direction": "higher",
-          "player": "Indiana Pacers",
+          "player": "Dallas Mavericks",
           "book_display": "FanDuel"
         },
         {
@@ -753,35 +739,13 @@
           "direction": "higher",
           "player": "Golden State Warriors",
           "book_display": "FanDuel"
-        },
-        {
-          "book": "fanduel",
-          "decimal_odds": 31.0,
-          "american_odds": 3000,
-          "median_odds": 26.0,
-          "median_american": 2500,
-          "deviation_pct": 19.2,
-          "direction": "higher",
-          "player": "Toronto Raptors",
-          "book_display": "FanDuel"
-        },
-        {
-          "book": "betmgm",
-          "decimal_odds": 351.0,
-          "american_odds": 35000,
-          "median_odds": 301.0,
-          "median_american": 30000,
-          "deviation_pct": 16.6,
-          "direction": "higher",
-          "player": "Charlotte Hornets",
-          "book_display": "BetMGM"
         }
       ],
       "book_vigs": {
-        "FanDuel": 20.8,
-        "BetRivers": 23.9,
-        "BetOnline": 11.1,
-        "BetMGM": 18.7
+        "FanDuel": 21.7,
+        "BetRivers": 24.7,
+        "BetOnline": 11.0,
+        "BetMGM": 16.9
       },
       "nc_books_available": [
         "FanDuel",
