@@ -4,8 +4,8 @@
   "sport_key": "basketball_nba_championship_winner",
   "sport_group": "nba",
   "event_date": "2027-06-19T00:40:00Z",
-  "days_to_resolution": 204,
-  "generated_at": "2026-11-26 22:00:34",
+  "days_to_resolution": 203,
+  "generated_at": "2026-11-27 21:43:50",
   "markets": {
     "outrights": {
       "market_key": "outrights",
@@ -14,18 +14,18 @@
       "num_nc_books": 2,
       "num_sharp_books": 1,
       "num_players": 30,
-      "min_edge_threshold": 4.52,
+      "min_edge_threshold": 4.5,
       "strong_picks": [
         {
           "player": "Washington Wizards",
           "book": "fanduel",
           "book_display": "FanDuel",
-          "american_odds": 150000,
-          "decimal_odds": 1501.0,
+          "american_odds": 200000,
+          "decimal_odds": 2001.0,
           "fair_american": 98652,
-          "implied_prob": 0.00067,
+          "implied_prob": 0.0005,
           "true_prob": 0.00101,
-          "ev_pct": 52.0,
+          "ev_pct": 102.63,
           "value_tier": "STRONG VALUE",
           "kelly_pct": 0.01,
           "analytics": null
@@ -48,14 +48,14 @@
           "player": "Dallas Mavericks",
           "book": "fanduel",
           "book_display": "FanDuel",
-          "american_odds": 25000,
-          "decimal_odds": 251.0,
+          "american_odds": 22500,
+          "decimal_odds": 226.0,
           "fair_american": 18481,
-          "implied_prob": 0.00398,
+          "implied_prob": 0.00442,
           "true_prob": 0.00538,
-          "ev_pct": 35.08,
+          "ev_pct": 21.63,
           "value_tier": "STRONG VALUE",
-          "kelly_pct": 0.04,
+          "kelly_pct": 0.02,
           "analytics": null
         },
         {
@@ -76,8 +76,8 @@
       "notable_picks": [
         {
           "player": "Memphis Grizzlies",
-          "book": "betmgm",
-          "book_display": "BetMGM",
+          "book": "fanduel",
+          "book_display": "FanDuel",
           "american_odds": 20000,
           "decimal_odds": 201.0,
           "fair_american": 18481,
@@ -452,9 +452,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 25000,
-              "decimal": 251.0,
-              "ev_pct": 35.08
+              "american": 22500,
+              "decimal": 226.0,
+              "ev_pct": 21.63
             },
             "betmgm": {
               "american": 20000,
@@ -472,9 +472,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 17500,
-              "decimal": 176.0,
-              "ev_pct": -5.28
+              "american": 20000,
+              "decimal": 201.0,
+              "ev_pct": 8.17
             },
             "betmgm": {
               "american": 20000,
@@ -482,8 +482,8 @@
               "ev_pct": 8.17
             }
           },
-          "best_book": "betmgm",
-          "best_book_display": "BetMGM"
+          "best_book": "fanduel",
+          "best_book_display": "FanDuel"
         },
         {
           "player": "Orlando Magic",
@@ -532,9 +532,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 30000,
-              "decimal": 301.0,
-              "ev_pct": -53.54
+              "american": 35000,
+              "decimal": 351.0,
+              "ev_pct": -45.82
             },
             "betmgm": {
               "american": 50000,
@@ -552,9 +552,9 @@
           "analytics": null,
           "books": {
             "fanduel": {
-              "american": 150000,
-              "decimal": 1501.0,
-              "ev_pct": 52.0
+              "american": 200000,
+              "decimal": 2001.0,
+              "ev_pct": 102.63
             },
             "betmgm": {
               "american": 100000,
@@ -709,24 +709,13 @@
       "outlier_summary": [
         {
           "book": "fanduel",
-          "decimal_odds": 1501.0,
-          "american_odds": 150000,
+          "decimal_odds": 2001.0,
+          "american_odds": 200000,
           "median_odds": 1001.0,
           "median_american": 100000,
-          "deviation_pct": 50.0,
+          "deviation_pct": 99.9,
           "direction": "higher",
           "player": "Washington Wizards",
-          "book_display": "FanDuel"
-        },
-        {
-          "book": "fanduel",
-          "decimal_odds": 251.0,
-          "american_odds": 25000,
-          "median_odds": 201.0,
-          "median_american": 20000,
-          "deviation_pct": 24.9,
-          "direction": "higher",
-          "player": "Dallas Mavericks",
           "book_display": "FanDuel"
         },
         {
@@ -742,7 +731,7 @@
         }
       ],
       "book_vigs": {
-        "FanDuel": 21.7,
+        "FanDuel": 21.6,
         "BetRivers": 24.7,
         "BetOnline": 11.0,
         "BetMGM": 16.9
